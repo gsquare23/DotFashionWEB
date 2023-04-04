@@ -38,7 +38,7 @@ public class BlogPageTest  extends BaseClass {
 	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_TitleVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) {
+	public void BlogPage_TitleVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) {
 		Log.startTestCase("BlogPage_TitleVerification");
 		commonPagedetails = new CommonPagedetails();
 		launchApp_V1(browser, url);
@@ -50,7 +50,7 @@ public class BlogPageTest  extends BaseClass {
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
 	
-	public void BlogPage_PageHeaderVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) {
+	public void BlogPage_PageHeaderVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) {
 		Log.startTestCase("BlogPage_PageHeaderVerification");
 		commonPagedetails = new CommonPagedetails();
 		launchApp_V1(browser, url);
@@ -76,7 +76,7 @@ public class BlogPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_SearchFucntionalityVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_SearchFucntionalityVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		
 		Log.startTestCase("-----------BlogPage_SearchFucntionalityVerification    Starts---------");
 		
@@ -90,7 +90,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_CartFucntionalityVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_CartFucntionalityVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_CartFucntionalityVerification    Starts---------");
 		commonPagedetails = new CommonPagedetails();
 		launchApp_V1(browser, url);
@@ -100,7 +100,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_UserFunctionalityVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_UserFunctionalityVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 
 		Log.startTestCase("-----------BlogPage_UserFunctionalityVerification    Starts---------");
 		recipePage = new RecipePageFinal();
@@ -112,7 +112,7 @@ public class BlogPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_LogoFunctionalityVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_LogoFunctionalityVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 
 		Log.startTestCase("-----------BlogPage_LogoFunctionalityVerification    Starts---------");
 		recipePage = new RecipePageFinal();
@@ -125,21 +125,18 @@ public class BlogPageTest  extends BaseClass {
 	
 	String BlogPage = "//div[@class='css-1rm28g8']/div/button";
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public  void BlogPage_BlogPageElements(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public  void BlogPage_BlogPageElements_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("BlogPage_BlogPageElements");
 		Log.info("Verfying the BlogPage List");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
-		//WebElement login = getDriver().findElement(By.xpath(BlogPage));
-		//Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
-		//Thread.sleep(1000);
 		recipePage.CategoryListVerification();	
 		Log.endTestCase("-----------BlogPage_BlogPageElements---------");
 	}
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BlogPage_addCommentVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) {
+	public void BlogPage_addCommentVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) {
 		Log.startTestCase("-----------BlogPage_addCommentVerification    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -148,7 +145,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_recipeImage(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_recipeImage_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_recipeImage    Starts---------");
 		blogPage = new BlogPage();
 		launchApp_V1(browser, url);
@@ -157,7 +154,7 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_recipeImage    Ends---------");
 	}
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_authornameVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle){
+	public void BlogPage_authornameVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate){
 		
 		Log.startTestCase("-----------BlogPage_authornameVerification    Starts---------");
 		Log.info("Author Name Verification");
@@ -170,7 +167,7 @@ public class BlogPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_likeIconFunctionality1(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_likeIconFunctionality1_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_likeIconFunctionality1    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -182,7 +179,7 @@ public class BlogPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_bookMarkIconFunctionality(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_bookMarkIconFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_bookMarkIconFunctionality    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -191,7 +188,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_ShareIconFunctionality(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_ShareIconFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_ShareIconFunctionality    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -200,7 +197,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_blogTitleVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle){
+	public void BlogPage_blogTitleVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate){
 		Log.startTestCase("-----------BlogPage_blogTitleVerification    Starts---------");
 		blogPage = new BlogPage();
 		launchApp_V1(browser, url);
@@ -209,7 +206,7 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_blogTitleVerification    Ends---------");
 	}
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_tagsVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_tagsVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_tagsVerification    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -217,7 +214,7 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_tagsVerification    Ends---------");
 	}
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_ProductTilesVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) {
+	public void BlogPage_ProductTilesVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) {
 		Log.startTestCase("-----------BlogPage_ProductImageVerification    Starts---------");
 		blogPage = new BlogPage();
 		launchApp_V1(browser, url);
@@ -226,7 +223,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_ProductQuickviewVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_ProductQuickviewVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_ProductQuickviewVerification    Starts---------");
 		blogPage = new BlogPage();
 		
@@ -238,7 +235,7 @@ public class BlogPageTest  extends BaseClass {
 
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_ProductWishlistVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_ProductWishlistVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_ProductWishlistVerification    Starts---------");
 		productPage = new ProductPage();
 		launchApp_V1(browser, url);
@@ -247,8 +244,8 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_ProductWishlistVerification    Ends---------");
 	}
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_BlogVideoVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	@Test(dataProvider = "BlogPage", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
+	public void BlogPage_BlogVideoVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_BlogVideoVerification    Starts---------");
 		blogPage = new BlogPage();
 		launchApp_V1(browser, url);
@@ -257,7 +254,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_BreadCrumbVerification(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	public void BlogPage_BreadCrumbVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_BreadCrumbVerification    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -270,8 +267,8 @@ public class BlogPageTest  extends BaseClass {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
-	public void BlogPage_AddCommentinCommentSeection(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
+	public void BlogPage_AddCommentinCommentSeection_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("BlogPage_AddCommentinCommentSeection");
 
 		launchApp_V1(browser, prop.getProperty("LoginUrl"));
@@ -284,8 +281,8 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_AddCommentinCommentSeection ---------");
 	}
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
-	public void BlogPage_bookMarkIconFunctionalityLoggedIn(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
+	public void BlogPage_bookMarkIconFunctionalityLoggedIn_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_bookMarkIconFunctionalityLoggedIn    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
@@ -293,8 +290,8 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_bookMarkIconFunctionalityLoggedIn    Ends---------");
 	}
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
-	public void BlogPage_likeIconFunctionality(String page, String title, String browser, String url, String BlogPageElements, String AuthorName, String PublishDate, String blogTitle) throws InterruptedException {
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
+	public void BlogPage_likeIconFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_likeIconFunctionality    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);

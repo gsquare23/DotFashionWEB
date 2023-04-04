@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dotKonnekt.tests.ProductPageTest">
+      <class name="com.dotKonnekt.tests.CheckoutPageTest">
         <methods>
-          <include name="flush"/>
-          <include name="loadConfig"/>
-          <include name="ProductPage_ProductElements" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="flush"/>
+          <include name="TitleVerification"/>
+          <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.dotKonnekt.tests.ProductPageTest -->
+      </class> <!-- com.dotKonnekt.tests.CheckoutPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
