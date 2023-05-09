@@ -46,7 +46,7 @@ public class CheckoutPage extends BaseClass{
 	String clickButton=  "//*[name()='svg' and @data-testid='SearchOutlinedIcon']";
 	String searchBox = "//input[@placeholder='Search']";
 	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-64acg5']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-8s8b0g']";
+	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-6o54za']";
 
 	public void SearchFunctionalityForArticleTab (String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
@@ -86,20 +86,20 @@ public class CheckoutPage extends BaseClass{
 		}
 		
 		if(ArticleTab.getText().contains("Article") && !ArticleTab.getText().equals("Article")) {
-			Log.info("fghjk");
+			Log.info("inside the Article section");
 			ArticleTab.click();
 			//Action.click(getDriver(), ArticleTab);
 			Thread.sleep(4000);
 			Log.info("Successfully Clicked the Article Tab button ");
 			String n = text.replaceAll("[^0-9]", "");
-			System.out.println(n);
+			System.out.println("Count Text present is Artcile(x) = " + n);
 			WebElement Showingresult = getDriver().findElement(By.xpath(showingresult));
 			String ss = (Showingresult.getText()).replaceAll("[^0-9]", "");
-			System.out.println(ss);
+			System.out.println("Total Product Present on Ui "+ss);
 			if(ss.equals(n)) {
 				List<WebElement> ShopProducts = getDriver().findElements(By.xpath(shopProducts));
 				int count  = ShopProducts.size();
-				System.out.println(count);
+				//System.out.println(count);
 				if(count == Integer.parseInt(ss)) {
 					Log.info("Successfully Verified the Count of the Articles");
 				}
@@ -119,24 +119,6 @@ public class CheckoutPage extends BaseClass{
 	
 	
 	String allproduct = "(//div[contains(@class,'css-i25sow')])/div";
-	/*
-	 * String carticon =
-	 * "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']"; String
-	 * wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	 * String quickview =
-	 * "//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']"; String
-	 * discountedPrice = "//div[@class='MuiBox-root css-70qvj9']/p"; String
-	 * actualPrice =
-	 * "//div[@class='MuiTypography-root MuiTypography-body1 css-lgaoco']"; String
-	 * productsName =
-	 * "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-1vybv8z'])[1]/div/div/div/div[1]"
-	 * ; String images =
-	 * "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-1vybv8z'])[1]/div/div/span/img"
-	 * ;
-	 */
-	
-	
-	
 	public void selectAProduct() throws InterruptedException {
 		Log.info("Starting the SelectAProduct");
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
@@ -153,7 +135,7 @@ public class CheckoutPage extends BaseClass{
 	}
 	
 	String checkoutBtn = "//div[@class='MuiBox-root css-1rtfqxi']/button";
-	String cartButton = "//div[@class='MuiBox-root css-gw6fln']/button[1]";
+	String cartButton = "//div[@class='MuiBox-root css-oaref8']/button[1]";
 	String stockCount = "//div[@class='MuiBox-root css-8hvv1y']/div/input";
 
 	public void availabiltyStock() throws InterruptedException {
@@ -222,8 +204,10 @@ public class CheckoutPage extends BaseClass{
 	String already = "(//p[contains(text(),'Already have an account ?')])[2]";
 	String emailText = "(//p[contains(text(),'Email*')])[2]";
 	//String contact = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[1]/div[1]/div[1]/p";
-	String contact = "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'])[4]";
+	String contact = "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'])[4]";
 	public void contactInfoGuest() throws InterruptedException {
+		
+		Log.info("ContactInfo Starts");
 		WebElement Contact = getDriver().findElement(By.xpath(contact));
 		
 		System.out.println(Contact.getText());
@@ -240,6 +224,7 @@ public class CheckoutPage extends BaseClass{
 		WebElement EmailBox = getDriver().findElement(By.xpath(emailBox));
 		Assert.assertEquals(EmailBox.getAttribute("placeholder"), "Email", " Placeholder  Text is not Present");
 		Action.type(EmailBox, "garvitofficial97@gmial.com");
+		Log.info("ContactInfo Ends");
 			
 	}
 	
@@ -255,7 +240,7 @@ public class CheckoutPage extends BaseClass{
 		Assert.assertEquals(EmailText.getText(), "Email*", "Email Text is not Present");
 		WebElement EmailBox = getDriver().findElement(By.xpath(emailbox1));
 		Assert.assertEquals(EmailBox.getAttribute("value"), prop.getProperty("Username"), " Placeholder  Text is not Present");
-		Action.type(EmailBox, "garvitofficial97@gmial.com");
+		Action.type(EmailBox, "garvitofficial97@gmail.com");
 			
 	}
 	
@@ -276,7 +261,7 @@ public class CheckoutPage extends BaseClass{
 	String addressLine2 = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[3]/div/p";
 	String addressLine1Box = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/input";
 	String addressLine1 = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[2]/div/p";
-	String shipping =  "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'])[5]";
+	String shipping =  "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'])[5]";
 	String name = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[1]/div[1]/p";
 	String nameBox = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/input"		;
 	public void shippingAddressGuest() throws InterruptedException {
@@ -374,7 +359,7 @@ public class CheckoutPage extends BaseClass{
 		Assert.assertEquals(ValidateBtn.getText(), "VALIDATE", "VALIDATE Text is not Present");
 		Log.info("Successfully entered the value in Validate Box");
 		Action.click(getDriver(), ValidateBtn);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		Assert.assertEquals(ValidateBtn.getText(), "VALIDATED", "VALIDATED Text is not Present");
 		Log.info("Successsfully clicked on the Validate button");
 		
@@ -412,7 +397,7 @@ public class CheckoutPage extends BaseClass{
 		Log.info("Successfully passed  the value in Name box");
 	}
 		
-	String shippingMethod = "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'][normalize-space()='Shipping Method'])[2]";			
+	String shippingMethod = "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'][normalize-space()='Shipping Method'])[2]";			
 	public void shippingMethod() throws InterruptedException {
 			WebElement ShippingMethod = getDriver().findElement(By.xpath(shippingMethod));
 			Action.scrollByVisibilityOfElement(getDriver(), ShippingMethod);
@@ -491,8 +476,8 @@ public class CheckoutPage extends BaseClass{
 				}
 				
 	}
-	String grandTotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1sj1rd'])[1]";
-	String subtotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-in88m2'])[1]";
+	String grandTotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-9r9xm0'])[1]";
+	String subtotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1r1xxje'])[1]";
 	String totalQty = "(//div[@class='MuiBox-root css-1u53qea']/p[2])[2]";
 	String expandIcon = "(//*[name()='svg' and @data-testid='ExpandMoreIcon'])[8]";
 	String qty = "((//div[@class='MuiBox-root css-z2wu8w'])/div[2]/p[2])";
@@ -509,17 +494,17 @@ public class CheckoutPage extends BaseClass{
 		
 		List<WebElement> Qty =getDriver().findElements(By.xpath(qty));
 		int d = Qty.size();
-		System.out.println(d);
-		Log.info("gfhjkl;");
+		System.out.println( d);
+		//Log.info("gfhjkl;");
 		
 		
 		WebElement TotalQty =getDriver().findElement(By.xpath(totalQty));
 		int e = Integer.parseInt(TotalQty.getText());
-		System.out.println(e);
-		Log.info("djklhgdjhjbd");
+		System.out.println("Quantity Present= "+e);
+		//Log.info("djklhgdjhjbd");
 		int sum =0;
 		
-		System.out.println(d/2);
+		//System.out.println(d/2);
 		List<Integer> l1 = new ArrayList<Integer>();
 		
 		for(int i=((d/2)+1);i<=d;i++) {
@@ -530,7 +515,7 @@ public class CheckoutPage extends BaseClass{
 			l1.add(eachQty);
 			 sum = sum+ eachQty;
 		}
-		System.out.println(l1);
+		System.out.println("Qunatity in list format = " + l1);
 		
 		
 		
@@ -544,7 +529,7 @@ public class CheckoutPage extends BaseClass{
 			l2.add(q1);
 		}
 		
-		System.out.println(l2);
+		System.out.println("Price in list format"+l2);
 		
 		Assert.assertEquals(e, sum, "Quantity of the products are not same");
 		Log.info("Successfully verified the quantity of the products");

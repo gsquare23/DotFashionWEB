@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -63,7 +64,7 @@ public class BaseClass {
 		System.out.println(browsername);
 		// String browsername = prop.getProperty("browser");
 
-		if (browsername.contains("Chrome")) {
+		if (browsername.equals("Chrome")) {
 
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
@@ -72,11 +73,31 @@ public class BaseClass {
 			cp.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 			chromeOptions.merge(cp);
 			driver.set(new ChromeDriver(chromeOptions));
+			getDriver().manage().window().maximize();
+			
 		}
+		
+		if (browsername.equals("ChromeMobile")) {
+
+			WebDriverManager.chromedriver().setup();
+			
+			  ChromeOptions chromeOptions = new ChromeOptions();
+			  chromeOptions.addArguments("--remote-allow-origins=*"); DesiredCapabilities
+			  cp = new DesiredCapabilities(); cp.setCapability(ChromeOptions.CAPABILITY,
+			  chromeOptions); chromeOptions.merge(cp); driver.set(new
+			  ChromeDriver(chromeOptions));
+			 
+			//driver.set(new ChromeDriver());
+			
+			Dimension d = new Dimension(390, 844);
+			getDriver().manage().window().setSize(d);
+		}
+		
 
 		else if (browsername.contains("MicrosoftEdge") || browsername.contains("Edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());
+			getDriver().manage().window().maximize();
 		}
 
 		else if (browsername.contains("Firefox")) {
@@ -96,16 +117,16 @@ public class BaseClass {
 			driver.set(new ChromeDriver(chromeOptions));
 		}
 
-		Action.implicitWait(getDriver(), 10);
-		Action.pageLoadTimeOut(getDriver(), 100);
-		long s = System.currentTimeMillis();
+		//Action.implicitWait(getDriver(), 10);
+		//Action.pageLoadTimeOut(getDriver(), 100);
+		long start = System.currentTimeMillis();
 		
 		getDriver().get(Url);
 		 
-		long e = System.currentTimeMillis();
-		long r = e - s;
-		System.out.println("Page load time in milliseconds: " + r);
-		getDriver().manage().window().maximize();
+		long end = System.currentTimeMillis();
+		long totalTime = end - start;
+		System.out.println("Page load time in milliseconds: " + totalTime);
+		//getDriver().manage().window().maximize();
 
 		Action.implicitWait(getDriver(), 10);
 		
@@ -129,19 +150,41 @@ public class BaseClass {
 			cp.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 			chromeOptions.merge(cp);
 			driver.set(new ChromeDriver(chromeOptions));
+			getDriver().manage().window().maximize();
+		}
+		
+		else if (browsername.equals("ChromeMobile")) {
+
+			WebDriverManager.chromedriver().setup();
+			
+			  ChromeOptions chromeOptions = new ChromeOptions();
+			  chromeOptions.addArguments("--remote-allow-origins=*"); DesiredCapabilities
+			  cp = new DesiredCapabilities(); cp.setCapability(ChromeOptions.CAPABILITY,
+			  chromeOptions); chromeOptions.merge(cp); driver.set(new
+			  ChromeDriver(chromeOptions));
+			 
+			//driver.set(new ChromeDriver());
+			
+			Dimension d = new Dimension(390, 844);
+			getDriver().manage().window().setSize(d);
 		}
 
 		else if (browsername.contains("MicrosoftEdge")|| browsername.contains("Edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver.set(new EdgeDriver());
+			//driver.set(new EdgeDriver());
+			EdgeOptions edgeOptions = new EdgeOptions();
+			edgeOptions.setAcceptInsecureCerts(true);
+			driver.set(new EdgeDriver(edgeOptions));
+			getDriver().manage().window().maximize();
 		}
 
 		else if (browsername.contains("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver.set(new FirefoxDriver());
-			Dimension d = new Dimension(1280, 587);
-			getDriver().manage().window().setSize(d);
-			Thread.sleep(2000);
+			/*
+			 * Dimension d = new Dimension(1280, 587);
+			 * getDriver().manage().window().setSize(d); Thread.sleep(2000);
+			 */
 		} 
 		else if (browsername.contains("Headless")) {
 			WebDriverManager.chromedriver().setup();
@@ -162,7 +205,7 @@ public class BaseClass {
 		long e = System.currentTimeMillis();
 		long r = e - s;
 		System.out.println("Page load time in milliseconds: " + r);
-		getDriver().manage().window().maximize();
+		//getDriver().manage().window().maximize();
 
 		Action.implicitWait(getDriver(), 10);
 		

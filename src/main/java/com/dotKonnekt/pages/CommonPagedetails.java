@@ -23,7 +23,7 @@ public class CommonPagedetails extends BaseClass {
 	String searchBox = "//input[@placeholder='Search']";
 	String clickButton=  "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1a6giau']//*[name()='svg']";
 	String welcomeTxt1 = "//div[@class='MuiBox-root css-6pef4c']/p[1]";
-	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1yt7wtf'])[1]";
+	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1ceu20y'])[1]";
 	String loginTxt = "(//button[normalize-space()='LOGIN/SIGNUP'])[1]";
 	String categoryElements = "//div[@class='MuiBox-root css-1y4n82h']/button";
 	String Author = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-1r6qczh']";
@@ -59,9 +59,9 @@ public class CommonPagedetails extends BaseClass {
 	public void validateCartIconFunctionality() {
 		WebElement cartIcon  =  getDriver().findElement(By.xpath(cart));
 		Action.click(getDriver(), cartIcon);
-		String totalItmesTxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-1093urb']")).getText();
+		String totalItmesTxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-1bbjh9u']")).getText();
 		Assert.assertEquals(totalItmesTxt, "Total item(s):");
-		String shippingtxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-kidj9m']")).getText();
+		String shippingtxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-5rxpp3']")).getText();
 		Assert.assertEquals(shippingtxt, "Shipping and tax will be calculated on checkout");
 		boolean result = getDriver().findElement(By.xpath("(//button[@type='button'][normalize-space()='checkout'])[1]")).isEnabled();
 		if(result) 
@@ -70,16 +70,9 @@ public class CommonPagedetails extends BaseClass {
 	
 	
 	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-64acg5']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-6o54za']";
+	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-1awxnbv']";
 	public void validateSeachFunctionality(String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
-		/*
-		 * //Action.explicitWait(getDriver(), RecentSearch, null); Thread.sleep(5000);
-		 * 
-		 * WebElement RecentSearch = getDriver().findElement(By.xpath(recentSearch));
-		 * String recentSerchTxt = RecentSearch.getText();
-		 * Assert.assertEquals(recentSerchTxt, "You Recent Searches");
-		 */
 		
 		WebElement Trending = getDriver().findElement(By.xpath(trending));
 		String trendingTxt = Trending.getText();
@@ -92,8 +85,6 @@ public class CommonPagedetails extends BaseClass {
 		else if(ClickedBy.equalsIgnoreCase("Keyboard")) {
 			getDriver().findElement(By.xpath(searchBox)).sendKeys(Keys.ENTER);
 		}
-		
-		
 		
 		Action.explicitWaitbyTitle(getDriver(), "Search Page", Duration.ofSeconds(10));
 		String title1 = getDriver().getTitle();
@@ -117,6 +108,7 @@ public class CommonPagedetails extends BaseClass {
 		Log.info("Login/Signup presence verified");
 		getDriver().findElement(By.xpath(loginTxt)).click();
 		Log.info("Login button is active and working perfectly");
+		Thread.sleep(1000);
 		WebElement login = getDriver().findElement(By.xpath(loginPageTxt));
 		Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
 		String loginTitle = getDriver().getTitle();

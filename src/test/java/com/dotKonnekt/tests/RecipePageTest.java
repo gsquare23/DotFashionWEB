@@ -33,7 +33,19 @@ public class RecipePageTest extends BaseClass {
 	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
 	
 
-	@Test(dataProvider = "NewRecipePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	public void RecipePage_PageLoadTime(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
+
+		Log.startTestCase("RecipePage_PageLoadTime");
+		launchApp_V1(browser, url);
+		Log.endTestCase("RecipePage_PageLoadTime");
+
+	}
+	
+	
+	
+	
+	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void RecipePage_TitleVerification(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 
 		Log.startTestCase("RecipePage_TitleVerification");
@@ -45,6 +57,9 @@ public class RecipePageTest extends BaseClass {
 		Log.endTestCase("RecipePage_TitleVerification");
 
 	}
+	
+	
+	
 
 	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void RecipePage_BreadCrumbVerification (String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
@@ -109,7 +124,7 @@ public class RecipePageTest extends BaseClass {
 		launchApp_V1(browser, url);
 		//WebElement login = getDriver().findElement(By.xpath(category));
 		//Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
-		recipePage.CategoryListVerification();
+		recipePage.CategoryListVerification(browser);
 		Log.endTestCase("-----------RecipePage_categoryElements    Ends---------");
 	}
 
@@ -196,7 +211,7 @@ public class RecipePageTest extends BaseClass {
 
 	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void RecipePage_commentsSection(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
-		Log.startTestCase("-----------RecipePage_commentsSection    Starts---------");
+		Log.startTestCase("-- ---------RecipePage_commentsSection    Starts---------");
 		recipePage = new RecipePageFinal();
 		launchApp_V1(browser, url);
 		recipePage.commentsSectionVerification();
@@ -247,7 +262,21 @@ public class RecipePageTest extends BaseClass {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	
-	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
+	
+	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	public void RecipePage_reportAbuseFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
+		Log.startTestCase("-----------RecipePage_reportAbuseFunctionality_dotFashion    Starts---------");
+		launchApp_V1(browser, prop.getProperty("LoginUrl"));
+		Log.startTestCase("Entering the data");
+		loginPage = new LoginPage();
+		loginPage.loginSetup(prop.getProperty("Username"), prop.getProperty("Password"));
+		getDriver().get(url);
+		recipePage = new RecipePageFinal();
+		recipePage.reportAbuseFunctionality();
+		Log.endTestCase("-----------RecipePage_reportAbuseFunctionality_dotFashion    Ends---------");
+	}
+	
+	@Test(dataProvider = "NewRecipePage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
 	public void RecipePage_AddCommentinCommentSeection(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("RecipePage_AddCommentinCommentSeection");
 

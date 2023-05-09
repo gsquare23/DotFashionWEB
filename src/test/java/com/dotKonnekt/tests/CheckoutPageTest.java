@@ -70,11 +70,11 @@ public class CheckoutPageTest extends BaseClass {
 	public void CheckoutPage_SearchFucntionalityVerification(String page, String title, String browser, String url) throws InterruptedException {
 		
 		Log.startTestCase("-----------CheckoutPage_SearchFucntionalityVerification    Starts---------");
-		
+		commonPagedetails = new CommonPagedetails();
 		checkoutPage = new CheckoutPage();
 		launchApp_V1(browser, url);
-		//checkoutPage.validateSeachFunctionalityForShopTab("mask","Keyboard","Search Page");
-		commonPagedetails.validateSeachFunctionality("Blacsdfghk","Keyboard",title);
+		
+		commonPagedetails.validateSeachFunctionality("Black","Keyboard",title);
 		
 		Log.info("SearchFucntionality Works perfectly");
 		Log.endTestCase("-----------CheckoutPage_SearchFucntionalityVerification    Ends---------");
@@ -115,7 +115,7 @@ public class CheckoutPageTest extends BaseClass {
 	
 	
 //Lotus Antioxidant Night Moisturizer
-	@Test(dataProvider = "CheckoutPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "CheckoutPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void CheckoutPage_GuestUseraddItemTotheCartforShopTab(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CheckoutPage_GuestUseraddItemTotheCart    Starts---------");
 		checkoutPage = new CheckoutPage();
@@ -124,7 +124,7 @@ public class CheckoutPageTest extends BaseClass {
 		searchPage = new SearchPage();
 		launchApp_EB(browser, prop.getProperty("HomePageurl"));
 		homePage.NewsletterPopup__Alert();
-		searchPage.validateSeachFunctionalityForShopTab("jojoba","Mouse","Search Page");
+		searchPage.validateSeachFunctionalityForShopTab("pant","Mouse","Search Page");
 		searchPage.ShopProducts();
 		checkoutPage.selectAProduct();
 		checkoutPage.availabiltyStock();
@@ -139,7 +139,7 @@ public class CheckoutPageTest extends BaseClass {
 		Log.endTestCase("-----------CheckoutPage_GuestUseraddItemTotheCart    Ends---------");
 	}
 	
-	@Test(dataProvider = "CheckoutPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "CheckoutPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void CheckoutPage_LoggedUseraddItemTotheCartforShopTab(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("----CheckoutPage_LoggedUseraddItemTotheCartforShopTab    Starts---------");
 		checkoutPage = new CheckoutPage();
@@ -172,9 +172,8 @@ public class CheckoutPageTest extends BaseClass {
 		homePage = new HomePage();
 		launchApp_EB(browser, prop.getProperty("HomePageurl"));
 		homePage.NewsletterPopup__Alert();
-		searchPage.validateSeachFunctionalityForShopTab("moisturizer","Keyboard","Search Page");
-		//checkoutPage.SearchFunctionalityForArticleTab("moisturizer","Keyboard","Search Page");
-		//checkoutPage.articlesPresence();
+		checkoutPage.SearchFunctionalityForArticleTab("Baring the Bra: ","Keyboard","Search Page");
+		checkoutPage.articlesPresence();
 		Log.endTestCase("-----------CheckoutPage_GuestUseraddItemTotheCart    Ends---------");
 	}
 	

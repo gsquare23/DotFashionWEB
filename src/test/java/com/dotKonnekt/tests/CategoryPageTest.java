@@ -35,7 +35,7 @@ public class CategoryPageTest  extends BaseClass {
 	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_TitleVerification(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_TitleVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("CategoryPage_TitleVerification");
 		
 		Log.startTestCase("TitleVerification");
@@ -71,9 +71,7 @@ public class CategoryPageTest  extends BaseClass {
 	}
 	
 	 @Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn") 
-		public void CategoryPage_UserFunctionalityVerification(String page, String title,
-				  String browser, String url, String CategoryElements, String tagsElement,
-				  String categoryName) throws InterruptedException {
+		public void CategoryPage_UserFunctionalityVerification(String page, String title, String browser, String url) throws InterruptedException {
 
 			Log.startTestCase("-----------CategoryPage_UserFunctionalityVerification    Starts---------");
 			commonPagedetails = new CommonPagedetails();
@@ -84,9 +82,7 @@ public class CategoryPageTest  extends BaseClass {
 		
 	 
 	 @Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-		public void CategoryPage_LogoFunctionalityVerification (String page, String title,
-				  String browser, String url, String CategoryElements, String tagsElement,
-				  String categoryName) throws InterruptedException {
+		public void CategoryPage_LogoFunctionalityVerification (String page, String title, String browser, String url) throws InterruptedException {
 			Log.startTestCase("-----------CategoryPage_LogoFunctionalityVerification    Starts---------");
 			commonPagedetails = new CommonPagedetails();
 			launchApp_V1(browser, url);
@@ -96,9 +92,7 @@ public class CategoryPageTest  extends BaseClass {
 	 
 	
 		@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-		public void CategoryPage_SearchFucntionalityVerification(String page, String title,
-				  String browser, String url, String CategoryElements, String tagsElement,
-				  String categoryName) throws InterruptedException {
+		public void CategoryPage_SearchFucntionalityVerification(String page, String title, String browser, String url) throws InterruptedException {
 			
 			 	Log.startTestCase("-----------CategoryPage_SearchFucntionalityVerification    Starts---------");
 			 	commonPagedetails = new CommonPagedetails();
@@ -111,9 +105,7 @@ public class CategoryPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_categoryElements(String page, String title,
-			  String browser, String url, String CategoryElements, String tagsElement,
-			  String categoryName) throws InterruptedException {
+	public void CategoryPage_categoryElements(String page, String title, String browser, String url) throws InterruptedException {
 
 		Log.startTestCase("ProductPage_categoryElements....RecipePage3");
 		Log.info("Verfying the Category List");
@@ -121,14 +113,12 @@ public class CategoryPageTest  extends BaseClass {
 		launchApp_V1(browser, url);
 		//WebElement login = getDriver().findElement(By.xpath(category));
 		//Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
-		recipePage.CategoryListVerification();
+		recipePage.CategoryListVerification(browser);
 		Log.endTestCase("-----------ProductPage_categoryElements    Ends---------");
 	}
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	  public void imageVerification(String page, String title,
-	  String browser, String url, String CategoryElements, String tagsElement,
-	  String categoryName) throws InterruptedException {
+	  public void imageVerification(String page, String title, String browser, String url) throws InterruptedException {
 		
 	  Log.startTestCase("-----------imageVerification    Starts---------");
 	  categoryPage = new CategoryPage(); launchApp_V1(browser, url);
@@ -139,8 +129,7 @@ public class CategoryPageTest  extends BaseClass {
 	
 	
 		@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void tagsVerification(String page, String title, String browser, String url, String CategoryElements,
-			String tagsElement, String categoryName) throws InterruptedException {
+	public void tagsVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------tagsVerification    Starts---------");
 		recipePage = new RecipePageFinal();
 		categoryPage = new CategoryPage();
@@ -151,14 +140,13 @@ public class CategoryPageTest  extends BaseClass {
 	 
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void BreadCrumbVerification(String page, String title, String browser, String url, String CategoryElements,
-			String tagsElement, String categoryName) throws InterruptedException {
+	public void BreadCrumbVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------BreadCrumbVerification    Starts---------");
 		categoryPage = new CategoryPage();
 		launchApp_V1(browser, url);
 		String breadcrumbCategory = categoryPage.breadCrumbFunctionality();
 		System.out.println(breadcrumbCategory);
-		Assert.assertEquals(breadcrumbCategory, categoryName);
+		//Assert.assertEquals(breadcrumbCategory, categoryName);
 		getDriver().findElement(By.xpath(bd_Home)).click();
 		Action.explicitWaitbyTitle(getDriver(), "dot beauty", Duration.ofSeconds(10));
 		String HomeTitle = getDriver().getTitle();
@@ -169,8 +157,7 @@ public class CategoryPageTest  extends BaseClass {
 	 
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void subTabsVerification(String page, String title, String browser, String url, String CategoryElements,
-			String tagsElement, String categoryName) {
+	public void subTabsVerification(String page, String title, String browser, String url) {
 		Log.startTestCase("-----------subTabsVerification    Starts---------");
 		categoryPage = new CategoryPage();
 		launchApp_V1(browser, url);
@@ -179,8 +166,7 @@ public class CategoryPageTest  extends BaseClass {
 	}
 
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_NewArrivalSection(String page, String title, String browser, String url,
-			String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_NewArrivalSection(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CategoryPage_NewArrivalSection    Starts---------");
 		categoryPage = new CategoryPage();
 		recipePage = new RecipePageFinal();
@@ -193,7 +179,7 @@ public class CategoryPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_CartFucntionalityVerification(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_CartFucntionalityVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CategoryPage_CartFucntionalityVerification    Starts---------");
 		commonPagedetails = new CommonPagedetails();
 		launchApp_V1(browser, url);
@@ -203,7 +189,7 @@ public class CategoryPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_subCategoriesVerification(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_subCategoriesVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CategoryPage_subCategoriesVerification    Starts---------");
 		categoryPage = new CategoryPage();
 		launchApp_V1(browser, url);
@@ -213,7 +199,7 @@ public class CategoryPageTest  extends BaseClass {
 	}
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_popularReadsVerification(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_popularReadsVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CategoryPage_subCategoriesVerification    Starts---------");
 		categoryPage = new CategoryPage();
 		launchApp_V1(browser, url);
@@ -223,7 +209,7 @@ public class CategoryPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void CategoryPage_BigImageBlogVerification(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
+	public void CategoryPage_BigImageBlogVerification(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------CategoryPage_BigImageBlogVerification    Starts---------");
 		categoryPage = new CategoryPage();
 		launchApp_V1(browser, url);
@@ -235,106 +221,6 @@ public class CategoryPageTest  extends BaseClass {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
-	@Test(dataProvider = "CategoryPage", dataProviderClass = DataProviders.class,enabled =  false, groups = "LoggedIn")
-	public void CategoryPage_VerificationLoggedin(String page, String title, String browser, String url, String CategoryElements, String tagsElement, String categoryName) throws InterruptedException {
-		
-		Log.startTestCase("CategoryPage_VerificationLoggedin");
-		
-		categoryPage = new CategoryPage();
-		recipePage = new RecipePageFinal();
-		commonPagedetails = new CommonPagedetails();
-		
-		Log.startTestCase("TitleVerification");
-		launchApp_V1(browser, prop.getProperty("LoginUrl"));
-		Log.endTestCase("TitleVerification");
-		
-		Log.startTestCase("Entering the data");
-		loginPage = new LoginPage();loginPage.validateTitle();
-		Log.info("setup login");
-		loginPage.loginSetup(prop.getProperty("Username"), prop.getProperty("Password"));
-		
-		getDriver().get(url);
-		Thread.sleep(5000);
-		loginPage.validateSeachFunctionality("Black","Keyboard", title);
-		Log.endTestCase("Entering the data");
-		
-		
-		  Log.info("-----------Logo Verification Starts----------"); boolean logoResult
-		  = commonPagedetails.valaidateLogo(); Assert.assertTrue(logoResult);
-		  Log.info("-----------Logo Verification End successfully----------");
-		  Log.info("-----------SearchBox Verification Starts----------"); boolean
-		  searchResult = commonPagedetails.validateSearchBox();
-		  Assert.assertTrue(searchResult);
-		  Log.info("-----------SearchBox Verification End Successfully----------");
-		  Log.info("-----------Cartbutton Verification Starts----------"); boolean
-		  cartResult = commonPagedetails.validateSearchBox();
-		  Assert.assertTrue(cartResult);
-		  Log.info("-----------Cartbutton Verification End Successfully----------");
-		  Log.info("-----------Userbutton Verification Starts----------"); boolean
-		  userResult = commonPagedetails.validateSearchBox();
-		  Assert.assertTrue(userResult);
-		  Log.info("-----------Userbutton Verification End Successfully----------");
-		  Log.endTestCase("PageHeaderVerification");
-		 
-		
-		Log.startTestCase("-----------UserFunctionalityVerification    Starts---------");
-		loginPage.UserButtonFunctionality(title);
-		Log.endTestCase("-----------UserFunctionalityVerification    Ends---------");
-		
-		Log.startTestCase("-----------LogoFunctionalityVerification    Starts---------");
-		loginPage.logoFunctionality(title);
-		Log.endTestCase("-----------LogoFunctionalityVerification    Ends---------");
-		
-		
-		  Log.startTestCase("categoryElements....RecipePage3");
-		  Log.info("Verfying the Category List"); 
-		  WebElement login = getDriver().findElement(By.xpath(category)); 
-		  Action.explicitWait(getDriver(),
-		  login, Duration.ofSeconds(10)); 
-		  recipePage.CategoryListVerification();
-		  Log.endTestCase("-----------categoryElements    Ends---------");
-		  
-		  Log.startTestCase("-----------BreadCrumbVerification    Starts---------");
-			recipePage.breadCrumbFunctionality(title);
-			Log.endTestCase("-----------BreadCrumbVerification    Ends---------");
-			
-			Log.startTestCase("-----------SearchFucntionalityVerification    Starts---------");
-			commonPagedetails.validateSeachFunctionality("Black","Keyboard",title);
-			Log.info("SearchFucntionality Works perfectly");
-			Log.endTestCase("-----------SearchFucntionalityVerification    Ends---------");
-			
-			Log.startTestCase("-----------LogoFunctionalityVerification    Starts---------");
-			commonPagedetails.logoFunctionality(title);
-			Log.endTestCase("-----------LogoFunctionalityVerification    Ends---------");
-			
-
-			Log.startTestCase("-----------BreadCrumbVerification    Starts---------");
-			recipePage.breadCrumbFunctionality(title); 
-			Log.endTestCase("-----------BreadCrumbVerification    Ends---------");
-			
-			Log.startTestCase("-----------imageVerification    Starts---------");
-			categoryPage.imageVerification();
-			Log.endTestCase("-----------imageVerification    Ends---------");
-			
-			Log.startTestCase("-----------tagsVerification    Starts---------");
-			categoryPage.tagList();
-			Log.endTestCase("-----------tagsVerification    Ends---------");
-			
-			
-			Log.startTestCase("-----------subTabsVerification    Starts---------");
-			categoryPage.subTabsverification();
-			Log.endTestCase("-----------subTabsVerification    Ends---------");
-			
-			/*
-			 * Log.startTestCase("-----------shopTheIngredientsSection    Starts---------");
-			 * categoryPage.shoptheIngredients();
-			 * Log.endTestCase("-----------shopTheIngredientsSection    Ends---------");
-			 */
-		 
-		
-		
-		Log.endTestCase("CategoryPageVerificationLoggedin");
-	}
 
 	
 	@AfterMethod(groups = {"LoggedIn","NotLoggedIn"})

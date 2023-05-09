@@ -1,5 +1,6 @@
 package com.dotKonnekt.pages;
 
+import java.awt.print.Book;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,31 +32,31 @@ public class RecipePageFinal extends BaseClass {
 	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
 	String bookMarkIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[2]";
 	String shareIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[3]";
-	String likeCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-5cgcae'][1]";
-	String bookCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-5cgcae'][2]";
+	String likeCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-bcxih4'][1]";
+	String bookCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-bcxih4'][2]";
 	String socialMediaIcons = "(//*[name()='circle'])";
 	String categoryElements = "//div[@class='css-1u1j1m2']/div/button";
 	String blog_title = "//div[@class='MuiTypography-root MuiTypography-body1 css-w8lzqg']";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']";
+	String quickview = "(//p[@id='sg-quickViewButton'])";
 	String discountedPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1tva794']";
-	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-lgaoco']";
-	String productsName = "//div[@class='MuiBox-root css-kgu7cg']";
-	String images  = "(//div[contains(@class, 'css-169jllx')])/span/img";
-	String carticon = "//button[contains(@class,'css-nle8bv')]";
-	String wishlist = "(//button[contains(@class,'css-v7k3k0')]//*[name()='svg'])";
-	String commentTxt = "//h5[@class='MuiTypography-root MuiTypography-h5 css-3tvp08']";
-	String commentBox ="//input[@placeholder='Type a comment...']";
-	String postbutton = "//span[@class='MuiTypography-root MuiTypography-span css-1fz7ep2']";
-	String commentCount ="//span[@class='MuiTypography-root MuiTypography-span css-1ov61vh']";
-	String see_more = "//span[normalize-space()='See more']";
-	String commentPosted = "//div[@class = 'MuiBox-root css-12tyeii']";
-	String replyCount = "//span [@class= 'MuiTypography-root MuiTypography-span css-4ccwly']";
+	String actualPrice = "//div[@id='productCardContentPriceTile']";
+	String productsName = "(//div[@id='sg-productCardContentTitle'])";
+	String images  = "(//img[@id='sg-productCardImage2'])";
+	String carticon = "(//button[@id='sg-addToCartButton'])";
+	String wishlist = "(//button[@id='sg-addToWishlistButton'])";
+	String commentTxt = "//h5[@id='sg-commentModuleTitle']";
+	String commentBox ="(//input[@id='sg-outlinedAdornmentPassword'])";
+	String postbutton = "(//span[@id='sg-postComment'])";
+	String commentCount ="(//span[@id='sg-commentModuleResponseLength'])";
+	String see_more = "//div[@id='sg-commentModuleSeeMoreButton']//span[1]";
+	String commentPosted = "(//div[@id='sg-editCommentAnsweredCommentReplace'])";
+	String replyCount = "(//span[@id='sg-commentContentRepliesLength'])";
 	String crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']";
 	String recipeImage =  "//img[@class='MuiBox-root css-11cts2d']";
 	String taggscount= "//span[@class='MuiChip-label MuiChip-labelMedium css-9iedg7']";
 	String nutritions = "//p[@class='MuiTypography-root MuiTypography-body1 css-22dtt9']";
 	
-	String reportAbuse = "//div[@class='css-viqta1']/button";
+	String reportAbuse = "(//button[@id='sg-reportButton3'])";
 	String recipeVideo = "//h5[@class='MuiTypography-root MuiTypography-h5 css-12esd7r']";
 	String frame = "//iframe[@id='widget2']";
 	
@@ -158,64 +159,86 @@ public class RecipePageFinal extends BaseClass {
 		Assert.assertTrue(getDriver().findElement(By.xpath(loginbutton)).isDisplayed());
 		WebElement CrossButton = getDriver().findElement(By.xpath(crossbutton1));
 		Action.click(getDriver(), CrossButton);
-		Thread.sleep(1000);
+		
 		}
 		else {
 		//getDriver().get("https://develop.d1fzm6olmw007.amplifyapp.com/recipe/sugarcane-juice-black-wheat-muffins-cake");
-		
+		Log.info("For Logged in Scenario Like functionality");
 		getDriver().findElement(By.name("email")).sendKeys(prop.getProperty("Username"));
 		getDriver().findElement(By.name("password")).sendKeys(prop.getProperty("Password"));
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		getDriver().findElement(By.xpath("//button[normalize-space()='LOG IN']")).click();
+		
 		Thread.sleep(2000)	;
-		getDriver().navigate().refresh();
+		//getDriver().navigate().refresh();
 		int count=Integer.parseInt(countTxt); 
+		System.out.println("Count of Like icon before click is " + count);
 		getDriver().findElement(By.xpath(likeIcon)).click();
+		Log.info("Successfully clicked on the like icon for the First time ");
 		Thread.sleep(2000)	;
 		String countTxt2 =	getDriver().findElement(By.xpath(likeCount)).getText();
 		int newCount = Integer.parseInt(countTxt2);
+		System.out.println("Count of Like icon after click is " + newCount);
 		Assert.assertEquals(count+1, newCount);
-		System.out.println("dfghjklcghgjhjk");
-		//WebElement CrossButton = getDriver().findElement(By.xpath(crossbutton1));
-		//Action.moveto
+		Log.info("Successfully verified the count increasing of Like icon");
 		
 		getDriver().findElement(By.xpath(likeIcon)).click();
 		
-		Thread.sleep(5000);
-		//System.out.println("dfghjklcghgjhjk");
+		
 		}
 		
 	}
 	
 	public void BookMarkIconfunctionality(String status) throws InterruptedException {
 		String countTxt =	getDriver().findElement(By.xpath(bookCount)).getText();
-		getDriver().findElement(By.xpath(bookMarkIcon)).click();
-		System.out.println(countTxt);
+		System.out.println("First Count When user land on the page:" +  countTxt);
+		
+		WebElement BookMark   =getDriver().findElement(By.xpath(bookMarkIcon));
+		Action.scrollByVisibilityOfElement(getDriver(), BookMark);
+		Action.click(getDriver(), BookMark);
+		//System.out.println(countTxt);
+		System.out.println(BookMark.getAttribute("data-testid"));
+		int count=Integer.parseInt(countTxt); 
+		System.out.println(" Count after first click: " +  count);
+		Thread.sleep(2000)	;
+		
 		if(status.equalsIgnoreCase("Loggedout")) {
 		WebElement login = getDriver().findElement(By.xpath(loginPageTxt));
 		Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
 		Assert.assertTrue(getDriver().findElement(By.xpath(loginbutton)).isDisplayed());
 		WebElement CrossButton = getDriver().findElement(By.xpath(crossbutton1));
 		Action.click(getDriver(), CrossButton);
-		Thread.sleep(5000);
+		
+		Log.info("Successfully verified the Bookmark functionality for the not logged in User");
+		
 		}
 		else {
 			getDriver().findElement(By.name("email")).sendKeys(prop.getProperty("Username"));
 			getDriver().findElement(By.name("password")).sendKeys(prop.getProperty("Password"));
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			getDriver().findElement(By.xpath("//button[normalize-space()='LOG IN']")).click();
 			Thread.sleep(2000)	;
-			getDriver().navigate().refresh();
-			int count=Integer.parseInt(countTxt); 
-			System.out.println(count); 
-			Thread.sleep(2000)	; 
-			getDriver().findElement(By.xpath(bookMarkIcon)).click();
-			Thread.sleep(2000)	; 
+			
+			 	
 		String countTxt2 =	getDriver().findElement(By.xpath(bookCount)).getText();
 		System.out.println(countTxt2);
 		int newCount = Integer.parseInt(countTxt2);
-		Assert.assertEquals(count+1, newCount);
+		System.out.println(" Count after Second click and logged in : " +  countTxt2);
+		Thread.sleep(2000);
+		Assert.assertEquals(count+1, newCount, "Count not increased");
+		System.out.println(BookMark.getAttribute("data-testid"));
+		Assert.assertEquals(BookMark.getAttribute("data-testid"), "BookmarkIcon", "BookMark icon is not in filled form");
+		
+		getDriver().navigate().refresh();
+		Thread.sleep(500);
+		Assert.assertEquals(count+1, newCount, "Count is not correct after refresh");
+		Assert.assertEquals(BookMark.getAttribute("data-testid"), "BookmarkIcon", "After Refresh BookMark icon is not in filled form");
 		getDriver().findElement(By.xpath(bookMarkIcon)).click();
+		Thread.sleep(1000);
+		Assert.assertEquals(count, newCount-1, "Count should be decreased");
+		Assert.assertEquals(BookMark.getAttribute("data-testid"), "BookmarkBorderOutlinedIcon", "BookMark icon is not in filled form");
+		Log.info("Successfully verified the BookMark functionality of the Logged in Scenario");
+		
 		}
 	}
 	
@@ -226,8 +249,10 @@ public class RecipePageFinal extends BaseClass {
 		System.out.println(socialMediaList.size());
 		
 	}
-	
-	public void CategoryListVerification() {
+	String menuButton = "//div[@class='MuiBox-root css-1m04nb5']/button";
+	String mobileCategoryElements =  "//div[@class='MuiBox-root css-1m9fqvd']/div/li/p";
+	public void CategoryListVerification(String browser) {
+		if(!browser.contains("Mobile")) {
 		int count = 0;
 		List<WebElement> menuList = getDriver().findElements(By.xpath(categoryElements));
 		//int size = menuList.size();
@@ -240,7 +265,7 @@ public class RecipePageFinal extends BaseClass {
 		//String delim = ",";
 		//String category = String.join(delim, listElements);
 		 //System.out.println(category);
-		String category = "WOMEN";
+		String category = "WOMEN,MEN";
 		 List<String> myList = new ArrayList<String>(Arrays.asList(category.split(",")));
 		 System.out.println(myList);
 		 if(listElements.containsAll(myList) && myList.containsAll(listElements)) {
@@ -253,7 +278,36 @@ public class RecipePageFinal extends BaseClass {
 		  { System.out.println("Category elements are equal"); } else {
 		  System.out.println("Category elements are not equal");
 		  Assert.assertTrue(false); } } else {
-		  System.out.println("Category are not present"); }
+		  System.out.println("Category are not present"); }}
+		else {
+			Log.info("In Mobile View");
+			WebElement MenuButton  = getDriver().findElement(By.xpath(menuButton));
+			Action.click(getDriver(), MenuButton);
+			int count = 0;
+			List<WebElement> menuList = getDriver().findElements(By.xpath(mobileCategoryElements));
+			//int size = menuList.size();
+			List<String> listElements = new ArrayList<String>();
+			for (WebElement webElement : menuList) {
+				listElements.add(webElement.getText());
+				count++;
+			}
+			System.out.println(listElements);
+			String category = "WOMEN,MEN";
+			 List<String> myList = new ArrayList<String>(Arrays.asList(category.split(",")));
+			 System.out.println(myList);
+			 if(listElements.containsAll(myList) && myList.containsAll(listElements)) {
+					Log.info("Successfully verified that all the category elements are in correct form");
+				}
+				else {
+					Assert.assertTrue(false, "Category elements are not in correct form");
+				}
+			  if (count != 0) { if (count == menuList.size())
+			  { System.out.println("Category elements are equal in mobile view"); } else {
+			  System.out.println("Category elements are not equal in mobile view");
+			  Assert.assertTrue(false); } } else {
+			  System.out.println("Category are not present in mobile view"); }
+			
+		}
 	
 	}
 	
@@ -446,15 +500,16 @@ public class RecipePageFinal extends BaseClass {
 				}
 	}
 	
-	String addAllToCart = "//div[@class='css-sg7by6']/button";
-	String bigWishlistIcon = "(//*[name()='svg'][@data-testid='FavoriteBorderOutlinedIcon'])[5]";
-	String allProduct= "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-tuxzvu'])/div";
-	String shoptheIngridients = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1xi88hf'])";
+	String addAllToCart = "//div[@id='sg-allProductStack']/button";
+	//String bigWishlistIcon = "(//*[name()='svg'][@data-testid='FavoriteBorderOutlinedIcon'])[5]";
+	String allProduct= "(//div[@id='sg-allProductGridItem2'])/div";
+	String shoptheIngridients = "//p[@id='sg-allProductHashTitle']";
 	public void shoptheIngredients() throws InterruptedException {
 		
 		WebElement l1 = getDriver().findElement(By.tagName("body"));
 		//System.out.println(l1.getText());
-		if(l1.getText().contains("Shop the Ingredients")) {
+		if(l1.getText().contains("SHOP THE INGREDIENTS")) {
+			System.out.println("dfghjkl");
 			WebElement ShoptheIngridients = getDriver().findElement(By.xpath(shoptheIngridients));
 			Action.scrollByVisibilityOfElement(getDriver(), ShoptheIngridients);
 		
@@ -538,22 +593,23 @@ public class RecipePageFinal extends BaseClass {
 			}
 			
 			
-			WebElement  BigWishlistIcon = getDriver().findElement(By.xpath(bigWishlistIcon));
-			softAssert.assertTrue(BigWishlistIcon.isDisplayed(), "Big Wishlist icon in Shop the Ingridients sections is not present");
-			
-				
-				Action.click(getDriver(), BigWishlistIcon);
-				if(l1.getText().contains("Email")) {
-				WebElement login = getDriver().findElement(By.xpath(loginPageTxt));
-				Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
-				Assert.assertTrue(getDriver().findElement(By.xpath(loginbutton)).isDisplayed());
-				WebElement CrossButton = getDriver().findElement(By.xpath(crossbutton1));
-				Action.click(getDriver(), CrossButton);
-				Thread.sleep(1000);}
-				else {
-					System.out.println("Wishlist icon is not clickable");
-					softAssert.assertTrue(false, "Wishlist icon is not clickable");
-				}
+			/*
+			 * WebElement BigWishlistIcon =
+			 * getDriver().findElement(By.xpath(bigWishlistIcon));
+			 * softAssert.assertTrue(BigWishlistIcon.isDisplayed(),
+			 * "Big Wishlist icon in Shop the Ingridients sections is not present");
+			 * 
+			 * 
+			 * Action.click(getDriver(), BigWishlistIcon);
+			 * if(l1.getText().contains("Email")) { WebElement login =
+			 * getDriver().findElement(By.xpath(loginPageTxt));
+			 * Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
+			 * Assert.assertTrue(getDriver().findElement(By.xpath(loginbutton)).isDisplayed(
+			 * )); WebElement CrossButton = getDriver().findElement(By.xpath(crossbutton1));
+			 * Action.click(getDriver(), CrossButton); Thread.sleep(1000);} else {
+			 * System.out.println("Wishlist icon is not clickable");
+			 * softAssert.assertTrue(false, "Wishlist icon is not clickable"); }
+			 */
 				
 		WebElement  AddAllToCart = getDriver().findElement(By.xpath(addAllToCart));
 		softAssert.assertTrue(AddAllToCart.isDisplayed(), "AddAllToCart in Shop the Ingridients sections is not present");
@@ -593,38 +649,64 @@ public class RecipePageFinal extends BaseClass {
 		WebElement comment = getDriver().findElement(By.xpath(commentTxt));
 		Action.scrollByVisibilityOfElement(getDriver(), comment);
 		String actualTxt = getDriver().findElement(By.xpath(commentTxt)).getText();
-		Assert.assertEquals(actualTxt, "COMMENTS");
+		Assert.assertEquals(actualTxt, "Comments");
 		Assert.assertTrue(getDriver().findElement(By.xpath(commentBox)).isDisplayed());
 		Assert.assertTrue(getDriver().findElement(By.xpath(postbutton)).isDisplayed());
 		}
 	
 	
 	
-	public void addCommentVerification() {
+	public void addCommentVerification() throws InterruptedException {
+		
+		//Comment textbox validation
 		WebElement CommentBox =getDriver().findElement(By.xpath(commentBox));
 		Assert.assertEquals(CommentBox.getAttribute("placeholder"), "Type a comment...", "Placeholder is not correct");
+		Action.scrollByVisibilityOfElement(getDriver(), CommentBox);
+		Log.info("Comment Text box is present");
 		Action.type(CommentBox, "This is the comment for testing");
+		
+		Log.info("USer is able to enter the data in the comment textbox");
+		
 		WebElement PostButton =getDriver().findElement(By.xpath(postbutton));
-		//getDriver().findElement(By.xpath(postbutton)).click();
+		Action.explicitWait(getDriver(), PostButton, Duration.ofSeconds(1));
+		
+		
 		Action.click(getDriver(), PostButton);
+		Log.info("Successfully clicked on the Post button ");
+		
 		WebElement LoginButton =getDriver().findElement(By.xpath(loginbutton));
+		Action.explicitWait(getDriver(), LoginButton, Duration.ofSeconds(5));
 		boolean p = Action.isDisplayed(getDriver(), LoginButton);
 		Assert.assertTrue(p);
+		
 		//Assert.assertTrue(getDriver().findElement(By.xpath(loginbutton)).isDisplayed());
 		WebElement CrossButton =getDriver().findElement(By.xpath(crossbutton1));
 		Action.click(getDriver(), CrossButton);
+		
 		//getDriver().findElement(By.xpath(crossbutton)).click();
+		List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
+		int abuseCount = abuse.size();
+		System.out.println(abuseCount);
+		
 		String countTxt = getDriver().findElement(By.xpath(commentCount)).getText();
 		int count=Integer.parseInt(countTxt); 
+		
 		System.out.println("Total Count of comments  = "+count);
-		if(count>4) {
-			getDriver().findElement(By.xpath(see_more)).click();
+		
+		//List<WebElement> postedcomments = getDriver().findElements(By.xpath(commentPosted));
+		//List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
+		if(abuseCount>=4 && count>4) {
+			Log.info("Comments are more than 4");
+			WebElement SeeMore  =getDriver().findElement(By.xpath(see_more));
+			Action.click(getDriver(), SeeMore);
+			Assert.assertEquals(SeeMore.getText(), "See less");
+			Thread.sleep(2000);
 			List<WebElement> postedcomments = getDriver().findElements(By.xpath(commentPosted));
 			int postedCount = postedcomments.size();
 			System.out.println("Total Posted Count after click on see more = "+postedCount);
 			
-			List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
-			int abuseCount = abuse.size();
+			List<WebElement> abuse1= getDriver().findElements(By.xpath(reportAbuse));
+			abuseCount = abuse1.size();
 			System.out.println("Report Abuse Count = "+ abuseCount);
 			
 			
@@ -646,13 +728,14 @@ public class RecipePageFinal extends BaseClass {
 			System.out.println("Successfully verified the Report Abuse buttons ");
 					
 		}
-		else if(count<4 && count!=0){
+		else if(abuseCount<4 && abuseCount!=0 || count<5){
+			Log.info("Count is Less than 5");
 			List<WebElement> postedcomments = getDriver().findElements(By.xpath(commentPosted));
 			int postedCount = postedcomments.size();
 			System.out.println("Total Posted Count = "+postedCount);
 			
-			List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
-			int abuseCount = abuse.size();
+			List<WebElement> abuse2= getDriver().findElements(By.xpath(reportAbuse));
+			 abuseCount = abuse2.size();
 			System.out.println("Report Abuse Count = "+ abuseCount);
 			
 			List<WebElement> replycomments = getDriver().findElements(By.xpath(replyCount));
@@ -677,11 +760,19 @@ public class RecipePageFinal extends BaseClass {
 	}
 	
 	
-	public void ReportAbuseFunctionality() {
-		WebElement comment = getDriver().findElement(By.xpath(commentTxt));
-		Action.scrollByVisibilityOfElement(getDriver(), comment);
+	public void reportAbuseFunctionality() {
+		WebElement CommentBox =getDriver().findElement(By.xpath(commentBox));
+		Assert.assertEquals(CommentBox.getAttribute("placeholder"), "Type a comment...", "Placeholder is not correct");
+		Action.scrollByVisibilityOfElement(getDriver(), CommentBox);
 		
-		//List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
+		List<WebElement> abuse= getDriver().findElements(By.xpath(reportAbuse));
+		int abuseCount = abuse.size();
+		System.out.println(abuseCount);
+		
+		 Random r = new Random(); 
+		 int randomValue = r.nextInt(abuseCount); //Getting a random value that is between 0 and (list's size)-1
+		 abuse.get(randomValue).click(); //Clicking on the random item in the list.\
+		 System.out.println( abuse.get(randomValue).getText());
 		
 		
 	}
@@ -727,23 +818,26 @@ public class RecipePageFinal extends BaseClass {
 		Action.click(getDriver(), postBtn);
 		Thread.sleep(1000);
 		System.out.println("Successfully Clicked on the Post button");
+		Thread.sleep(2000);
 		Assert.assertEquals(postedComment.getText(), typedComment);
 		Thread.sleep(1000);
-		System.out.println("T3");
+		System.out.println("Successfully verified the add comment ");
 		Assert.assertTrue(editButton.isEnabled(), "Edit button is not present");
 		Action.click(getDriver(), editButton);
-		System.out.println("T4");
+		System.out.println("Successfully clicked on the edit button");
 		String editTypedComment = "This is edited selenium test9";
-		
+		Thread.sleep(1000);
 		Action.type(editTextbox, editTypedComment);
-		System.out.println("T5");
+		System.out.println("Successfully type the edited comment in the text box");
 		if (save.equalsIgnoreCase("save")) {
-			System.out.println("T6");
+			System.out.println("");
 			Action.click(getDriver(), saveBtn);
-			System.out.println("T7");
+			System.out.println("Successfully clicked on the Save button");
 			Thread.sleep(2000);
 			Assert.assertEquals(postedComment.getText(), editTypedComment);
+			Assert.assertTrue(deleteButton.isEnabled(), "Delete button is not clickable");
 			Action.click(getDriver(), deleteButton);
+			
 			Thread.sleep(1000);
 			String txt = getDriver().findElement(By.xpath("(//h2[normalize-space()='Delete comment'])[1]")).getText();
 			if (txt.equalsIgnoreCase("Delete Comment"))

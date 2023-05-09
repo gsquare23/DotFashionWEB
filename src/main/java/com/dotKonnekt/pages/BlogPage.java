@@ -25,7 +25,7 @@ public class BlogPage extends BaseClass{
 		PageFactory.initElements(getDriver(), this);
 	}
 	
-	String Blogimage = "//div[@class='MuiBox-root css-xyyqyk']//img[@alt='logo']";
+	String Blogimage = "//img[@id='sg-bannerImage']";
 	public void imageVerification() throws InterruptedException {
 		WebElement imageDes = getDriver().findElement(By.xpath(Blogimage));
 		System.out.println(imageDes.isDisplayed());
@@ -44,7 +44,7 @@ public class BlogPage extends BaseClass{
 		
 	}
 	
-	String blog_title = "//div[@class='MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre']";
+	String blog_title = "//div[@class='MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-oet6yn']f";
 	public String blogTitleVerification() {
 		String actualblogTitle = getDriver().findElement(By.xpath(blog_title)).getText();
 		return actualblogTitle;
@@ -56,17 +56,17 @@ public class BlogPage extends BaseClass{
 	String wishlist = "//*[name()='svg'][@data-testid='FavoriteBorderOutlinedIcon']";
 	String ratings = "//div[@class='MuiBox-root css-yeouz0']/span";
 	//String quickView = allproduct+ "/div[2]/div/div[2]";
-	String quickView ="//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']";
+	String quickView ="//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
 	//String productName= allproduct + "/div[2]/div[2]";
-	String productName = "//div[@class='MuiTypography-root MuiTypography-h5 css-qla7e7']";
-	String productPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1tk0scz']";
+	String productName = "//div[@class='MuiTypography-root MuiTypography-h5 css-7cmtph']";
+	String productPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1hmydg3']";
 	String addtoCartBtn = "//div[@class='css-z2nkb7']/button";
 	String productDetail = "//div[@class='MuiTypography-root MuiTypography-body1 css-rkcvek']/a";
 	public void productImageVerification() {
 		
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
 		int n = products1.size();
-		System.out.println(n);
+		System.out.println("Total Products on blog Page are " + n);
 		
 		
 
@@ -81,7 +81,7 @@ public class BlogPage extends BaseClass{
 					count4++;
 				}
 			}
-			System.out.println(count4);
+			//System.out.println(count4);
 			if(count4 ==n ) {
 			System.out.println("All " + count4 + " images are present");}
 			else {
@@ -170,11 +170,17 @@ public class BlogPage extends BaseClass{
 		System.out.println(c+ "Add To Cart button should be present");
 		if (c == n) {
 			for(WebElement i : carticon1) {
-				//Action.scrollByVisibilityOfElement(getDriver(), i);
+				Action.scrollByVisibilityOfElement(getDriver(), i);
 				if(i.isDisplayed()) {
+					if(i.getAttribute("tabindex").equals("0")) {
 					softAssert.assertTrue(i.isEnabled(), "Add To Cart button is not Enabled");
 					Log.info("Add To Cart button is successfully verified");
 					count5++;
+					}
+					
+					else {System.out.println("This product is Out of Stock");
+						count5++;
+					}
 				}
 			}
 			if(count5 ==n ) {
@@ -317,19 +323,7 @@ public class BlogPage extends BaseClass{
 		Action.explicitWait(getDriver(), iconFunctionality1, Duration.ofSeconds(5000));
 		Action.click(getDriver(), iconFunctionality1);
 
-		/*
-		 * Thread.sleep(5000); System.out.println("fdghjkcgvhj");
-		 * 
-		 * 
-		 * WebElement wish = getDriver().findElement(By.xpath(iconn));
-		 * Assert.assertTrue(wish.isDisplayed());
-		 * 
-		 * 
-		 * 
-		 * Thread.sleep(5000);
-		 */
-		// getDriver().navigate().refresh();
-		// Action.pageLoadTimeOut(getDriver(), 10);
+		
 		JavascriptExecutor j1 = (JavascriptExecutor) getDriver();
 		j1.executeScript("window.scrollBy(0,0)");
 		WebElement productName1 = getDriver().findElement(By.xpath(productName2));
@@ -421,33 +415,40 @@ public class BlogPage extends BaseClass{
 			String quickView = "("+ allproduct + "/div[2]/div/div[2])"+"["+ count + "]";
 			WebElement QuickView = getDriver().findElement(By.xpath(quickView));
 			if(QuickView.isDisplayed()) {
+				Log.info("inside quick view");
 				Action.click(getDriver(), QuickView);
+				
 				Thread.sleep(2000);
-				String quickPName = "//div[@class='MuiTypography-root MuiTypography-body1 css-vcbw66']";
+				System.out.println(getDriver().getTitle());
+			if(getDriver().getTitle().equals("BlogPage")) {
+				Log.info("When title is blogPage");
+				String quickPName = "//div[@class='MuiTypography-root MuiTypography-body1 css-13875v1']";
 				WebElement QuickPName = getDriver().findElement(By.xpath(quickPName));
 				softAssert.assertTrue(QuickPName.getText().contains(PName), "Quick view Link does not contain same name as product Tile");
 				Log.info("Successfully verifying the product name with quick view Product name");
 				
-				String quickPPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1b9o26n']";
+				String quickPPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1vukegx']";
 				WebElement QuickPPrice = getDriver().findElement(By.xpath(quickPPrice));
 				System.out.println(QuickPPrice.getText());
 				softAssert.assertEquals(QuickPPrice.getText(), PPrice, "Quick view Link does not contain same Price as product Tile");
 				Log.info("Successfully verifying the product Price with quick view Product Price");
 				
-				String quikViewPDesc = "//div[@class='MuiTypography-root MuiTypography-body1 css-9p1hyi']";
+				String quikViewPDesc = "//div[@class='MuiTypography-root MuiTypography-body1 css-t5v19d']";
 				WebElement QuikViewPDesc = getDriver().findElement(By.xpath(quikViewPDesc));
 				softAssert.assertTrue(QuikViewPDesc.isDisplayed(), "Quick view Product does not contain Product description");
 				Log.info("Successfully verifying the product Description on clicking the quick view ");
 				
-				String productDetail1 = "//div[contains(@class,'css-rkcvek')]/a";
+				String productDetail1 = "//div[contains(@class,'css-1fuu61l')]/a";
 				WebElement ProductDetail1 = getDriver().findElement(By.xpath(productDetail1));
 				softAssert.assertTrue(ProductDetail1.isDisplayed() && ProductDetail1.getText().equals("View Product Details"), "Quick view Product does not contain View Product Details link");
 				softAssert.assertTrue(ProductDetail1.isEnabled(), "View Product Detail is enabled ");
 				Log.info("Successfully verifying the View Product Details on clicking the quick view ");
 				
+				
 				String quickPRatings = "//div[@class='MuiBox-root css-18u70he']//div[@class='MuiBox-root css-yeouz0']/span";
 				WebElement QuickPRatings = getDriver().findElement(By.xpath(quickPRatings));
-				String PQuickPRatings = ProductRating.getAttribute("aria-label");
+				String PQuickPRatings = QuickPRatings.getAttribute("aria-label");
+				System.out.println(PQuickPRatings);
 				softAssert.assertEquals(PQuickPRatings, PRating, "Quick view Link does not contain same ratings as product Tile");
 				Log.info("Successfully verifying the product ratings on clicking the quick view ");
 				
@@ -493,6 +494,7 @@ public class BlogPage extends BaseClass{
 						}
 					}
 				}
+			
 				
 				
 				Log.info("AddToCart of Product Page verification");
@@ -524,12 +526,125 @@ public class BlogPage extends BaseClass{
 				
 				count++;
 				count1 = count1+ 2;
+				}
+			
+			else {
+				Assert.assertTrue(false, "Quick view is not working properly");
 			}
+			}
+			
 			
 		}
 		softAssert.assertAll();
+	
 	}
 	
+	
+	String askour = "(//div[@class='MuiTypography-root MuiTypography-body1 css-m4divx'])";
+	String askDesc = "//p[@class='MuiTypography-root MuiTypography-body1 css-1h7d3yx']";
+	String experts = "(//div[@class='swiper-wrapper'])//div[@class='MuiBox-root css-155xjc6']";
+	String expertsImage = "(//div[@class='MuiBox-root css-155xjc6'])/span/img";
+	String newExperts = "//div[@class='MuiBox-root css-2txfei']";
+	String sendAMessage = "//div[@class='message MuiBox-root css-1ggpf2f']";
+	String expertName = "//div[@class='MuiBox-root css-1nj6oyt']";
+	String click1 = "//div[@class='MuiBox-root css-x9cc89']//button[2]//span[1]";
+	//String crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']";
+	public void askOurExpert() throws InterruptedException {
+		WebElement AskOur  =  getDriver().findElement(By.xpath(askour));
+		Action.scrollByVisibilityOfElement(getDriver(), AskOur);
+		softAssert.assertEquals(AskOur.getText(), "ASK OUR EXPERTS");
+		Log.info("Successfully Verified the Ask Our Experts Presence on UI");
+		
+		
+		WebElement AskDesc  =  getDriver().findElement(By.xpath(askDesc));
+		softAssert.assertTrue(AskDesc.isDisplayed(), "Ask Desc is not present");
+		String desc= "We're all about real connection, and our store ambassadors make it happen. With endless passion and leadership, they motivate their communities to get sweaty and make a difference.";
+		softAssert.assertEquals(AskDesc.getText(), desc, "Ask our Expert Description text are not same");
+		Log.info("Succesfully verified the text Presence on the UI for the Ask our Expert section");
+		
+		List<WebElement> Experts = getDriver().findElements(By.xpath(experts));
+		//Assert.assertEquals(Experts.size(), 2, " Total 3 experts are not Present" );
+		Log.info(" Experts are present and successfully verified the presence");
+		int n= Experts.size();
+		System.out.println("Total Expert Present are:" + n);
+		
+		List<WebElement> ExpertsImage = getDriver().findElements(By.xpath(expertsImage));
+		int x = ExpertsImage.size();
+		System.out.println(x);
+		int count5 = 0;
+		if (x == n) {
+			for (WebElement i : ExpertsImage) {
+				Action.mouseOverElement(getDriver(), i);
+				Thread.sleep(500);
+				if (i.getAttribute("srcset").contains("cloudfront.net")) {
+					count5++;
+				}
+			}
+			System.out.println(count5);
+			if (count5 == n) {
+				System.out.println("All " + count5 + " images are present");
+			} else {
+				softAssert.assertTrue(false, n - count5 + "Images are not present  ");
+			}
+		} else {
+			System.out.println(n - x + " Images are not present ");
+			softAssert.assertTrue(false, +n - x + " Images are not present ");
+		}
+		
+		Log.info("Succesafully Verified the Presence of the Experts Image");
+		
+		List<WebElement> SendAMessage = getDriver().findElements(By.xpath(sendAMessage));
+		int y = SendAMessage.size();
+		System.out.println(y);
+		int count6 = 0;
+		if (y == n) {
+			for (WebElement i : SendAMessage) {
+				Action.mouseOverElement(getDriver(), i);
+				if (i.getText().equals("Send a Message")) {
+					Action.isEnabled(getDriver(), i);
+					System.out.println(" Send Message is present");
+					count6++;
+				}
+			}
+			if (count6 == n) {
+				System.out.println("All " + count6 + " Send Message are present");
+			} else {
+				softAssert.assertTrue(false, n - count5 + " Send Message are not present  ");
+			}
+		} else {
+			System.out.println(n - y + " Send Message are not present ");
+			softAssert.assertTrue(false, +n - y + " Send Message are not present ");
+		}
+		Log.info("Succesafully Verified the Presence of the Experts Send A Message");
+		 
+		
+		List<WebElement> ExpertName = getDriver().findElements(By.xpath(expertName));
+		
+		
+		if(n==ExpertName.size()) {
+			int q = 0;
+			for(WebElement i : ExpertName) {
+			Action.mouseOverElement(getDriver(), i);
+				Action.isDisplayed(getDriver(), i);
+				
+				if(i.getText().equals("")) {
+					q++;
+					softAssert.assertTrue(false, q + " Name is/are not present");
+				}
+				else {
+					System.out.println(i.getText());
+				}
+				//WebElement Click1 = getDriver().findElement(By.xpath(click1));
+				//Action.click(getDriver(), Click1);
+				Thread.sleep(1000);
+				
+			}
+		}
+		Log.info("Succesfully Verified the Presence of the name and role");
+		
+		
+		softAssert.assertAll();
+	}
 	
 	
 	

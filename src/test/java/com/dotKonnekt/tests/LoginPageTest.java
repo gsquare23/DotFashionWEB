@@ -78,7 +78,7 @@ public class LoginPageTest extends BaseClass {
 		//WebElement login = getDriver().findElement(By.xpath(category));
 		//Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
 		Thread.sleep(1000);
-		recipePage.CategoryListVerification();	
+		recipePage.CategoryListVerification(browser);	
 		Log.endTestCase("-----------categoryElements    Ends---------");
 	
 	}

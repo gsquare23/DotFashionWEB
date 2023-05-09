@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.dotKonnekt.base.BaseClass;
 import com.dotKonnekt.dataProviders.DataProviders;
 import com.dotKonnekt.pages.CommonPagedetails;
+import com.dotKonnekt.pages.HomePage;
 import com.dotKonnekt.pages.MyAccountPage;
 import com.dotKonnekt.pages.RecipePageFinal;
 import com.dotKonnekt.utility.Log;
@@ -14,24 +15,32 @@ public class MyAccountPageTest extends BaseClass{
 	CommonPagedetails commonPagedetails;
 	MyAccountPage myAccountPage;
 	RecipePageFinal recipePage;
+	HomePage homePage;
+	
 	
 	@Test(dataProvider = "MyAccount", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn") 
 	public void profileIcon_NotLoggedIn(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------profileIcon_NotLoggedIn    Starts---------");
 		commonPagedetails = new CommonPagedetails();
-		launchApp_V1(browser, url);
+		homePage = new HomePage();
+		launchApp_EB(browser, url);
+		homePage.NewsletterPopup__Alert();
 		commonPagedetails.UserButtonFunctionality(title);
 		Log.endTestCase("-----------profileIcon_NotLoggedIn    Ends---------");
 	}
-	@Test(dataProvider = "MyAccount", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "MyAccount", dataProviderClass = DataProviders.class,enabled = true, groups = "LoggedIn")
 	public void profileIcon_LoggedIn(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------profileIcon_LoggedIn    Starts---------");
 		myAccountPage = new MyAccountPage();
 		recipePage = new RecipePageFinal();
+		
 		commonPagedetails = new CommonPagedetails();
-		launchApp_V1(browser, url);
+		homePage = new HomePage();
+		launchApp_EB(browser, url);
+		homePage.NewsletterPopup__Alert();
+		System.out.println("fyhjkl;");
 		myAccountPage.profileIcon_LoggedIcon(title);
-		recipePage.CategoryListVerification();
+		recipePage.CategoryListVerification(browser);
 		Thread.sleep(5000);
 		commonPagedetails.logoFunctionality("My Account");
 		commonPagedetails.validateSeachFunctionality("Black", "Keyboard", "My Account");

@@ -247,7 +247,7 @@ public class SearchPage extends BaseClass{
 	
 	
 	String lowToHigh = "(//div[contains(@class,'css-177ic5c')])/ul/li[2]";
-	String actualPrice = "(//div[@class='MuiTypography-root MuiTypography-body1 css-lgaoco'])";
+	String actualPrice = "(//div[@class='MuiTypography-root MuiTypography-body1 css-1jw05cp'])";
 	String highToLow = "(//div[contains(@class,'css-177ic5c')])/ul/li[3]";
 	String recentlyAdded ="(//p[@class='MuiTypography-root MuiTypography-body1 css-c43tyy'])[5]";
 	public void FilterByRecentlyAdded(String FilterOptions) throws InterruptedException {
@@ -341,15 +341,15 @@ public class SearchPage extends BaseClass{
 			  Assert.assertTrue(false, n - z + " Actual Prices are not present "); }
 	}
 	//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-spacing-md-2 css-1tg6332']/div
-	
+	String ratings = "//div[@class='MuiBox-root css-yeouz0']/span";
 	String allproduct = "(//div[contains(@class,'css-i25sow')])/div";
 	String carticon = "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']";
 	String wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']";
-	//String actualPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
+	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
+//	String actualPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
 	String discountedPrice = "p[@class='MuiTypography-root MuiTypography-body1 css-1zopcr']";
-	String productsName = "(//div[contains(@class,'css-1tg6332')])[1]/div/div/div/div[1]";
-	String images = "(//div[contains(@class,'css-1tg6332')])[1]/div/div/span/img";
+	String productsName = "(//div[contains(@class,'css-1v9zv32')])[1]/div/div/div/div[1]";
+	String images = "(//div[contains(@class,'css-1v9zv32')])[1]/div/div/span/img";
 
 	public void ShopProducts() throws InterruptedException {
 		Log.info("Shop functionality starts"); 
@@ -357,7 +357,7 @@ public class SearchPage extends BaseClass{
 		
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
 		int n = products1.size();
-		System.out.println("total Products are" + n);
+		System.out.println("Total Products are in Search Page" + n);
 		Thread.sleep(2000);
 		List<WebElement> image = getDriver().findElements(By.xpath(images));
 		int x = image.size();
@@ -434,6 +434,32 @@ public class SearchPage extends BaseClass{
 		} else {
 			System.out.println(n - d + " Wishlist icon are not present ");
 			softAssert.assertTrue(false, +n - c + " Wishlist icon are not present ");
+		}
+		
+		
+		List<WebElement> Ratings = getDriver().findElements(By.xpath(ratings));
+
+		int e = Ratings.size();
+		int count7=0;
+		System.out.println(e+ "Ratings icon should be present");
+		if (e == n) {
+			for(WebElement i1 : Ratings) {
+				//Action.scrollByVisibilityOfElement(getDriver(), i);
+				if(i1.isDisplayed()) {
+					softAssert.assertTrue(i1.isEnabled(), "Ratings icon is not Enabled");
+					Log.info("Ratings icon is successfully verified");
+					count7++;
+				}
+			}
+			if(count7 ==n ) {
+				System.out.println("All Ratings icon are present");}
+				else {
+					softAssert.assertTrue(false, n-count7+ " Ratings icon are not present  ");
+				}	
+			} 
+		 else {
+			System.out.println(n - e + " Ratings icon are not present ");
+			softAssert.assertTrue(false, +n - e + " Ratings icon are not present ");
 		}
 
 		softAssert.assertAll();

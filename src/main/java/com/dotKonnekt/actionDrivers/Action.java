@@ -795,7 +795,7 @@ public class Action extends BaseClass  {
 		String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date());
 		TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
 		File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		String destination = "C:\\Users\\garvi\\eclipse-workspace\\RecipePage3\\Screenshots\\" + filename + "_" + dateName + ".png";
+		String destination = "C:\\Users\\garvi\\eclipse-workspace\\DotFashion\\Screenshots\\" + filename + "_" + dateName + ".png";
 
 		try {
 			FileUtils.copyFile(source, new File(destination));

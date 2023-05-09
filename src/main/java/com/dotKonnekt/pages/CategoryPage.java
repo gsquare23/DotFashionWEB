@@ -192,9 +192,9 @@ public class CategoryPage extends BaseClass{
 	
 	
 	 String allproduct ="//div[contains(@class,'css-i25sow')]";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']";
+	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
 	String discountedPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1tva794']";
-	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-lgaoco']";
+	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1jw05cp']";
 	String productsName = "//div[@class='MuiBox-root css-kgu7cg']";
 	String images  = "//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1ho6dvz']/span/img";
 	String carticon = "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']";
@@ -203,11 +203,22 @@ public class CategoryPage extends BaseClass{
 	
 	public void newArrival() throws InterruptedException {
 		WebElement bodyText = getDriver().findElement(By.tagName("body"));
+		Log.info("Inside Body Tag");
 		if(bodyText.getText().contains("Filter by:")){
+			String filter = "//p[@class='MuiTypography-root MuiTypography-body1 css-1rmxet5']";
+			WebElement filterBy = getDriver().findElement(By.xpath(filter));
+			Action.scrollByVisibilityOfElement(getDriver(), filterBy);
+			Log.info("Filter By is present");
 			String pagination = "(//div[@class='MuiBox-root css-efl1h4']//div[@class='MuiBox-root css-1sfz9yc']/nav/ul/li/button)";
-				if (bodyText.getText().contains("Previous")) {
+			List<WebElement> Pagination = getDriver().findElements(By.xpath(pagination));
+			
+			if(Pagination.size()>=3 ) {
+				
+			
+				//if (bodyText.getText().contains("Previous")) {
+					Log.info("Pagination is present");
 					int PaginationValue = getDriver().findElements(By.xpath(pagination)).size();
-
+					System.out.println(PaginationValue);
 					List<String> values = new ArrayList<String>();
 					for (int q = 2; q <= PaginationValue - 1; q++) {
 						Thread.sleep(700);
@@ -215,16 +226,14 @@ public class CategoryPage extends BaseClass{
 						WebElement paginationSelectorClick = getDriver().findElement(By.xpath(paginationSelector));
 						Action.click(getDriver(), paginationSelectorClick);
 			
-		String filter = "//p[@class='MuiTypography-root MuiTypography-body1 css-1rp7iwk']";
-		WebElement filterBy = getDriver().findElement(By.xpath(filter));
-		Action.scrollByVisibilityOfElement(getDriver(), filterBy);
+		
   
 		Thread.sleep(2000);
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
 		 int n = products1.size();
 		System.out.println("Products Present on this page " + n);
 	
-		
+					
 		if(n>0) {
 			
 		List<WebElement> productName1 = getDriver().findElements(By.xpath(productsName));
@@ -293,8 +302,84 @@ public class CategoryPage extends BaseClass{
 		}
 		
 		else {System.out.println("No Products are available");}
-			}
+			}			
 		}
+			
+				
+				if(Pagination.size()==0) {
+					Log.info("Pagination is not present");
+					Thread.sleep(2000);
+					List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
+					 int n = products1.size();
+					System.out.println("Products Present on this page " + n);
+				
+								
+					if(n>0) {
+						
+					List<WebElement> productName1 = getDriver().findElements(By.xpath(productsName));
+					int j = productName1.size();
+					if(j==n) {System.out.println("All Products name are present");}
+						else {
+						System.out.println(n-j + " Products name are not present ");
+						softAssert.assertTrue(false, +n-j+" Products name are not present ");
+						}
+					
+					List<WebElement> productActPrice = getDriver().findElements(By.xpath(actualPrice));
+					int z = productActPrice.size();
+					if(z==n) {System.out.println("All Actual Prices are present");}
+						else {
+						System.out.println(n-z + " Actual Prices are not present ");
+						softAssert.assertTrue(false, n-z+" Actual Prices are not present ");
+						}
+					
+					List<WebElement> quickviewlink = getDriver().findElements(By.xpath(quickview));
+					int i = quickviewlink.size();
+					if(i==n) {System.out.println("All Quick View links are present");}
+						else {
+						System.out.println(n-i + " Quick View links are not present ");
+						softAssert.assertTrue(false, n-i+" Quick View links are not present ");
+						}
+					
+					List<WebElement> image = getDriver().findElements(By.xpath(images));
+					int x = image.size();
+					int count4 = 0;
+					if (x == n) {
+						for(WebElement j1 : image) {
+							Action.mouseOverElement(getDriver(), j1);
+							Thread.sleep(500);
+							//j1.getAttribute("srcset").contains("shopify.com")
+							if((Boolean) ((JavascriptExecutor)getDriver()) .executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", j1)) {
+								count4++;
+							}
+						}
+						if(count4 ==n ) {
+						System.out.println("All " + count4 + " images are present");}
+						else {
+							softAssert.assertTrue(false, n-count4+ " Images are not present  ");
+						}
+					} else {
+						System.out.println(n - x + " Images are not present ");
+						softAssert.assertTrue(false, +n - x + " Images are not present ");
+					}
+					
+					List<WebElement> carticon1 =getDriver().findElements(By.xpath(carticon));
+					int c = carticon1.size();
+					if(c==n) {System.out.println("All carticon are present");}
+						else {
+						System.out.println(n-c + " carticon are not present ");
+						softAssert.assertTrue(false, +n-c+" carticon are not present ");
+						}
+					
+					List<WebElement> wishlist1 =getDriver().findElements(By.xpath(wishlist));
+					
+					int d = carticon1.size();
+					if(d==n) {System.out.println("All Wishlist icon are present");}
+						else {
+						System.out.println(n-d + " Wishlist icon are not present ");
+						softAssert.assertTrue(false, +n-c+" Wishlist icon are not present ");
+						}
+				}
+			}
 		else {Assert.assertTrue(false, "Products are not present in the New Arrival Sections");}
 		}
 		softAssert.assertAll();
@@ -364,7 +449,7 @@ public class CategoryPage extends BaseClass{
 		String popularArticles = "//div[contains(@class,'css-9g2cf7')]/img";
 		String forwardicon = "(//*[name()='svg'][@data-testid='ArrowForwardIcon'])[2]";
 		String backwardicon = "(//*[name()='svg'][@data-testid='ArrowBackIcon'])";
-		String popularReadText = "(//p[contains(@class, 'css-1amebvj')])";
+		String popularReadText = "(//p[contains(@class, 'css-j9wtq3')])";
 		public void popularReads () {
 			WebElement PopularReadsText = getDriver().findElement(By.xpath(popularReadText));
 			Assert.assertEquals(PopularReadsText.getText(), "Popular Reads");
@@ -396,11 +481,11 @@ public class CategoryPage extends BaseClass{
 			Log.info("Successfully verified the presence of the bookmark icon ");
 		}
 		
-		String readmore = "//button[contains(@class,'css-1s3a5x3')]";
+		String readmore = "//button[contains(@class,'css-1qw6qfe')]";
 		String writtenBy = "//div[contains(@class,'css-90yzwr')]";
 		String bigImageDesc = "//div[contains(@class,'css-1u5x3pp')]/p/p";
-		String blogTitle = "//div[contains(@class,'css-rhwwre')]";
-		String bigImageTitle = "//div[contains(@class,'css-6k5ne1')]";
+		String blogTitle = "//div[contains(@class,'css-5ltym6')]";
+		String bigImageTitle = "//div[contains(@class,'css-1tninrt')]";
 		String bigImage = "//div[contains(@class,'css-19qk1n6')]/img";
 		public void bigImageBlog () {
 			WebElement BigImage = getDriver().findElement(By.xpath(bigImage));
@@ -438,7 +523,7 @@ public class CategoryPage extends BaseClass{
 				WebElement ReadMorebutton  = getDriver().findElement(By.xpath(readmore));
 				softAssert.assertTrue(ReadMorebutton.isDisplayed() && ReadMorebutton.getText().equals("Read more"), "Read More button is not displayed");
 				Action.click(getDriver(), ReadMorebutton);
-				Action.explicitWaitbyTitle(getDriver(), "BlogPage", Duration.ofSeconds(5));
+				Action.explicitWaitbyTitle(getDriver(), ("BlogPage"), Duration.ofSeconds(5));
 				getDriver().navigate().back();
 				Action.explicitWaitbyTitle(getDriver(), "Category", Duration.ofSeconds(5));
 				

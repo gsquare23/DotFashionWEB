@@ -63,7 +63,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 			launchApp_V1(browser, url);
 			//WebElement login = getDriver().findElement(By.xpath(category));
 			//Action.explicitWait(getDriver(), login, Duration.ofSeconds(10));
-			recipePage.CategoryListVerification();	
+			recipePage.CategoryListVerification(browser);	
 			Log.endTestCase("-----------ProductPage_categoryElements    Ends---------");
 	 }
 	

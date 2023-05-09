@@ -11,18 +11,15 @@
       </run>
     </groups>
     <classes>
-      <class name="com.dotKonnekt.tests.HomePageTest">
+      <class name="com.dotKonnekt.tests.BlogPageTest">
         <methods>
-          <include name="HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer" invocation-numbers="0"/>
-          <include name="HomePage_SendAMessageFunctionality" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer" invocation-numbers="0"/>
-          <include name="HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="BlogPage_ProductQuickviewVerification_dotFashion" invocation-numbers="0"/>
+          <include name="BlogPage_blogTitleVerification_dotFashion" invocation-numbers="0"/>
           <include name="flush"/>
           <include name="loadConfig"/>
-          <include name="HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.dotKonnekt.tests.HomePageTest -->
+      </class> <!-- com.dotKonnekt.tests.BlogPageTest -->
     </classes>
   </test> <!-- NotLoggedIn(failed) -->
 </suite> <!-- Failed suite [Suite] -->

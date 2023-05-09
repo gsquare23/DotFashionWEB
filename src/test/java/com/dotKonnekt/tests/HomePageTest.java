@@ -82,7 +82,6 @@ public class HomePageTest extends BaseClass{
 		homePage = new HomePage();
 		launchApp_EB(browser, url);
 		homePage.NewsletterPopup__Alert();
-		//homePage.NewsletterPopup__Alert();
 		commonPagedetails.validateSeachFunctionality("Black","Keyboard",title);
 		
 		Log.info("SearchFucntionality Works perfectly");
@@ -123,6 +122,23 @@ public class HomePageTest extends BaseClass{
 		homePage.newArrival();
 		Log.endTestCase("-----------HomePage_NewArrival    Ends---------");
 	}
+	
+	
+	
+	
+	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	public void HomePage_ProductQuickviewVerification (String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------HomePage_ProductQuickviewVerification    Starts---------");
+		blogPage = new BlogPage();
+		homePage = new HomePage();
+		launchApp_EB(browser, url);
+		homePage.NewsletterPopup__Alert();
+		homePage.ByQuickView();
+		
+		Log.endTestCase("-----------HomePage_ProductQuickviewVerification    Ends---------");
+	}
+	
+	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void HomePage_shoutOutFromCustomers(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------HomePage_shoutOutFromCustomers    Starts---------");
@@ -144,25 +160,38 @@ public class HomePageTest extends BaseClass{
 	}
 	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void HomePage_SendAMessageFunctionality(String page, String title, String browser, String url) throws InterruptedException {
+	public void HomePage_SendAMessageFunctionalityGuestUser(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------HomePage_SendAMessageFunctionality    Starts---------");
 		homePage = new HomePage();
 		launchApp_EB(browser, url);
 		homePage.NewsletterPopup__Alert();
-		//Thread.sleep(3000);
-		homePage.sendAMessage();
+		homePage.sendAMessage("Guest");   //enter type of User -  Logged, Guest
 		Log.endTestCase("-----------HomePage_SendAMessageFunctionality    Ends---------");
 	}
 	
 	
+	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	public void HomePage_SendAMessageFunctionalityLoggedInUser(String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------HomePage_SendAMessageFunctionality    Starts---------");
+		homePage = new HomePage();
+		loginPage = new LoginPage();
+		launchApp_EB(browser, prop.getProperty("HomePageurl"));
+		homePage.NewsletterPopup__Alert();
+		loginPage.loginSetup1(prop.getProperty("Username"), prop.getProperty("Password"));
+		homePage.onlyNewsLetter();
+		
+		homePage.sendAMessage("Logged");
+		Log.endTestCase("-----------HomePage_SendAMessageFunctionality    Ends---------");
+	}
+	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void HomePage_aboutUsSection(String page, String title, String browser, String url) throws InterruptedException {
-		Log.startTestCase("-----------HomePage_aboutUsSection    Starts---------");
+	public void HomePage_OurStorySection(String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------HomePage_OurStorySection    Starts---------");
 		homePage = new HomePage();
 		launchApp_EB(browser, url);
 		homePage.NewsletterPopup__Alert();
-		homePage.aboutUs();
-		Log.endTestCase("-----------HomePage_aboutUsSection    Ends---------");
+		homePage.ourStory_AboutUs();
+		Log.endTestCase("-----------HomePage_OurStorySection    Ends---------");
 	}
 	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
@@ -176,6 +205,26 @@ public class HomePageTest extends BaseClass{
 	}
 	
 	
+	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	public void HomePage_discountVoucherSection(String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------HomePage_discountVoucherSection    Starts---------");
+		homePage = new HomePage();
+		launchApp_EB(browser, url);
+		homePage.NewsletterPopup__Alert();
+		homePage.discountVoucher();
+		Log.endTestCase("-----------HomePage_discountVoucherSection    Ends---------");
+	}
+	
+	/*
+	 * @Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class,
+	 * enabled = true, groups = "NotLoggedIn") public void
+	 * HomePage_HeroImage/VideoSection(String page, String title, String browser,
+	 * String url) throws InterruptedException {
+	 * Log.startTestCase("-----------HomePage_HeroImage    Starts---------");
+	 * homePage = new HomePage(); launchApp_EB(browser, url);
+	 * homePage.NewsletterPopup__Alert(); homePage.discountVoucher();
+	 * Log.endTestCase("-----------HomePage_HeroImage    Ends---------"); }
+	 */
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer    Starts---------");
@@ -212,16 +261,40 @@ public class HomePageTest extends BaseClass{
 	}
 	
 	
+	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
+	public void HomePage_endToEndGuestScenarioByClickingProductCartIconLoggedUSer(String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer    Starts---------");
+		homePage = new HomePage();
+		loginPage = new LoginPage();
+		checkoutPage = new CheckoutPage();
+		launchApp_EB(browser, prop.getProperty("HomePageurl"));
+		homePage.NewsletterPopup__Alert();
+		loginPage.loginSetup1(prop.getProperty("Username"), prop.getProperty("Password"));
+		homePage.onlyNewsLetter();
+		
+		Thread.sleep(1000);
+		homePage.ByCartIcon();
+		checkoutPage.CheckoutPageStatus(); 
+		checkoutPage.contactInfoGuest();
+		checkoutPage.shippingAddressGuest();
+		checkoutPage.quantityVerification();
+		checkoutPage.shippingMethod();
+		Log.endTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer    Ends---------");
+	}
+	
+	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer    Starts---------");
 		homePage = new HomePage();
 		checkoutPage = new CheckoutPage();
+		blogPage = new BlogPage();
 		launchApp_EB(browser, url);
+		
 		homePage.NewsletterPopup__Alert();
 		homePage.ByQuickView();
-		//checkoutPage.CheckoutPageStatus(); 
-		//checkoutPage.contactInfoGuest();
+		checkoutPage.CheckoutPageStatus(); 
+		checkoutPage.contactInfoGuest();
 		checkoutPage.shippingAddressGuest();
 		checkoutPage.quantityVerification();
 		checkoutPage.shippingMethod();
@@ -230,7 +303,7 @@ public class HomePageTest extends BaseClass{
 	
 	 
 	
-	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = false, groups = "NotLoggedIn")
+	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn(String page, String title, String browser, String url) throws InterruptedException {
 		Log.startTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn    Starts---------");
 		homePage = new HomePage();
@@ -240,6 +313,8 @@ public class HomePageTest extends BaseClass{
 		homePage.NewsletterPopup__Alert();
 		loginPage.loginSetup1(prop.getProperty("Username"), prop.getProperty("Password"));
 		homePage.onlyNewsLetter();
+		
+		Thread.sleep(1000);
 		homePage.endToEndScenarioHomePageByClickingProductTile();
 		checkoutPage.availabiltyStock();
 		checkoutPage.CheckoutPageStatus(); 
@@ -248,6 +323,13 @@ public class HomePageTest extends BaseClass{
 		checkoutPage.quantityVerification();
 		checkoutPage.shippingMethod();
 		Log.endTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn    Ends---------");
+	}
+	
+	
+	
+	@Test
+	public void BrowserStack() {
+		
 	}
 	
 	@AfterMethod(groups = {"LoggedIn","NotLoggedIn"})

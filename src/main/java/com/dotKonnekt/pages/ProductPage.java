@@ -23,7 +23,7 @@ public class ProductPage extends BaseClass {
 		PageFactory.initElements(getDriver(), this);
 	}
 	SoftAssert softAssert = new SoftAssert();
-	String productName = "//div[@class='MuiTypography-root MuiTypography-body1 css-122og3s']";
+	String productName = "//div[contains(@class,'css-13875v1')]";
 	String Bigimage = "(//div[@class='magnifier_container MuiBox-root css-1pujjbg']//img)[2]";
 	String smallImage = "(//div[@class='css-j6afl0']//img)[2]";
 
@@ -154,19 +154,6 @@ public class ProductPage extends BaseClass {
 		Action.explicitWait(getDriver(), iconFunctionality1, Duration.ofSeconds(5000));
 		Action.click(getDriver(), iconFunctionality1);
 
-		/*
-		 * Thread.sleep(5000); System.out.println("fdghjkcgvhj");
-		 * 
-		 * 
-		 * WebElement wish = getDriver().findElement(By.xpath(iconn));
-		 * Assert.assertTrue(wish.isDisplayed());
-		 * 
-		 * 
-		 * 
-		 * Thread.sleep(5000);
-		 */
-		// getDriver().navigate().refresh();
-		// Action.pageLoadTimeOut(getDriver(), 10);
 		JavascriptExecutor j1 = (JavascriptExecutor) getDriver();
 		j1.executeScript("window.scrollBy(0,50)");
 		WebElement productName1 = getDriver().findElement(By.xpath(productName));
@@ -222,10 +209,10 @@ public class ProductPage extends BaseClass {
 	}
 	
 	
-	String descrtiption = "//div[@class='MuiTypography-root MuiTypography-body1 css-9p1hyi']";       
+	String descrtiption = "//div[@class='MuiTypography-root MuiTypography-body1 css-6oii7y']";       
 	public void readMoreFunctionality() {
 		WebElement readMoreBtn = getDriver()
-				.findElement(By.xpath("//div[@class='MuiTypography-root MuiTypography-body1 css-rkcvek']"));
+				.findElement(By.xpath("//div[@class='MuiTypography-root MuiTypography-body1 css-1fuu61l']"));
 		String text = getDriver()
 				.findElement(By.xpath(descrtiption)).getText();
 		if (!text.isEmpty()) {
@@ -269,6 +256,7 @@ public class ProductPage extends BaseClass {
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allProducts));
 		int n = products1.size();
 		System.out.println(n);
+		if(n>0) {
 		int count=1;
 		int count1 = 1;
 		for(WebElement j: products1) {
@@ -320,15 +308,21 @@ public class ProductPage extends BaseClass {
 			count++;
 			}
 		}
+		}
+		else{
+			Assert.assertTrue(false, "No Products are available");
+			
+		}
 	}
+	
 	
 	
 	String allproduct = "(//div[@class='swiper-wrapper'])[1]/div/div";
 	String carticon = "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']";
 	String wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-xrfgiq']";
+	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
 	String discountedPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
-	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-lgaoco']";
+	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1jw05cp']";
 	String productsName = "(//div[@class='swiper-wrapper'])[1]/div/div/div/div[1]";
 	String images = "(//div[@class='swiper-wrapper'])[1]/div/div/span/img";
 	
@@ -502,7 +496,7 @@ public class ProductPage extends BaseClass {
 	public void faqSections() throws InterruptedException {
 		
 		WebElement bodyTag = getDriver().findElement(By.tagName("body"));
-		if(bodyTag.getText().contains("FAQ")) {
+		if(bodyTag.getText().contains("FAQs")) {
 		
 		WebElement faqs = getDriver().findElement(By.xpath(faq));
 		Action.scrollByVisibilityOfElement(getDriver(), faqs);
@@ -634,7 +628,8 @@ public class ProductPage extends BaseClass {
 	}
 	String readAllReviews = "//div[@class='MuiBox-root css-18u70he']/a";
 	String rating = "(//div[@class='MuiBox-root css-yeouz0'])[1]";
-	String actPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1b9o26n']";
+	String reviewscount = "(//div[@class='MuiBox-root css-yeouz0'])[1]/div";
+	String actPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1vukegx']";
 	String basic_tabs = "//div[@aria-label='basic tabs example']/button";
 	public void productElementsVerification() {
 		WebElement ProductName = getDriver().findElement(By.xpath(productName));
@@ -661,8 +656,33 @@ public class ProductPage extends BaseClass {
 		
 		WebElement ProductRating = getDriver().findElement(By.xpath(rating));
 		if(ProductRating.isDisplayed()) {
-			//String productPrice = ProductPrice.getText();
-			//System.out.println(productPrice + " is the price of the product");
+			WebElement Reviewscount = getDriver().findElement(By.xpath(reviewscount));
+			String s = Reviewscount.getText().replaceAll("[()]", "");
+			System.out.println(s);
+			if(!s.equals("0")) {
+				
+				
+				WebElement ReadAllReviews = getDriver().findElement(By.xpath(readAllReviews));
+				if(ReadAllReviews.isDisplayed()) {
+					Assert.assertTrue(ReadAllReviews.isEnabled(), "ReadAllReviews is not working properly");
+					Log.info("Successfully verified the presence of the ReadAllReviews link");
+				}
+				
+				else {
+					Log.info("Product ReadAllReviews is not present");
+				}
+			}
+			else {
+				WebElement e = getDriver().findElement(By.tagName("body"));
+				if(e.getText().contains("Read all reviews")) {
+					Assert.assertTrue(false, "Read All Reviews is Present but not able to see it");
+				}
+				else {
+					System.out.println("Read All Reviews button is not present");
+				}
+				
+			}
+			//System.out.println(ProductRating.getText() + " is the ratings of the product");
 			Log.info("Successfully verified the presence of the product rating");
 		}
 		else {
@@ -670,18 +690,10 @@ public class ProductPage extends BaseClass {
 			Log.info("Product rating is not present");
 		}
 		
-		WebElement ReadAllReviews = getDriver().findElement(By.xpath(readAllReviews));
-		if(ReadAllReviews.isDisplayed()) {
-			Assert.assertTrue(ReadAllReviews.isEnabled(), "ReadAllReviews is not working properly");
-			Log.info("Successfully verified the presence of the ReadAllReviews link");
-		}
 		
-		else {
-			Log.info("Product ReadAllReviews is not present");
-		}
 		
-		String returnText = "//p[contains(@class ,'css-4bzhkn')]";
-		String shippingText = "//p[@class='MuiTypography-root MuiTypography-body1 css-4bzhkn']";
+		String returnText = "//p[contains(@class ,'css-zwonm6')]";
+		String shippingText = "//p[@class='MuiTypography-root MuiTypography-body1 css-zwonm6']";
 		List<WebElement> Values = getDriver().findElements(By.xpath(basic_tabs));
 		System.out.println(Values.size());
 		if(Values.size()==2) {

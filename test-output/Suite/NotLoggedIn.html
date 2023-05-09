@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>NotLoggedIn</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/5/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>24/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 29 15:00:13 IST 2023</td>
+<td>Started on:</td><td>Wed Apr 19 10:01:43 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>282 seconds (282943 ms)</td>
+<tr><td>Total time:</td><td>164 seconds (164829 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>NotLoggedIn </td>
 </tr><tr>
@@ -76,73 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer()'><b>HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Checkout&quot;. Current title: &quot;dot beauty&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:57986}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57986/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1ec2cce0c6adb4f72753e6ce64aa42a3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.dotKonnekt.actionDrivers.Action.explicitWaitbyTitle(Action.java:784)
-	at com.dotKonnekt.pages.HomePage.ByCartIcon(HomePage.java:488)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer(HomePageTest.java:203)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1076642142", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1076642142'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Checkout&quot;. Current title: &quot;dot beauty&quot; (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:57986}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57986/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1ec2cce0c6adb4f72753e6ce64aa42a3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.dotKonnekt.actionDrivers.Action.explicitWaitbyTitle(Action.java:784)
-	at com.dotKonnekt.pages.HomePage.ByCartIcon(HomePage.java:488)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer(HomePageTest.java:203)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>35</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer()'><b>HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;((//div[@class=&apos;swiper-wrapper&apos;])[2]/div/div)[0]&quot;}
-  (Session info: MicrosoftEdge=111.0.1661.54)
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion()'><b>BlogPage_blogTitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]&quot;}
+  (Session info: chrome=111.0.5563.147)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [2f0f2ee42415af7a4271bb39378a8ee2, findElement {using=xpath, value=((//div[@class=&apos;swiper-wrapper&apos;])[2]/div/div)[0]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58073}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58073/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2f0f2ee42415af7a4271bb39378a8ee2
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d846d5069fcee6b6541275e82a36897c, findElement {using=xpath, value=//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58892/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d846d5069fcee6b6541275e82a36897c
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -154,19 +97,19 @@ Session ID: 2f0f2ee42415af7a4271bb39378a8ee2
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.HomePage.endToEndScenarioHomePageByClickingProductTile(HomePage.java:436)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer(HomePageTest.java:184)
+	at com.dotKonnekt.pages.BlogPage.blogTitleVerification(BlogPage.java:49)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion(BlogPageTest.java:225)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace163190398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace163190398'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;((//div[@class=&apos;swiper-wrapper&apos;])[2]/div/div)[0]&quot;}
-  (Session info: MicrosoftEdge=111.0.1661.54)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1228179933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1228179933'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]&quot;}
+  (Session info: chrome=111.0.5563.147)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [2f0f2ee42415af7a4271bb39378a8ee2, findElement {using=xpath, value=((//div[@class=&apos;swiper-wrapper&apos;])[2]/div/div)[0]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58073}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58073/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2f0f2ee42415af7a4271bb39378a8ee2
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d846d5069fcee6b6541275e82a36897c, findElement {using=xpath, value=//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58892/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d846d5069fcee6b6541275e82a36897c
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -183,8 +126,8 @@ Session ID: 2f0f2ee42415af7a4271bb39378a8ee2
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.HomePage.endToEndScenarioHomePageByClickingProductTile(HomePage.java:436)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer(HomePageTest.java:184)
+	at com.dotKonnekt.pages.BlogPage.blogTitleVerification(BlogPage.java:49)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion(BlogPageTest.java:225)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -214,34 +157,21 @@ Session ID: 2f0f2ee42415af7a4271bb39378a8ee2
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>19</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>12</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn()'><b>HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;dot beauty&quot;. Current title: &quot;Login&quot; (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58147}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58147/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cdda604fcf5be33bfea9a467c5b4c34b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.dotKonnekt.actionDrivers.Action.explicitWaitbyTitle(Action.java:784)
-	at com.dotKonnekt.pages.LoginPage.loginSetup1(LoginPage.java:145)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn(HomePageTest.java:239)
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion()'><b>BlogPage_ProductQuickviewVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td><div><pre>java.lang.AssertionError: Quick view is not working properly expected [true] but found [false]
+	at com.dotKonnekt.pages.BlogPage.productQuickView(BlogPage.java:538)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion(BlogPageTest.java:252)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace844789788", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace844789788'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;dot beauty&quot;. Current title: &quot;Login&quot; (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58147}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58147/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cdda604fcf5be33bfea9a467c5b4c34b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at com.dotKonnekt.actionDrivers.Action.explicitWaitbyTitle(Action.java:784)
-	at com.dotKonnekt.pages.LoginPage.loginSetup1(LoginPage.java:145)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn(HomePageTest.java:239)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1693900057", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1693900057'><pre>java.lang.AssertionError: Quick view is not working properly expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at com.dotKonnekt.pages.BlogPage.productQuickView(BlogPage.java:538)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion(BlogPageTest.java:252)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -271,174 +201,8 @@ Session ID: cdda604fcf5be33bfea9a467c5b4c34b
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>31</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer()'><b>HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//p[@class=&apos;MuiTypography-root MuiTypography-body1 css-k1juyd&apos;])[5]&quot;}
-  (Session info: MicrosoftEdge=111.0.1661.54)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8cb25c759441af939f9307b948ed9eb5, findElement {using=xpath, value=(//p[@class=&apos;MuiTypography-root MuiTypography-body1 css-k1juyd&apos;])[5]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58232}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58232/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8cb25c759441af939f9307b948ed9eb5
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.CheckoutPage.shippingAddressGuest(CheckoutPage.java:283)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer(HomePageTest.java:223)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1912733854", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1912733854'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//p[@class=&apos;MuiTypography-root MuiTypography-body1 css-k1juyd&apos;])[5]&quot;}
-  (Session info: MicrosoftEdge=111.0.1661.54)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8cb25c759441af939f9307b948ed9eb5, findElement {using=xpath, value=(//p[@class=&apos;MuiTypography-root MuiTypography-body1 css-k1juyd&apos;])[5]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:58232}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58232/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8cb25c759441af939f9307b948ed9eb5
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.CheckoutPage.shippingAddressGuest(CheckoutPage.java:283)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer(HomePageTest.java:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>19</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_SendAMessageFunctionality()'><b>HomePage_SendAMessageFunctionality</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: MicrosoftEdge=111.0.1661.54)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [88f9dca29bc0c851fc8a58a411772ec7, getElementText {id=170eefb9-e753-4fd2-8b0c-a23ea222ada9}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:57598}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57598/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (88f9dca29bc0c851fc8a58a411772ec7)] -&gt; xpath: //div[@class=&apos;message MuiBox-root css-1ggpf2f&apos;]]
-Session ID: 88f9dca29bc0c851fc8a58a411772ec7
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
-	at com.dotKonnekt.pages.HomePage.sendAMessage(HomePage.java:324)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_SendAMessageFunctionality(HomePageTest.java:151)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1652592286", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1652592286'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: MicrosoftEdge=111.0.1661.54)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [88f9dca29bc0c851fc8a58a411772ec7, getElementText {id=170eefb9-e753-4fd2-8b0c-a23ea222ada9}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 111.0.1661.54, ms:edgeOptions: {debuggerAddress: localhost:57598}, msedge: {msedgedriverVersion: 111.0.1661.54 (9e410ec23a36..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57598/devtoo..., se:cdpVersion: 111.0.1661.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (88f9dca29bc0c851fc8a58a411772ec7)] -&gt; xpath: //div[@class=&apos;message MuiBox-root css-1ggpf2f&apos;]]
-Session ID: 88f9dca29bc0c851fc8a58a411772ec7
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
-	at com.dotKonnekt.pages.HomePage.sendAMessage(HomePage.java:324)
-	at com.dotKonnekt.tests.HomePageTest.HomePage_SendAMessageFunctionality(HomePageTest.java:151)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>20</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -449,55 +213,125 @@ Session ID: 88f9dca29bc0c851fc8a58a411772ec7
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_PageHeaderVerification()'><b>HomePage_PageHeaderVerification</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_askOurExpertSection()'><b>BlogPage_askOurExpertSection</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>10</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>7</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_aboutUsSection()'><b>HomePage_aboutUsSection</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
 <td></td>
 <td>12</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_SearchFucntionalityVerification()'><b>HomePage_SearchFucntionalityVerification</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_authornameVerification_dotFashion()'><b>BlogPage_authornameVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>11</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>2</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_UserFunctionalityVerification()'><b>HomePage_UserFunctionalityVerification</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_SearchFucntionalityVerification_dotFashion()'><b>BlogPage_SearchFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>11</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_askOurExpertSection()'><b>HomePage_askOurExpertSection</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_UserFunctionalityVerification_dotFashion()'><b>BlogPage_UserFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>16</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.TitleVerification()'><b>TitleVerification</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogPageElements_dotFashion()'><b>BlogPage_BlogPageElements_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>7</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageLoadtime()'><b>BlogPage_PageLoadtime</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
 <td></td>
 <td>8</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_CartFucntionalityVerification()'><b>HomePage_CartFucntionalityVerification</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_LogoFunctionalityVerification_dotFashion()'><b>BlogPage_LogoFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>13</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_aboveAboutUsSection()'><b>HomePage_aboveAboutUsSection</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_addCommentVerification_dotFashion()'><b>BlogPage_addCommentVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>12</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_NewArrival()'><b>HomePage_NewArrival</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_tagsVerification_dotFashion()'><b>BlogPage_tagsVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
-<td>41</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>2</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.HomePageTest.HomePage_shoutOutFromCustomers()'><b>HomePage_shoutOutFromCustomers</b><br>Test class: com.dotKonnekt.tests.HomePageTest<br>Parameters: Home Page, dot beauty, Edge, https://uidotbeauty.sangria.tech/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_recipeImage_dotFashion()'><b>BlogPage_recipeImage_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
+<td></td>
+<td>8</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductTilesVerification_dotFashion()'><b>BlogPage_ProductTilesVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
+<td></td>
+<td>8</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BreadCrumbVerification_dotFashion()'><b>BlogPage_BreadCrumbVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>7</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
+<td></td>
+<td>8</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductWishlistVerification_dotFashion()'><b>BlogPage_ProductWishlistVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ShareIconFunctionality_dotFashion()'><b>BlogPage_ShareIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_TitleVerification_dotFashion()'><b>BlogPage_TitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_CartFucntionalityVerification_dotFashion()'><b>BlogPage_CartFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_likeIconFunctionality1_dotFashion()'><b>BlogPage_likeIconFunctionality1_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
 <td></td>
 <td>10</td>
-<td>com.dotKonnekt.tests.HomePageTest@272ed83b</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageHeaderVerification_dotFashion()'><b>BlogPage_PageHeaderVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
 </table><p>
 </body>
 </html>

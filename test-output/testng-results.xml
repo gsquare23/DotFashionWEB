@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="10" total="11" passed="0" failed="1" skipped="0">
+<testng-results ignored="25" total="26" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-04T11:20:17 IST" name="Default suite" finished-at="2023-04-04T11:20:18 IST" duration-ms="1202">
+  <suite started-at="2023-05-08T17:23:44 IST" name="Default suite" finished-at="2023-05-08T17:23:47 IST" duration-ms="2256">
     <groups>
-      <group name="NotLoggedIn">
-        <method signature="CheckoutPageTest.TitleVerification(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dotKonnekt.tests.CheckoutPageTest@62230c58]" name="TitleVerification" class="com.dotKonnekt.tests.CheckoutPageTest"/>
-      </group> <!-- NotLoggedIn -->
+      <group name="LoggedIn">
+        <method signature="BlogPageTest.BlogPage_AddCommentinCommentSeection_dotFashion(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dotKonnekt.tests.BlogPageTest@53976f5c]" name="BlogPage_AddCommentinCommentSeection_dotFashion" class="com.dotKonnekt.tests.BlogPageTest"/>
+      </group> <!-- LoggedIn -->
     </groups>
-    <test started-at="2023-04-04T11:20:17 IST" name="Default test" finished-at="2023-04-04T11:20:18 IST" duration-ms="1202">
-      <class name="com.dotKonnekt.tests.CheckoutPageTest">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.dotKonnekt.tests.CheckoutPageTest@62230c58]" started-at="2023-04-04T11:20:16 IST" name="loadConfig" finished-at="2023-04-04T11:20:17 IST" duration-ms="541" status="PASS">
+    <test started-at="2023-05-08T17:23:44 IST" name="Default test" finished-at="2023-05-08T17:23:47 IST" duration-ms="2256">
+      <class name="com.dotKonnekt.tests.BlogPageTest">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.dotKonnekt.tests.BlogPageTest@53976f5c]" started-at="2023-05-08T17:23:44 IST" name="loadConfig" finished-at="2023-05-08T17:23:44 IST" duration-ms="315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method signature="TitleVerification(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dotKonnekt.tests.CheckoutPageTest@62230c58]" started-at="2023-04-04T11:20:18 IST" name="TitleVerification" data-provider="CheckoutPage" finished-at="2023-04-04T11:20:18 IST" duration-ms="0" status="FAIL">
+        <test-method signature="BlogPage_AddCommentinCommentSeection_dotFashion(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.dotKonnekt.tests.BlogPageTest@53976f5c]" started-at="2023-05-08T17:23:47 IST" name="BlogPage_AddCommentinCommentSeection_dotFashion" data-provider="BlogPage1" finished-at="2023-05-08T17:23:47 IST" duration-ms="0" status="FAIL">
           <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[java.lang.NegativeArraySizeException: -1]]>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFWorkbook.getSheetIndex(String)" because "this.workbook" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.NegativeArraySizeException: -1
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFWorkbook.getSheetIndex(String)" because "this.workbook" is null
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:57)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:157)
 at org.testng.internal.Parameters.handleParameters(Parameters.java:791)
@@ -47,8 +47,9 @@ at org.testng.TestNG.run(TestNG.java:1067)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.NegativeArraySizeException: -1
-at com.dotKonnekt.dataProviders.DataProviders.CheckoutDetails(DataProviders.java:282)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFWorkbook.getSheetIndex(String)" because "this.workbook" is null
+at com.dotKonnekt.utility.NewExcelLibrary.getRowCount(NewExcelLibrary.java:55)
+at com.dotKonnekt.dataProviders.DataProviders.getBlogDetails1(DataProviders.java:150)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -62,12 +63,12 @@ at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedExce
           </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TitleVerification -->
-        <test-method is-config="true" signature="flush()[pri:0, instance:com.dotKonnekt.tests.CheckoutPageTest@62230c58]" started-at="2023-04-04T11:20:18 IST" name="flush" finished-at="2023-04-04T11:20:18 IST" duration-ms="291" status="PASS">
+        </test-method> <!-- BlogPage_AddCommentinCommentSeection_dotFashion -->
+        <test-method is-config="true" signature="flush()[pri:0, instance:com.dotKonnekt.tests.BlogPageTest@53976f5c]" started-at="2023-05-08T17:23:47 IST" name="flush" finished-at="2023-05-08T17:23:47 IST" duration-ms="249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flush -->
-      </class> <!-- com.dotKonnekt.tests.CheckoutPageTest -->
+      </class> <!-- com.dotKonnekt.tests.BlogPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
