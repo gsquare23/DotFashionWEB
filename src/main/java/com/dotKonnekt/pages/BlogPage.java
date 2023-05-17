@@ -44,7 +44,7 @@ public class BlogPage extends BaseClass{
 		
 	}
 	
-	String blog_title = "//div[@class='MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-oet6yn']f";
+	String blog_title = "//div[@id='sg-blogHeadTitle']";
 	public String blogTitleVerification() {
 		String actualblogTitle = getDriver().findElement(By.xpath(blog_title)).getText();
 		return actualblogTitle;
@@ -52,16 +52,15 @@ public class BlogPage extends BaseClass{
 	}
 	String allproduct = "//div[@class='MuiBox-root css-srjk1z']/div";
 	//String images = allproduct + "/img";
-	String images = "//div[@class='MuiBox-root css-srjk1z']/div/img";
+	String images = "//img[@id='sg-productCardImage']";
 	String wishlist = "//*[name()='svg'][@data-testid='FavoriteBorderOutlinedIcon']";
-	String ratings = "//div[@class='MuiBox-root css-yeouz0']/span";
-	//String quickView = allproduct+ "/div[2]/div/div[2]";
-	String quickView ="//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
+	String ratings = "//span[@id='sg-styledRating']";
+	String quickView ="//p[@id='sg-quickViewButton']";
 	//String productName= allproduct + "/div[2]/div[2]";
-	String productName = "//div[@class='MuiTypography-root MuiTypography-h5 css-7cmtph']";
-	String productPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1hmydg3']";
-	String addtoCartBtn = "//div[@class='css-z2nkb7']/button";
-	String productDetail = "//div[@class='MuiTypography-root MuiTypography-body1 css-rkcvek']/a";
+	String productName = "//div[@id='sg-productCardHead']";
+	String productPrice = "//div[@id='productCardContentPriceTile']";
+	String addtoCartBtn = "//div[@id='sg-productCardAddtoButton']";
+	//String productDetail = "//div[@class='MuiTypography-root MuiTypography-body1 css-rkcvek']/a";
 	public void productImageVerification() {
 		
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
@@ -266,11 +265,9 @@ public class BlogPage extends BaseClass{
 	 * 
 	 * }
 	 */
-	String recipeVideo = "//div[@class='MuiBox-root css-1cbkcwo']";
+	String recipeVideo = "//div[@id='sg-videoPlayerWrapper']";
 	public void blogVideoSection() throws InterruptedException {
-		WebElement i = getDriver().findElement(By.tagName("body"));
-		//System.out.println(i.getText());
-		//if(i.getText().contains("Recipe Video")) {
+		
 		
 		WebElement element = getDriver().findElement(By.tagName("body"));
 		System.out.println(element.getText());
@@ -279,19 +276,17 @@ public class BlogPage extends BaseClass{
 		System.out.println(Action.isDisplayed(getDriver(), recipeVideos));
 		Action.click(getDriver(), recipeVideos);
 		Thread.sleep(5000);
-		//}
-		/*
-		 * else { System.out.println("Blog Video is not present");
-		 * Assert.assertTrue(false, "Blog Video is not present"); }
-		 */
+	
+		 
 	}
+	
 	
 	String productName2 = "//div[@class='MuiTypography-root MuiTypography-h5 css-qla7e7'][1]";
 	String loginbutton = "//button[normalize-space()='LOG IN']";
 	String loginPageTxt = "//input[@placeholder='Email']";
 	String crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']";
 	String wishlistsTxt = "(//p[@class='MuiTypography-root MuiTypography-body1 css-uog56n'])[2]";
-	String productnames = "//div[@class='MuiBox-root css-d8xk2t']/p";
+	String productnames = "//div[@id='sg-productCardHead']";
 
 	// String iconn = "(//*[local-name()='svg' and
 	// @data-testid='FavoriteIcon'])[1]";
@@ -380,11 +375,11 @@ public class BlogPage extends BaseClass{
 	
 	
 	String icon = "(//*[local-name()='svg' and @data-testid='FavoriteBorderOutlinedIcon'])[1]";
-	String cartButton = "//div[@class='MuiBox-root css-1g2muyo']/button[1]";
-	String stockCount = "//div[@class='MuiBox-root css-8hvv1y']/div/input";
-	String productName1 = "//div[@class='MuiTypography-root MuiTypography-body1 css-122og3s']";
-	String Bigimage = "(//div[@class='magnifier_container MuiBox-root css-1pujjbg']//img)[2]";
-	String smallImage = "(//div[@class='css-j6afl0']//img)[2]";
+	String cartButton = "//div[@id='sg-productDetailsActionButtonsWrapper']/button[1]";
+	String stockCount = "//input[@id='sg-counterCountInput']";
+	String productName1 = "//div[@id='sg-productDetailsCardProductTitle']";
+	String Bigimage = "//img[@id='sg-imageMagnifierImage']";
+	String smallImage = "(//img[@id='sg-imageStackImage'])";
 	public void productQuickView() throws InterruptedException{
 		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
 		int n = products1.size();
@@ -540,111 +535,82 @@ public class BlogPage extends BaseClass{
 	}
 	
 	
-	String askour = "(//div[@class='MuiTypography-root MuiTypography-body1 css-m4divx'])";
-	String askDesc = "//p[@class='MuiTypography-root MuiTypography-body1 css-1h7d3yx']";
-	String experts = "(//div[@class='swiper-wrapper'])//div[@class='MuiBox-root css-155xjc6']";
-	String expertsImage = "(//div[@class='MuiBox-root css-155xjc6'])/span/img";
-	String newExperts = "//div[@class='MuiBox-root css-2txfei']";
-	String sendAMessage = "//div[@class='message MuiBox-root css-1ggpf2f']";
-	String expertName = "//div[@class='MuiBox-root css-1nj6oyt']";
-	String click1 = "//div[@class='MuiBox-root css-x9cc89']//button[2]//span[1]";
-	//String crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']";
-	public void askOurExpert() throws InterruptedException {
-		WebElement AskOur  =  getDriver().findElement(By.xpath(askour));
-		Action.scrollByVisibilityOfElement(getDriver(), AskOur);
-		softAssert.assertEquals(AskOur.getText(), "ASK OUR EXPERTS");
-		Log.info("Successfully Verified the Ask Our Experts Presence on UI");
-		
-		
-		WebElement AskDesc  =  getDriver().findElement(By.xpath(askDesc));
-		softAssert.assertTrue(AskDesc.isDisplayed(), "Ask Desc is not present");
-		String desc= "We're all about real connection, and our store ambassadors make it happen. With endless passion and leadership, they motivate their communities to get sweaty and make a difference.";
-		softAssert.assertEquals(AskDesc.getText(), desc, "Ask our Expert Description text are not same");
-		Log.info("Succesfully verified the text Presence on the UI for the Ask our Expert section");
-		
-		List<WebElement> Experts = getDriver().findElements(By.xpath(experts));
-		//Assert.assertEquals(Experts.size(), 2, " Total 3 experts are not Present" );
-		Log.info(" Experts are present and successfully verified the presence");
-		int n= Experts.size();
-		System.out.println("Total Expert Present are:" + n);
-		
-		List<WebElement> ExpertsImage = getDriver().findElements(By.xpath(expertsImage));
-		int x = ExpertsImage.size();
-		System.out.println(x);
-		int count5 = 0;
-		if (x == n) {
-			for (WebElement i : ExpertsImage) {
-				Action.mouseOverElement(getDriver(), i);
-				Thread.sleep(500);
-				if (i.getAttribute("srcset").contains("cloudfront.net")) {
-					count5++;
-				}
-			}
-			System.out.println(count5);
-			if (count5 == n) {
-				System.out.println("All " + count5 + " images are present");
-			} else {
-				softAssert.assertTrue(false, n - count5 + "Images are not present  ");
-			}
-		} else {
-			System.out.println(n - x + " Images are not present ");
-			softAssert.assertTrue(false, +n - x + " Images are not present ");
-		}
-		
-		Log.info("Succesafully Verified the Presence of the Experts Image");
-		
-		List<WebElement> SendAMessage = getDriver().findElements(By.xpath(sendAMessage));
-		int y = SendAMessage.size();
-		System.out.println(y);
-		int count6 = 0;
-		if (y == n) {
-			for (WebElement i : SendAMessage) {
-				Action.mouseOverElement(getDriver(), i);
-				if (i.getText().equals("Send a Message")) {
-					Action.isEnabled(getDriver(), i);
-					System.out.println(" Send Message is present");
-					count6++;
-				}
-			}
-			if (count6 == n) {
-				System.out.println("All " + count6 + " Send Message are present");
-			} else {
-				softAssert.assertTrue(false, n - count5 + " Send Message are not present  ");
-			}
-		} else {
-			System.out.println(n - y + " Send Message are not present ");
-			softAssert.assertTrue(false, +n - y + " Send Message are not present ");
-		}
-		Log.info("Succesafully Verified the Presence of the Experts Send A Message");
-		 
-		
-		List<WebElement> ExpertName = getDriver().findElements(By.xpath(expertName));
-		
-		
-		if(n==ExpertName.size()) {
-			int q = 0;
-			for(WebElement i : ExpertName) {
-			Action.mouseOverElement(getDriver(), i);
-				Action.isDisplayed(getDriver(), i);
-				
-				if(i.getText().equals("")) {
-					q++;
-					softAssert.assertTrue(false, q + " Name is/are not present");
-				}
-				else {
-					System.out.println(i.getText());
-				}
-				//WebElement Click1 = getDriver().findElement(By.xpath(click1));
-				//Action.click(getDriver(), Click1);
-				Thread.sleep(1000);
-				
-			}
-		}
-		Log.info("Succesfully Verified the Presence of the name and role");
-		
-		
-		softAssert.assertAll();
-	}
+	/*
+	 * String askour =
+	 * "(//div[@class='MuiTypography-root MuiTypography-body1 css-m4divx'])"; String
+	 * askDesc = "//p[@class='MuiTypography-root MuiTypography-body1 css-1h7d3yx']";
+	 * String experts =
+	 * "(//div[@class='swiper-wrapper'])//div[@class='MuiBox-root css-155xjc6']";
+	 * String expertsImage = "(//div[@class='MuiBox-root css-155xjc6'])/span/img";
+	 * String newExperts = "//div[@class='MuiBox-root css-2txfei']"; String
+	 * sendAMessage = "//div[@class='message MuiBox-root css-1ggpf2f']"; String
+	 * expertName = "//div[@class='MuiBox-root css-1nj6oyt']"; String click1 =
+	 * "//div[@class='MuiBox-root css-x9cc89']//button[2]//span[1]"; //String
+	 * crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']"; public
+	 * void askOurExpert() throws InterruptedException { WebElement AskOur =
+	 * getDriver().findElement(By.xpath(askour));
+	 * Action.scrollByVisibilityOfElement(getDriver(), AskOur);
+	 * softAssert.assertEquals(AskOur.getText(), "ASK OUR EXPERTS");
+	 * Log.info("Successfully Verified the Ask Our Experts Presence on UI");
+	 * 
+	 * 
+	 * WebElement AskDesc = getDriver().findElement(By.xpath(askDesc));
+	 * softAssert.assertTrue(AskDesc.isDisplayed(), "Ask Desc is not present");
+	 * String desc=
+	 * "We're all about real connection, and our store ambassadors make it happen. With endless passion and leadership, they motivate their communities to get sweaty and make a difference."
+	 * ; softAssert.assertEquals(AskDesc.getText(), desc,
+	 * "Ask our Expert Description text are not same"); Log.
+	 * info("Succesfully verified the text Presence on the UI for the Ask our Expert section"
+	 * );
+	 * 
+	 * List<WebElement> Experts = getDriver().findElements(By.xpath(experts));
+	 * //Assert.assertEquals(Experts.size(), 2, " Total 3 experts are not Present"
+	 * ); Log.info(" Experts are present and successfully verified the presence");
+	 * int n= Experts.size(); System.out.println("Total Expert Present are:" + n);
+	 * 
+	 * List<WebElement> ExpertsImage =
+	 * getDriver().findElements(By.xpath(expertsImage)); int x =
+	 * ExpertsImage.size(); System.out.println(x); int count5 = 0; if (x == n) { for
+	 * (WebElement i : ExpertsImage) { Action.mouseOverElement(getDriver(), i);
+	 * Thread.sleep(500); if (i.getAttribute("srcset").contains("cloudfront.net")) {
+	 * count5++; } } System.out.println(count5); if (count5 == n) {
+	 * System.out.println("All " + count5 + " images are present"); } else {
+	 * softAssert.assertTrue(false, n - count5 + "Images are not present  "); } }
+	 * else { System.out.println(n - x + " Images are not present ");
+	 * softAssert.assertTrue(false, +n - x + " Images are not present "); }
+	 * 
+	 * Log.info("Succesafully Verified the Presence of the Experts Image");
+	 * 
+	 * List<WebElement> SendAMessage =
+	 * getDriver().findElements(By.xpath(sendAMessage)); int y =
+	 * SendAMessage.size(); System.out.println(y); int count6 = 0; if (y == n) { for
+	 * (WebElement i : SendAMessage) { Action.mouseOverElement(getDriver(), i); if
+	 * (i.getText().equals("Send a Message")) { Action.isEnabled(getDriver(), i);
+	 * System.out.println(" Send Message is present"); count6++; } } if (count6 ==
+	 * n) { System.out.println("All " + count6 + " Send Message are present"); }
+	 * else { softAssert.assertTrue(false, n - count5 +
+	 * " Send Message are not present  "); } } else { System.out.println(n - y +
+	 * " Send Message are not present "); softAssert.assertTrue(false, +n - y +
+	 * " Send Message are not present "); }
+	 * Log.info("Succesafully Verified the Presence of the Experts Send A Message");
+	 * 
+	 * 
+	 * List<WebElement> ExpertName = getDriver().findElements(By.xpath(expertName));
+	 * 
+	 * 
+	 * if(n==ExpertName.size()) { int q = 0; for(WebElement i : ExpertName) {
+	 * Action.mouseOverElement(getDriver(), i); Action.isDisplayed(getDriver(), i);
+	 * 
+	 * if(i.getText().equals("")) { q++; softAssert.assertTrue(false, q +
+	 * " Name is/are not present"); } else { System.out.println(i.getText()); }
+	 * //WebElement Click1 = getDriver().findElement(By.xpath(click1));
+	 * //Action.click(getDriver(), Click1); Thread.sleep(1000);
+	 * 
+	 * } } Log.info("Succesfully Verified the Presence of the name and role");
+	 * 
+	 * 
+	 * softAssert.assertAll(); }
+	 */
 	
 	
 	

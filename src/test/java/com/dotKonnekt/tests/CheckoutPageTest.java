@@ -124,15 +124,25 @@ public class CheckoutPageTest extends BaseClass {
 		searchPage = new SearchPage();
 		launchApp_EB(browser, prop.getProperty("HomePageurl"));
 		homePage.NewsletterPopup__Alert();
+		Log.info("1");
 		searchPage.validateSeachFunctionalityForShopTab("pant","Mouse","Search Page");
+		Log.info("2");
 		searchPage.ShopProducts();
+		Log.info("3");
 		checkoutPage.selectAProduct();
+		Log.info("4");
 		checkoutPage.availabiltyStock();
-		checkoutPage.CheckoutPageStatus(); 
+		Log.info("5");
+		checkoutPage.CheckoutPageStatus();
+		Log.info("6");
 		checkoutPage.contactInfoGuest();
+		Log.info("7");
 		checkoutPage.shippingAddressGuest();
+		Log.info("8");
 		checkoutPage.quantityVerification();
+		Log.info("9");
 		checkoutPage.shippingMethod();
+		Log.info("10");
 		
 		
 		

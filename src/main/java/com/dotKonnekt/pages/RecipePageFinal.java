@@ -22,21 +22,21 @@ import com.dotKonnekt.utility.Log;
 public class RecipePageFinal extends BaseClass {
 	
 	String searchBox = "//input[@placeholder='Search']";
-	String clickButton=  "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1a6giau']//*[name()='svg']";
-	String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
-	String bd_Blog = "(//li[@class='MuiBreadcrumbs-li'])/p";
-	String Author = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-1r6qczh']";
-	String P_Date = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-3odfiv']";
+	//String clickButton=  "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1a6giau']//*[name()='svg']";
+	String bd_Home = "(//a[@id='sg-breadcrum0 sg-BreadCrumbLink'])";
+	String bd_Blog = "(//a[@id='sg-breadcrum2 sg-breadCrumbText'])";
+	String Author = "//div[@id='sg-authorGrid']";
+	String P_Date = "//div[@id='sg-dateGrid']";
 	String loginbutton = "//button[normalize-space()='LOG IN']";
 	String loginPageTxt = "//input[@name='email']";
-	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
-	String bookMarkIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[2]";
-	String shareIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[3]";
-	String likeCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-bcxih4'][1]";
-	String bookCount = "//p[@class = 'MuiTypography-root MuiTypography-body1 css-bcxih4'][2]";
+	String likeIcon = "(//*[name()='svg'][@id='sg-thumbUpButtonOutline'])";
+	String bookMarkIcon = "(//*[name()='svg'][@id='sg-bookmarkBorderOutlinedIcon'])";
+	String shareIcon = "(//*[name()='svg'][@id='sg-shareIconOutline'])";
+	String likeCount = "//p[@id= 'sg-likeCount']";
+	String bookCount = "//p[@id= 'sg-bookmarkCount']";
 	String socialMediaIcons = "(//*[name()='circle'])";
-	String categoryElements = "//div[@class='css-1u1j1m2']/div/button";
-	String blog_title = "//div[@class='MuiTypography-root MuiTypography-body1 css-w8lzqg']";
+	String categoryElements = "//button[@id='sg-categoryItem']";
+	String blog_title = "(//div[@id='sg-blogHeadTitle'])";
 	String quickview = "(//p[@id='sg-quickViewButton'])";
 	String discountedPrice = "//p[@class='MuiTypography-root MuiTypography-body1 css-1tva794']";
 	String actualPrice = "//div[@id='productCardContentPriceTile']";
@@ -52,15 +52,15 @@ public class RecipePageFinal extends BaseClass {
 	String commentPosted = "(//div[@id='sg-editCommentAnsweredCommentReplace'])";
 	String replyCount = "(//span[@id='sg-commentContentRepliesLength'])";
 	String crossbutton1 = "//*[local-name()='svg' and @data-testid='ClearIcon']";
-	String recipeImage =  "//img[@class='MuiBox-root css-11cts2d']";
-	String taggscount= "//span[@class='MuiChip-label MuiChip-labelMedium css-9iedg7']";
-	String nutritions = "//p[@class='MuiTypography-root MuiTypography-body1 css-22dtt9']";
+	String recipeImage =  "//img[@id='sg-ingredientItemContainer']";
+	String taggscount= "//div[@id='sg-tagChip4']/span[1]";
+	//String nutritions = "//p[@class='MuiTypography-root MuiTypography-body1 css-22dtt9']";
 	
 	String reportAbuse = "(//button[@id='sg-reportButton3'])";
 	String recipeVideo = "//h5[@class='MuiTypography-root MuiTypography-h5 css-12esd7r']";
 	String frame = "//iframe[@id='widget2']";
 	
-	@FindBy (xpath = "//span[@class='MuiTypography-root MuiTypography-span css-1fz7ep2']")
+	@FindBy (xpath = "//span[@id='sg-postComment']")
 	WebElement postBtn;
 	
 	@FindBy(name = "email")
@@ -114,9 +114,9 @@ public class RecipePageFinal extends BaseClass {
 		String actualBreadcrumb = String.join(delim, listElements);
 		 System.out.println(actualBreadcrumb);
 			getDriver().findElement(By.xpath(bd_Home)).click();
-			Action.explicitWaitbyTitle(getDriver(), "dot beauty", Duration.ofSeconds(10));
+			Action.explicitWaitbyTitle(getDriver(), "dotfashion", Duration.ofSeconds(10));
 			String HomeTitle = getDriver().getTitle();
-			Assert.assertEquals(HomeTitle, "dot beauty"); 
+			Assert.assertEquals(HomeTitle, "dotfashion"); 
 			getDriver().navigate().back();
 			Action.explicitWaitbyTitle(getDriver(), title, Duration.ofSeconds(5));
 		
@@ -327,13 +327,13 @@ public class RecipePageFinal extends BaseClass {
 		 if(l.getText().contains("Tags")) {
 		 
 		 WebElement tagText = getDriver().findElement(By.
-				  xpath("//p[@class = 'MuiTypography-root MuiTypography-body1 css-qfzj9b']"));
+				  xpath("//p[@id= 'sg-hashTitle']"));
 		  Action.scrollByVisibilityOfElement(getDriver(), tagText);
 		   System.out.println(tagText.getText());
 		List<WebElement> taggs = getDriver().findElements(By.xpath(taggscount));
 		System.out.println(taggs.size());
 			if(taggs.size() == 5) {
-				System.out.println(getDriver().findElement(By.xpath("//p[@class = 'MuiTypography-root MuiTypography-body1 css-juaq']")).getText());
+				System.out.println(getDriver().findElement(By.xpath("//p[@id= 'sg-nuterationSeeTagText']")).getText());
 				  WebElement seeMoreButton =getDriver().findElement(By.
 				  xpath("//p[@class = 'MuiTypography-root MuiTypography-body1 css-juaq']"));
 				  if(seeMoreButton.isDisplayed()) { seeMoreButton.click(); }
@@ -430,7 +430,7 @@ public class RecipePageFinal extends BaseClass {
 		if(l1.getText().contains("Nutritions Per Serving")) {
 		Log.info("Nutrition per Saving lists");
 		WebElement nutritions_Display = getDriver()
-				.findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-1aoo3g']"));
+				.findElement(By.xpath("//p[@id='sg-nuterationHashTitle']"));
 		Action.scrollByVisibilityOfElement(getDriver(), nutritions_Display);
 		 System.out.println(nutritions_Display.getText());
 		
@@ -791,11 +791,11 @@ public class RecipePageFinal extends BaseClass {
 		Thread.sleep(5000);
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-	@FindBy (xpath = "//input[@id='outlined-adornment-password']")
+	@FindBy (xpath = "//input[@id='sg-outlinedAdornmentPassword']")
 	WebElement typecomment;
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-6l6otf'])[1]")
+	@FindBy(xpath = "(//div[@id='sg-editCommentAnsweredCommentReplace'])[1]")
 	WebElement postedComment;
-	@FindBy(xpath = "//img[@alt='Picture of the author']")
+	@FindBy(xpath = "//img[@id='sg-commentContentImage']")
 	WebElement editButton;
 	@FindBy(xpath = "(//img[@alt='Dlt Button'])")
 	WebElement deleteButton;
@@ -803,12 +803,12 @@ public class RecipePageFinal extends BaseClass {
 	@FindBy(xpath = "//input[@id='standard-helperText']")
 	WebElement editTextbox;
 	
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-1bvc4cc'])/button[2]")
+	@FindBy(xpath = "(//button[@id='sg-editCommentSaveButton2'])")
 	WebElement saveBtn;
-	@FindBy(xpath = "(//div[@class='MuiBox-root css-1bvc4cc'])/button[1]")
+	@FindBy(xpath = "(//button[@id='sg-editCommentCancelButton'])")
 	WebElement cancelBtn;
 	
-	public void LoggedInAddCommentsVerification(String save) throws InterruptedException {
+	public void LoggedInAddCommentsVerification(String save1) throws InterruptedException {
 		WebElement comment = getDriver().findElement(By.xpath(commentTxt));
 		Action.scrollByVisibilityOfElement(getDriver(), comment);
 		//Thread.sleep(5000);
@@ -816,9 +816,9 @@ public class RecipePageFinal extends BaseClass {
 		Action.type(typecomment, typedComment);
 		System.out.println("successfully typed the comment in the comment box");
 		Action.click(getDriver(), postBtn);
-		Thread.sleep(1000);
-		System.out.println("Successfully Clicked on the Post button");
 		Thread.sleep(2000);
+		System.out.println("Successfully Clicked on the Post button");
+		
 		Assert.assertEquals(postedComment.getText(), typedComment);
 		Thread.sleep(1000);
 		System.out.println("Successfully verified the add comment ");
@@ -829,8 +829,9 @@ public class RecipePageFinal extends BaseClass {
 		Thread.sleep(1000);
 		Action.type(editTextbox, editTypedComment);
 		System.out.println("Successfully type the edited comment in the text box");
-		if (save.equalsIgnoreCase("save")) {
-			System.out.println("");
+		if (save1.equalsIgnoreCase("save")) {
+			System.out.println("in save section");
+			
 			Action.click(getDriver(), saveBtn);
 			System.out.println("Successfully clicked on the Save button");
 			Thread.sleep(2000);
@@ -847,9 +848,10 @@ public class RecipePageFinal extends BaseClass {
 			
 		}
 		
-		  else if(save.equalsIgnoreCase("cancel"))
+		  else if(save1.equalsIgnoreCase("cancel"))
 		  { Action.click(getDriver(),cancelBtn); 
-		  Assert.assertEquals(postedComment.getText(), typedComment); }
+		  Assert.assertEquals(postedComment.getText(), typedComment);
+		  Log.info("Successfully cancel to write the edited comment");}
 		 
 	}
 	

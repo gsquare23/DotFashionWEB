@@ -126,7 +126,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 	public void DigitalProductPage_ProductAddtoCartVerification(String page, String title, String browser, String url) throws InterruptedException {
 		
 		Log.startTestCase("ProductPage_ProductAddtoCartVerification");
-		  digitalProduct = new DigitalProductPage();
+		 digitalProduct = new DigitalProductPage();
 		launchApp_V1(browser, url);
 		digitalProduct.availabiltyStock();
 		Log.endTestCase("ProductPage_ProductAddtoCartVerification");
@@ -157,12 +157,12 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 	
 	
 	@Test(dataProvider = "DigitalProduct", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void DigitalProductPage_weFoundOtherProducts(String page, String title, String browser, String url) {
+	public void DigitalProductPage_weFoundOtherProducts(String page, String title, String browser, String url) throws InterruptedException {
 	Log.startTestCase("ProductPage_weFoundOtherProducts");
 		
 		productPage = new ProductPage();
 		launchApp_V1(browser, url);
-		productPage.wefoundOtherSections1();
+		productPage.wefoundOtherSections();
 		Log.endTestCase("ProductPage_weFoundOtherProducts");
 	}
 	
@@ -179,10 +179,10 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 	@Test(dataProvider = "DigitalProduct", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void DigitalProductPage_weFoundOtherContentYouMightLike(String page, String title, String browser, String url) throws InterruptedException {
 	Log.startTestCase("ProductPage_weFoundOtherContentYouMightLike");
-		
+		productPage = new ProductPage();
 		digitalProduct = new DigitalProductPage();
 		launchApp_V1(browser, url);
-		digitalProduct.weFoundOtherContentYouMightLike();
+		productPage.weFoundOtherContentYouMightLike();
 		Log.endTestCase("ProductPage_weFoundOtherContentYouMightLike");
 	}
 	

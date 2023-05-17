@@ -38,7 +38,7 @@ public class HomePageTest extends BaseClass{
 		homePage.NewsletterPopup__Alert();
 		String actualTitle = commonPagedetails.getTitle();
 		System.out.println(actualTitle);
-		Assert.assertEquals(actualTitle, "dot beauty", "Title Not Verified");
+		Assert.assertEquals(actualTitle, "dotfashion", "Title Not Verified");
 		commonPagedetails.BrokenLinks(url);
 		
 		Log.endTestCase("TitleVerification");

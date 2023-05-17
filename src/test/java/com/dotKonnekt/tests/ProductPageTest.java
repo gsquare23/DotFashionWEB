@@ -162,7 +162,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 	}
 	
 	@Test(dataProvider = "ProductPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public void ProductPage_weFoundOtherProducts(String page, String title, String browser, String url) {
+	public void ProductPage_weFoundOtherProducts(String page, String title, String browser, String url) throws InterruptedException {
 	Log.startTestCase("ProductPage_weFoundOtherProducts");
 		
 		productPage = new ProductPage();
@@ -171,7 +171,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 		Log.endTestCase("ProductPage_weFoundOtherProducts");
 	}
 	
-	@Test(dataProvider = "ProductPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "ProductPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void ProductPage_FAQSections(String page, String title, String browser, String url) throws InterruptedException {
 	Log.startTestCase("ProductPage_FAQSections");
 		
@@ -181,7 +181,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 		Log.endTestCase("ProductPage_FAQSections");
 	}
 	
-	@Test(dataProvider = "ProductPage", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
+	@Test(dataProvider = "ProductPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
 	public void ProductPage_weFoundOtherContentYouMightLike(String page, String title, String browser, String url) throws InterruptedException {
 	Log.startTestCase("ProductPage_weFoundOtherContentYouMightLike");
 		

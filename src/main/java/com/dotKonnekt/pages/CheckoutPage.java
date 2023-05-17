@@ -1,21 +1,15 @@
 package com.dotKonnekt.pages;
 
-import static org.testng.Assert.assertTrue;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import org.apache.xalan.xsltc.compiler.sym;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -40,13 +34,13 @@ public class CheckoutPage extends BaseClass{
 	
 	String shopProducts = "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-1vybv8z']/div";
 	String showingresult = "(//div[@class='MuiBox-root css-0'])[2]/p";
-	String noresult = "//p[@class='MuiTypography-root MuiTypography-body1 css-3iqdok']";
+	String noresult = "//p[@id='sg-no-results']";
 	String shoptab = "//div[@aria-label='basic tabs example']/button[1]";
 	String articletab = "//div[@aria-label='basic tabs example']/button[2]";
 	String clickButton=  "//*[name()='svg' and @data-testid='SearchOutlinedIcon']";
 	String searchBox = "//input[@placeholder='Search']";
-	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-64acg5']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-6o54za']";
+	String recentSearch = "//p[@id='sg-autoCompleteSearchTypography']";
+	String trending = "//p[@id='sg-autoCompleteSearchTypography3']";
 
 	public void SearchFunctionalityForArticleTab (String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
@@ -134,9 +128,9 @@ public class CheckoutPage extends BaseClass{
 		  Log.info("Successfully verified the title of the Product page from search Page");
 	}
 	
-	String checkoutBtn = "//div[@class='MuiBox-root css-1rtfqxi']/button";
-	String cartButton = "//div[@class='MuiBox-root css-oaref8']/button[1]";
-	String stockCount = "//div[@class='MuiBox-root css-8hvv1y']/div/input";
+	String checkoutBtn = "//button[@id='sg-orderCommonButton']";
+	String cartButton = "(//button[@id='sg-addToCartButton'])[1]";
+	String stockCount = "//input[@id='sg-counterCountInput']";
 
 	public void availabiltyStock() throws InterruptedException {
 
@@ -176,7 +170,7 @@ public class CheckoutPage extends BaseClass{
 	}
 	
 	
-	String statusInfo = "(//div[@class='css-m4samb'])[2]/div/div/span/span[2]";
+	String statusInfo = "(//div[@id='sg-customStepper'])[2]/div/span/span[2]";
 	public void CheckoutPageStatus() {
 		Log.info("CheckoutPageElements verification starts");
 		List<WebElement> StatusInfo = getDriver().findElements(By.xpath(statusInfo));
@@ -199,12 +193,12 @@ public class CheckoutPage extends BaseClass{
 			}
 		}
 	}
-	String emailBox = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[1]/div[2]/div/div/div/div/div/div[2]/div/input";
+	String emailBox = "(//input[@id='sg-GuestAddressEmailInput'])[2]";
 	String loginLink = "(//p[contains(text(),'Log-in')])[2]";
 	String already = "(//p[contains(text(),'Already have an account ?')])[2]";
 	String emailText = "(//p[contains(text(),'Email*')])[2]";
 	//String contact = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[1]/div[1]/div[1]/p";
-	String contact = "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'])[4]";
+	String contact = "(//p[@id='sg-checkoutAccordionTitle'])[4]";
 	public void contactInfoGuest() throws InterruptedException {
 		
 		Log.info("ContactInfo Starts");
@@ -228,7 +222,7 @@ public class CheckoutPage extends BaseClass{
 			
 	}
 	
-	String emailbox1 = "(//input[@class='MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-1x5jdmq'])[2]";
+	String emailbox1 = "(//input[@id='sg-webInputEmail'])";
 	
 	public void contactInfoLogged() throws InterruptedException {
 		WebElement Contact = getDriver().findElement(By.xpath(contact));
@@ -244,26 +238,26 @@ public class CheckoutPage extends BaseClass{
 			
 	}
 	
-	String makePayment = "(//div[contains(@class,'css-1nwt8xw')])/button";
-	String validateBtn = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[6]/div/button";
-	String phoneBox = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[6]/div/div/div[2]/div[2]/div/input";
-	String phonecode = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[6]/div/div/div/div/div/div";
-	String phone = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[6]/div/div/div/p";
-	String country = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[5]/div[2]/p";
-	String stateDropdown = "/html[1]/body[1]/div[3]/div[3]/ul/li";
-	String stateBox = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[5]/div/div";
-	String state = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[5]/div/p";
-	String postalZipBox = "((//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div[1]/input)[2]";
-	String postalZip = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/p";
-	String cityBox = "((//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div[1]/input)[1]";
-	String city = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[4]/div/div/p";
-	String addressLine2Box = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[3]/div[2]/div/input";
-	String addressLine2 = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[3]/div/p";
-	String addressLine1Box = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/input";
-	String addressLine1 = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[2]/div/p";
-	String shipping =  "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'])[5]";
-	String name = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[1]/div[1]/p";
-	String nameBox = "(//div[@class='MuiBox-root css-npgrt2'])/fieldset/form/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/input"		;
+	String makePayment = "(//button[contains(@id,'sg-checkoutPaymentButton')])";
+	String validateBtn = "(//button[@id='sg-GuestPhoneButton'])[2]";
+	String phoneBox = "(//input[@id='sg-GuestPhoneInputField'])[2]";
+	String phonecode = "(//div[@id='sg-GuestPhoneInputSelect'])[2]";
+	String phone = "(//p[@id='sg-GuestPhoneLabelInput'])[2]";
+	String country = "(//p[@id='sg-GuestCountryLabelInput'])[2]";
+	String stateDropdown = "//div[@id = 'menu-state']/div[3]/ul/li";
+	String stateBox = "(//div[@id='sg-GuestStateInputSelect'])[2]";
+	String state = "(//p[@id='sg-GuestStateLabelInput'])[2]";
+	String postalZipBox = "(//input[@id='sg-GuestAddressPostalInput'])[2]";
+	String postalZip = "(//p[@id='sg-inputFieldLabel'])[13]";
+	String cityBox = "(//input[@id='sg-GuestAddressCityInput'])[2]";
+	String city = "(//p[@id='sg-inputFieldLabel'])[12]";
+	String addressLine2Box = "(//input[@id='sg-GuestAddressApartmentInput'])[2]";
+	String addressLine2 = "(//p[@id='sg-inputFieldLabel'])[11]";
+	String addressLine1Box = "(//input[@id='sg-GuestAddressPhoneInput'])[2]";
+	String addressLine1 = "(//p[@id='sg-inputFieldLabel'])[10]";
+	String shipping =  "(//p[@id='sg-checkoutAccordionTitle'])[5]";
+	String name = "(//p[@id='sg-inputFieldLabel'])[9]";
+	String nameBox = "(//input[@id='sg-GuestAddressNameInput'])[2]"		;
 	public void shippingAddressGuest() throws InterruptedException {
 		WebElement Shipping = getDriver().findElement(By.xpath(shipping));
 		Action.scrollByVisibilityOfElement(getDriver(), Shipping);
@@ -366,9 +360,9 @@ public class CheckoutPage extends BaseClass{
 
 		
 	}
-	String change_add = "(//div[@class='MuiBox-root css-v4v65f'])[2]/p";
-	String address = "(//div[@class='MuiBox-root css-v4v65f'])[2]/div[2]";
-	String shippingBoxUsername = "(//div[@class='MuiBox-root css-v4v65f'])[2]/div[1]/p";
+	String change_add = "(//p[@id='sg-selectedAddressChange'])[2]";
+	String address = "(//div[@id='sg-selectedAddressBoxBody'])[2]";
+	String shippingBoxUsername = "(//p[@id='sg-selectedAddressName'])[2]";
 	public void shippingAddressLogged() throws InterruptedException {
 		WebElement Shipping = getDriver().findElement(By.xpath(shipping));
 		Action.scrollByVisibilityOfElement(getDriver(), Shipping);
@@ -397,7 +391,7 @@ public class CheckoutPage extends BaseClass{
 		Log.info("Successfully passed  the value in Name box");
 	}
 		
-	String shippingMethod = "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'][normalize-space()='Shipping Method'])[2]";			
+	String shippingMethod = "(//p[@id='sg-checkoutAccordionTitle'])[6]";			
 	public void shippingMethod() throws InterruptedException {
 			WebElement ShippingMethod = getDriver().findElement(By.xpath(shippingMethod));
 			Action.scrollByVisibilityOfElement(getDriver(), ShippingMethod);
@@ -413,75 +407,68 @@ public class CheckoutPage extends BaseClass{
 	
 	
 	
-	String bookMarkicon = "//*[name()='svg' and @data-testid='BookmarkBorderIcon']";
-	String mightLikeProductDescription = "(//div[contains(@class,'css-3delsl')])";
-	String mightLikeProductNames = "(//div[contains(@class,'css-kgu7cg')])";
-	String mightLikeallproduct = "(//div[contains(@class,'css-169jllx')])";
-	String mightLikeimages = "(//div[contains(@class,'css-169jllx')])/span/span/img";
-	//String mightLike1 = "(//div[normalize-space()='We found other content you might like'])";
-	public void articlesPresence() throws InterruptedException {
-		Action.implicitWait(getDriver(), 10);
-			//WebElement MightLike1 = getDriver().findElement(By.xpath(mightLike1));
-			//Action.scrollByVisibilityOfElement(getDriver(), MightLike1);
-			
-			List<WebElement> MightLikeallproduct = getDriver().findElements(By.xpath(mightLikeallproduct));
-			int n = MightLikeallproduct.size();
-			System.out.println(n + " Articles should be present in Might Like section");
-			int count5 =0;
-			List<WebElement> MightLikeimages = getDriver().findElements(By.xpath(mightLikeimages));
-			int x = MightLikeimages.size();
-			System.out.println(x+ " Articles should be present in Might Like section");
-			//Thread.sleep(2000);
-			if(x==n) {for (WebElement i : MightLikeimages) {
-				Action.mouseOverElement(getDriver(), i);
-				//Action.explicitWait(getDriver(), i, Duration.ofSeconds(5));
-				//Thread.sleep(1000);
-				if (i.getAttribute("srcset").contains("amazonaws.com")) {
-					count5++;
-				}
-			}	
-				if (count5 == n) {
-					System.out.println("All " + count5 + " Articles images are present");
-				} else {
-					softAssert.assertTrue(false, n - count5 + " Article Images are not present  ");
-				}
-			}
-				else {
-				System.out.println(n-x + " Images are not present ");
-				softAssert.assertTrue(false, +n-x+" Images are not present ");
-				}
-			
-			List<WebElement> MightLikeProductName= getDriver().findElements(By.xpath(mightLikeProductNames));
-			int y = MightLikeProductName.size();
-			if(y==n) {System.out.println("All "+ y +" Article Product Names are present");}
-				else {
-				System.out.println(n-y + "   Article Product Names are not present ");
-				softAssert.assertTrue(false, +n-y+"  Article Product Names are not present ");
-				}
-			
-			List<WebElement> MightLikeProductDescription= getDriver().findElements(By.xpath(mightLikeProductDescription));
-			int z = MightLikeProductDescription.size();
-			if(z==n) {System.out.println("All "+ z +" Article Product description are present");}
-				else {
-				System.out.println(n-z + "  Article Product description are not present ");
-				softAssert.assertTrue(false, +n-z+"  Articleff Product description are not present ");
-				}
-			
-			List<WebElement> BookMarkicon =getDriver().findElements(By.xpath(bookMarkicon));
-			int c = BookMarkicon.size();
-			if(c==n) {System.out.println("All "+ c +"  BookMarkicon are present");}
-				else {
-				System.out.println(n-c + " BookMarkicon are not present ");
-				softAssert.assertTrue(false, +n-c+" BookMarkicon are not present ");
-				}
-				
-	}
-	String grandTotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-9r9xm0'])[1]";
-	String subtotal = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1r1xxje'])[1]";
-	String totalQty = "(//div[@class='MuiBox-root css-1u53qea']/p[2])[2]";
+		
+		String bookMarkicon = "//*[name()='svg' and @data-testid='BookmarkBorderIcon']";
+		String mightLikeProductDescription = "(//div[contains(@class,'css-3delsl')])";
+		String mightLikeProductNames = "(//div[contains(@class,'css-kgu7cg')])";
+		String mightLikeallproduct = "(//div[contains(@class,'css-169jllx')])";
+		String mightLikeimages = "(//div[contains(@class,'css-169jllx')])/span/span/img";
+		// String mightLike="(//div[normalize-space()='We found other content you might like'])";
+
+		public void articlesPresence() throws InterruptedException {
+		  Action.implicitWait(getDriver(), 10); 
+		  //WebElement MightLike1 =getDriver().findElement(By.xpath(mightLike1));
+		  //Action.scrollByVisibilityOfElement(getDriver(), MightLike1);
+		  
+		  List<WebElement> MightLikeallproduct = getDriver().findElements(By.xpath(mightLikeallproduct));
+		  int n = MightLikeallproduct.size(); System.out.println(n +" Articles should be present in Might Like section"); 
+		  int count5 =0;
+		  List<WebElement> MightLikeimages = getDriver().findElements(By.xpath(mightLikeimages));
+		  int x = MightLikeimages.size(); System.out.println(x+ " Articles should be present in Might Like section"); //Thread.sleep(2000);
+		  if(x==n) 
+		  {for (WebElement i : MightLikeimages) {
+		  Action.mouseOverElement(getDriver(), i); 
+		  //Action.explicitWait(getDriver(),i, Duration.ofSeconds(5)); 
+		  //Thread.sleep(1000); 
+		  if(i.getAttribute("srcset").contains("amazonaws.com")) { count5++; } } 
+		  if (count5 == n) { 
+		System.out.println("All " + count5 +  " Articles images are present"); } 
+		  else { softAssert.assertTrue(false, n - count5 + " Article Images are not present  "); } } else {
+		  System.out.println(n-x + " Images are not present ");
+		  softAssert.assertTrue(false, +n-x+" Images are not present "); }
+		  
+		  List<WebElement> MightLikeProductName=
+		  getDriver().findElements(By.xpath(mightLikeProductNames)); int y =
+		  MightLikeProductName.size(); 
+		  if(y==n)
+		  {System.out.println("All "+ y +" Article Product Names are present");} 
+		  else { System.out.println(n-y + "   Article Product Names are not present ");
+		  softAssert.assertTrue(false, +n-y+"  Article Product Names are not present "); }
+		  
+		  List<WebElement> MightLikeProductDescription=
+		  getDriver().findElements(By.xpath(mightLikeProductDescription)); int z =
+		  MightLikeProductDescription.size(); if(z==n) {System.out.println("All "+ z
+		  +" Article Product description are present");} else { System.out.println(n-z
+		  + "  Article Product description are not present ");
+		  softAssert.assertTrue(false,
+		  +n-z+"  Articleff Product description are not present "); }
+		  
+		  List<WebElement> BookMarkicon
+		  =getDriver().findElements(By.xpath(bookMarkicon)); int c =
+		  BookMarkicon.size(); if(c==n) {System.out.println("All "+ c
+		  +"  BookMarkicon are present");} else { System.out.println(n-c +
+		  " BookMarkicon are not present "); softAssert.assertTrue(false,
+		  +n-c+" BookMarkicon are not present "); }
+		  
+		  }
+	
+	
+	String grandTotal = "(//p[@id='sg-checkoutGrandTotalPrice'])[1]";
+	String subtotal = "(//p[@id='sg-checkoutSubtotalPrice'])[1]";
+	String totalQty = "(//p[@id='sg-yourCartItemsNumber'])[2]";
 	String expandIcon = "(//*[name()='svg' and @data-testid='ExpandMoreIcon'])[8]";
-	String qty = "((//div[@class='MuiBox-root css-z2wu8w'])/div[2]/p[2])";
-	String cartPrdPrice ="(//div[@class='MuiBox-root css-ipeiv2']/p)"; 
+	String qty = "(//p[@id='sg-cartCardCartProductTitle'])";
+	String cartPrdPrice ="(//p[@id='sg-cartCardOfferPrice'])[2]"; 
 	public void quantityVerification() throws InterruptedException {
 		
 		WebElement ExpandIcon =getDriver().findElement(By.xpath(expandIcon));

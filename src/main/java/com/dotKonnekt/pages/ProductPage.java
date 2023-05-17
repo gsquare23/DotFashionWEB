@@ -23,9 +23,9 @@ public class ProductPage extends BaseClass {
 		PageFactory.initElements(getDriver(), this);
 	}
 	SoftAssert softAssert = new SoftAssert();
-	String productName = "//div[contains(@class,'css-13875v1')]";
-	String Bigimage = "(//div[@class='magnifier_container MuiBox-root css-1pujjbg']//img)[2]";
-	String smallImage = "(//div[@class='css-j6afl0']//img)[2]";
+	String productName = "//div[@id = 'sg-productDetailsCardProductTitle']";
+	String Bigimage = "//img[@id='sg-imageMagnifierImage']";
+	String smallImage = "//img[@id='sg-imageStackImage']";
 
 	// SoftAssert softAssert = new SoftAssert();
 	public void productDetailVerification() throws InterruptedException {
@@ -74,8 +74,8 @@ public class ProductPage extends BaseClass {
 		}
 	}
 
-	String cartButton = "//div[@class='MuiBox-root css-gw6fln']/button[1]";
-	String stockCount = "//div[@class='MuiBox-root css-8hvv1y']/div/input";
+	String cartButton = "//button[@id='sg-addToCartButton']";
+	String stockCount = "//input[@id='sg-counterCountInput']";
 
 	public void availabiltyStock() {
 
@@ -209,10 +209,10 @@ public class ProductPage extends BaseClass {
 	}
 	
 	
-	String descrtiption = "//div[@class='MuiTypography-root MuiTypography-body1 css-6oii7y']";       
+	String descrtiption = "//div[@id='sg-productDetailsCardProductDescription']";       
 	public void readMoreFunctionality() {
 		WebElement readMoreBtn = getDriver()
-				.findElement(By.xpath("//div[@class='MuiTypography-root MuiTypography-body1 css-1fuu61l']"));
+				.findElement(By.xpath("//div[@id='sg-productDetailsCardReadAllLink']"));
 		String text = getDriver()
 				.findElement(By.xpath(descrtiption)).getText();
 		if (!text.isEmpty()) {
@@ -247,9 +247,9 @@ public class ProductPage extends BaseClass {
 		}
 	}
 	
-	String allProducts ="(//div[contains(@class,'css-1ho6dvz')])";
+	String allProducts ="(//div[@id='sg-productCardWrapper' and @type ='Products'])";
 	public void productTiltProducts() {
-		String productYouMightLikeSection = "//div[normalize-space()='We found other products you might like']";
+		String productYouMightLikeSection = "//div[@id='sg-recomendationProductCustomWrapper']";
 		WebElement products = getDriver().findElement(By.xpath(productYouMightLikeSection));
 		Action.scrollByVisibilityOfElement(getDriver(), products);
 		
@@ -317,22 +317,28 @@ public class ProductPage extends BaseClass {
 	
 	
 	
-	String allproduct = "(//div[@class='swiper-wrapper'])[1]/div/div";
+	//String allproduct = "(//div[@id='sg-productCardWrapper' and @type ='Products'])";
 	String carticon = "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']";
 	String wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
+	String quickview = "//p[@id='sg-quickViewButton']";
 	String discountedPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
-	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1jw05cp']";
-	String productsName = "(//div[@class='swiper-wrapper'])[1]/div/div/div/div[1]";
-	String images = "(//div[@class='swiper-wrapper'])[1]/div/div/span/img";
+	String actualPrice = "//div[@id='productCardContentPriceTile']";
+	String productsName = "(//div[@id='sg-productCardWrapper' and @type ='Products'])/div[1]/div[1]";
+	String images = "(//div[@id='sg-productCardWrapper' and @type ='Products'])/span/img";
 	
 
-	public void wefoundOtherSections() {
-		String productYouMightLikeSection = "//div[normalize-space()='We found other products you might like']";
+	public void wefoundOtherSections() throws InterruptedException {
+		
+		WebElement bodyTag = getDriver().findElement(By.tagName("body"));
+		Thread.sleep(1000);
+		//System.out.println(bodyTag.getText());
+		if(bodyTag.getText().contains("WE FOUND OTHER COURSES YOU MIGHT LIKE") || bodyTag.getText().contains("WE FOUND OTHER PRODUCTS YOU MIGHT LIKE") ) {
+			
+		String productYouMightLikeSection = "//div[@id='sg-recomendationProductTitle']";
 		WebElement products = getDriver().findElement(By.xpath(productYouMightLikeSection));
 		Action.scrollByVisibilityOfElement(getDriver(), products);
 
-		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
+		List<WebElement> products1 = getDriver().findElements(By.xpath(allProducts));
 		int n = products1.size();
 		System.out.println(n);
 
@@ -403,85 +409,69 @@ public class ProductPage extends BaseClass {
 		}
 
 		softAssert.assertAll();
+		}
+		else {
+			System.out.println("We Found other Product/Courses you might like section is not present");
+			Assert.assertTrue(false, "We Found other Product/Courses you might like section is not present");
+			
+		}
 	}
 	
-	public void wefoundOtherSections1() {
-		String productYouMightLikeSection = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[5]/div[1]";
-		WebElement products = getDriver().findElement(By.xpath(productYouMightLikeSection));
-		Action.scrollByVisibilityOfElement(getDriver(), products);
-
-		List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
-		int n = products1.size();
-		System.out.println(n);
-
-		List<WebElement> image = getDriver().findElements(By.xpath(images));
-		int x = image.size();
-		int count4 = 0;
-		if (x == n) {
-			for(WebElement i : image) {
-				Action.mouseOverElement(getDriver(), i);
-				if(i.getAttribute("srcset").contains("shopify.com")) {
-					count4++;
-				}
-			}
-			if(count4 ==n ) {
-			System.out.println("All " + count4 + " images are present");}
-			else {
-				softAssert.assertTrue(false, n-count4+ " Images are not present  ");
-			}
-		} else {
-			System.out.println(n - x + " Images are not present ");
-			softAssert.assertTrue(false, +n - x + " Images are not present ");
-		}
-
-		List<WebElement> productName1 = getDriver().findElements(By.xpath(productsName));
-		int j = productName1.size();
-		if (j == n) {
-			System.out.println("All Products name are present");
-		} else {
-			System.out.println(n - j + " Products name are not present ");
-			softAssert.assertTrue(false, +n - j + " Products name are not present ");
-		}
-
-		List<WebElement> productActPrice = getDriver().findElements(By.xpath(actualPrice));
-		int z = productActPrice.size();
-		if (z == n) {
-			System.out.println("All Actual Prices are present");
-		} else {
-			System.out.println(n - z + " Actual Prices are not present ");
-			softAssert.assertTrue(false, n - z + " Actual Prices are not present ");
-		}
-
-		List<WebElement> quickviewlink = getDriver().findElements(By.xpath(quickview));
-		int i = quickviewlink.size();
-		if (i == n) {
-			System.out.println("All Quick View links are present");
-		} else {
-			System.out.println(n - i + " Quick View links are not present ");
-			softAssert.assertTrue(false, n - i + " Quick View links are not present ");
-		}
-
-		List<WebElement> carticon1 = getDriver().findElements(By.xpath(carticon));
-		int c = carticon1.size();
-		if (c == n) {
-			System.out.println("All carticon are present");
-		} else {
-			System.out.println(n - c + " carticon are not present ");
-			softAssert.assertTrue(false, +n - c + " carticon are not present ");
-		}
-
-		List<WebElement> wishlist1 = getDriver().findElements(By.xpath(wishlist));
-
-		int d = carticon1.size();
-		if (d == n) {
-			System.out.println("All Wishlist icon are present");
-		} else {
-			System.out.println(n - d + " Wishlist icon are not present ");
-			softAssert.assertTrue(false, +n - c + " Wishlist icon are not present ");
-		}
-
-		softAssert.assertAll();
-	}
+	/*
+	 * public void wefoundOtherSections1() { String productYouMightLikeSection =
+	 * "/html[1]/body[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[5]/div[1]";
+	 * WebElement products =
+	 * getDriver().findElement(By.xpath(productYouMightLikeSection));
+	 * Action.scrollByVisibilityOfElement(getDriver(), products);
+	 * 
+	 * List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
+	 * int n = products1.size(); System.out.println(n);
+	 * 
+	 * List<WebElement> image = getDriver().findElements(By.xpath(images)); int x =
+	 * image.size(); int count4 = 0; if (x == n) { for(WebElement i : image) {
+	 * Action.mouseOverElement(getDriver(), i);
+	 * if(i.getAttribute("srcset").contains("shopify.com")) { count4++; } }
+	 * if(count4 ==n ) { System.out.println("All " + count4 +
+	 * " images are present");} else { softAssert.assertTrue(false, n-count4+
+	 * " Images are not present  "); } } else { System.out.println(n - x +
+	 * " Images are not present "); softAssert.assertTrue(false, +n - x +
+	 * " Images are not present "); }
+	 * 
+	 * List<WebElement> productName1 =
+	 * getDriver().findElements(By.xpath(productsName)); int j =
+	 * productName1.size(); if (j == n) {
+	 * System.out.println("All Products name are present"); } else {
+	 * System.out.println(n - j + " Products name are not present ");
+	 * softAssert.assertTrue(false, +n - j + " Products name are not present "); }
+	 * 
+	 * List<WebElement> productActPrice =
+	 * getDriver().findElements(By.xpath(actualPrice)); int z =
+	 * productActPrice.size(); if (z == n) {
+	 * System.out.println("All Actual Prices are present"); } else {
+	 * System.out.println(n - z + " Actual Prices are not present ");
+	 * softAssert.assertTrue(false, n - z + " Actual Prices are not present "); }
+	 * 
+	 * List<WebElement> quickviewlink =
+	 * getDriver().findElements(By.xpath(quickview)); int i = quickviewlink.size();
+	 * if (i == n) { System.out.println("All Quick View links are present"); } else
+	 * { System.out.println(n - i + " Quick View links are not present ");
+	 * softAssert.assertTrue(false, n - i + " Quick View links are not present "); }
+	 * 
+	 * List<WebElement> carticon1 = getDriver().findElements(By.xpath(carticon));
+	 * int c = carticon1.size(); if (c == n) {
+	 * System.out.println("All carticon are present"); } else { System.out.println(n
+	 * - c + " carticon are not present "); softAssert.assertTrue(false, +n - c +
+	 * " carticon are not present "); }
+	 * 
+	 * List<WebElement> wishlist1 = getDriver().findElements(By.xpath(wishlist));
+	 * 
+	 * int d = carticon1.size(); if (d == n) {
+	 * System.out.println("All Wishlist icon are present"); } else {
+	 * System.out.println(n - d + " Wishlist icon are not present ");
+	 * softAssert.assertTrue(false, +n - c + " Wishlist icon are not present "); }
+	 * 
+	 * softAssert.assertAll(); }
+	 */
 	
 	
 	String faq = "//div[normalize-space()='FAQ']";
@@ -496,7 +486,9 @@ public class ProductPage extends BaseClass {
 	public void faqSections() throws InterruptedException {
 		
 		WebElement bodyTag = getDriver().findElement(By.tagName("body"));
-		if(bodyTag.getText().contains("FAQs")) {
+		Thread.sleep(1000);
+		System.out.println(bodyTag.getText());
+		if(bodyTag.getText().contains("FAQ")) {
 		
 		WebElement faqs = getDriver().findElement(By.xpath(faq));
 		Action.scrollByVisibilityOfElement(getDriver(), faqs);
@@ -555,15 +547,17 @@ public class ProductPage extends BaseClass {
 	
 	
 	String bookMarkicon = "//*[name()='svg' and @data-testid='BookmarkBorderIcon']";
-	String mightLikeProductDescription = "(//div[@class='swiper-wrapper'])[2]/div/div/div/div[2]";
-	String mightLikeProductNames = "(//div[@class='swiper-wrapper'])[2]/div/div/div/div[1]";
-	String mightLikeallproduct = "(//div[@class='swiper-wrapper'])[2]/div/div";
-	String mightLikeimages = "(//div[@class='swiper-wrapper'])[2]/div/div/span/img";
+	String mightLikeProductDescription = "(//div[@id='sg-productCardWrapper' and @type ='article' ])/div/div[2]";
+	String mightLikeProductNames = "(//div[@id='sg-productCardWrapper' and @type ='article' ])/div/div[1]";
+	String mightLikeallproduct = "(//div[@id='sg-productCardWrapper' and @type ='article' ])";
+	String mightLikeimages = "(//div[@id='sg-productCardWrapper' and @type ='article' ])/span/span/img";
 	String mightLike1 = "(//div[normalize-space()='We found other content you might like'])";
 	public void weFoundOtherContentYouMightLike() throws InterruptedException {
 		
 		WebElement bodyTag = getDriver().findElement(By.tagName("body"));
-		if(bodyTag.getText().contains("FAQ")) {
+		Thread.sleep(2000);
+		//System.out.println(bodyTag.getText());
+		if(bodyTag.getText().contains("WE FOUND OTHER CONTENT YOU MIGHT LIKE")) {
 		
 		Action.implicitWait(getDriver(), 10);
 			WebElement MightLike1 = getDriver().findElement(By.xpath(mightLike1));
@@ -626,11 +620,11 @@ public class ProductPage extends BaseClass {
 			
 		}
 	}
-	String readAllReviews = "//div[@class='MuiBox-root css-18u70he']/a";
-	String rating = "(//div[@class='MuiBox-root css-yeouz0'])[1]";
-	String reviewscount = "(//div[@class='MuiBox-root css-yeouz0'])[1]/div";
-	String actPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-1vukegx']";
-	String basic_tabs = "//div[@aria-label='basic tabs example']/button";
+	String readAllReviews = "//div[@id='productDetailsProductReviewWrapper']/a";
+	String rating = "(//div[@id='sg-starRatingWrapper'])[1]";
+	String reviewscount = "(//div[@id='sg-starRatingWrapper'])[1]/div";
+	String actPrice = "//div[@id='sg-productDetailsCardProductPrice']";
+	String basic_tabs = "//button[@id='sg-tabsComponentTab']";
 	public void productElementsVerification() {
 		WebElement ProductName = getDriver().findElement(By.xpath(productName));
 		if(ProductName.isDisplayed()) {
@@ -692,8 +686,8 @@ public class ProductPage extends BaseClass {
 		
 		
 		
-		String returnText = "//p[contains(@class ,'css-zwonm6')]";
-		String shippingText = "//p[@class='MuiTypography-root MuiTypography-body1 css-zwonm6']";
+		String returnText = "//p[contains(@id,'sg-shippingDetailsCommonDesc')]";
+		String shippingText = "//p[@id='sg-shippingDetailsCommonDesc']";
 		List<WebElement> Values = getDriver().findElements(By.xpath(basic_tabs));
 		System.out.println(Values.size());
 		if(Values.size()==2) {
@@ -724,7 +718,7 @@ public class ProductPage extends BaseClass {
 				
 	}
 	//String Value = "//li[@role = 'option' and @data-value = '"+value+"']";
-	String dropdown ="//div[contains(@class,'css-1maxgwy')]";
+	String dropdown ="//div[contains(@id,'sg-productVariantSelect')]";
 	public void productDropdown(String value) throws InterruptedException {
 		WebElement Dropdown =  getDriver().findElement(By.xpath(dropdown));
 		Action.click(getDriver(), Dropdown);

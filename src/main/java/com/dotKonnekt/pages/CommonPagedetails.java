@@ -21,22 +21,26 @@ import com.dotKonnekt.utility.Log;
 public class CommonPagedetails extends BaseClass {
 	
 	String searchBox = "//input[@placeholder='Search']";
-	String clickButton=  "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1a6giau']//*[name()='svg']";
-	String welcomeTxt1 = "//div[@class='MuiBox-root css-6pef4c']/p[1]";
-	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1ceu20y'])[1]";
+	String clickButton=  "//button[@id='sg-autoCompleteSearchBarSubmitBtn']";
+	String welcomeTxt1 = "//p[@id='sg-iconsHeaderWelcomeTitle']";
+	String accessTxt ="(//p[@id='sg-iconsHeaderWelcomeDesc'])[1]";
 	String loginTxt = "(//button[normalize-space()='LOGIN/SIGNUP'])[1]";
-	String categoryElements = "//div[@class='MuiBox-root css-1y4n82h']/button";
-	String Author = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-1r6qczh']";
-	String P_Date = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-3odfiv']";
-	String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
+	String categoryElements = "//button[@id='sg-categoryItem']";
+	//String Author = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-1r6qczh']";
+	//String P_Date = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-3odfiv']";
+	String bd_Home = "(//a[@id='sg-breadcrum0 sg-BreadCrumbLink'])";
 	String loginPageTxt = "//input[@placeholder='Email']";
-	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
+	String likeIcon = "(//*[name()='svg'][@id='sg-thumbUpButtonOutline'])[1]";
+	String cart = "//img[@id='iconsHeaderCartImg']";
+	String user = "(//img[@id='sg-iconsHeaderActiveUser'])";
+	String logo = "(//img[@id='sg-headerLogoImg'])";
+	
 	public CommonPagedetails() {
 		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public boolean valaidateLogo() {
-		boolean result  = getDriver().findElement(By.xpath("(//img[@alt='logo'])[1]")).isDisplayed();
+		boolean result  = getDriver().findElement(By.xpath(logo)).isDisplayed();
 		return result;
 	}
 	
@@ -46,31 +50,31 @@ public class CommonPagedetails extends BaseClass {
 	}
 	
 	public boolean validateCartButton() {
-		boolean result  = getDriver().findElement(By.xpath("//div[@class='MuiBox-root css-1p3qk0r']//img[@alt='logo']")).isDisplayed();
+		boolean result  = getDriver().findElement(By.xpath(cart)).isDisplayed();
 		return result;
 	}
 	public boolean validateUserButton() {
-		boolean result  = getDriver().findElement(By.xpath("(//img[@alt ='logo'])[4]")).isDisplayed();
+		boolean result  = getDriver().findElement(By.xpath(user)).isDisplayed();
 		return result;
 	}
 	
-	String cart = "//div[@class='MuiBox-root css-1p3qk0r']//img[@alt='logo']";
+	//String cart = "//div[@class='MuiBox-root css-1p3qk0r']//img[@alt='logo']";
 	
 	public void validateCartIconFunctionality() {
 		WebElement cartIcon  =  getDriver().findElement(By.xpath(cart));
 		Action.click(getDriver(), cartIcon);
-		String totalItmesTxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-1bbjh9u']")).getText();
+		String totalItmesTxt = getDriver().findElement(By.xpath("//p[@id='sg-floatingCartTotalText']")).getText();
 		Assert.assertEquals(totalItmesTxt, "Total item(s):");
-		String shippingtxt = getDriver().findElement(By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-5rxpp3']")).getText();
+		String shippingtxt = getDriver().findElement(By.xpath("//p[@id='sg-orderWarningText']")).getText();
 		Assert.assertEquals(shippingtxt, "Shipping and tax will be calculated on checkout");
-		boolean result = getDriver().findElement(By.xpath("(//button[@type='button'][normalize-space()='checkout'])[1]")).isEnabled();
+		boolean result = getDriver().findElement(By.xpath("(//button[@id='sg-orderCommonButton'])")).isEnabled();
 		if(result) 
 			Assert.assertTrue(false, "Checkout is enabled it should be disabled ");
 	}
 	
 	
-	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-64acg5']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-1awxnbv']";
+	String recentSearch = "(//p[@id='sg-autoCompleteSearchTypography'])";
+	String trending = "//p[@id='sg-autoCompleteSearchTypography3']";
 	public void validateSeachFunctionality(String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
 		
@@ -96,7 +100,8 @@ public class CommonPagedetails extends BaseClass {
 	}
 	//String welcomeTxt = "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'])[1]";
 	public void UserButtonFunctionality(String Title) throws InterruptedException {
-		getDriver().findElement(By.xpath("//div[@class='MuiBox-root css-tap1yw']//img[@alt='logo']")).click();
+		WebElement userButton = getDriver().findElement(By.xpath(user));
+		Action.click(getDriver(), userButton);
 		String welcomeText = getDriver().findElement(By.xpath(welcomeTxt1)).getText();
 		Assert.assertEquals(welcomeText, "Welcome", "Welcome Text is not present");
 		Log.info("Successfully verified the Welcome Text Presence");
@@ -120,25 +125,36 @@ public class CommonPagedetails extends BaseClass {
 	}
 	
 	public void logoFunctionality(String title) {
-		getDriver().findElement(By.xpath("//div[@class='MuiBox-root css-1t8m3ns']//img[@alt='Header Logo']")).click();
+		
+	WebElement pageLogo = 	getDriver().findElement(By.xpath(logo));
+	String url  = getDriver().getCurrentUrl();
+	if(url.contains("dotbeauty")) {
+	Action.click(getDriver(), pageLogo);
 		Action.explicitWaitbyTitle(getDriver(), "dot beauty", Duration.ofSeconds(10));
 		String recipeTitle = getDriver().getTitle();
-		Assert.assertEquals(recipeTitle, "dot beauty"); 
+		Assert.assertEquals(recipeTitle, "dot beauty"); }
+	else {
+		Action.click(getDriver(), pageLogo);
+		Action.explicitWaitbyTitle(getDriver(), "dotfashion", Duration.ofSeconds(10));
+		String recipeTitle = getDriver().getTitle();
+		Assert.assertEquals(recipeTitle, "dotfashion");
+	}
 		Log.info("LogoFunctionalityVerification Works perfectly");
 		
 		getDriver().navigate().back();
 		Action.explicitWaitbyTitle(getDriver(), title, Duration.ofSeconds(10));
 	}
 	
-	public String getTitle() {
-		String title = getDriver().getTitle();
-		return title;
-	}
 	
-	String socialMediacIcon = "(//div[@class='css-1lwz3ky']/div/a)";
+	  public String getTitle() 
+	  { String title = getDriver().getTitle();
+	  return title; }
+	 
+	
+	String socialMediacIcon = "(//div[@id='sg-footerSubBox3']/a)";
 	String newsLetter = "//*[name()='svg'][@data-testid = 'ClearIcon']";
-	String elements = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1ywue4y'])";
-	String pagefooter = "//div[@class='MuiBox-root css-1ofqig9']";
+	String elements = "(//p[@id='sg-footerNewsLatterText'])";
+	String pagefooter = "//div[@id='sg-footerBox']";
 	public void PageFooterLinks() throws InterruptedException {
 		
 		WebElement Pagefooter = getDriver().findElement(By.xpath(pagefooter));

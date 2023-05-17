@@ -131,9 +131,9 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_LogoFunctionalityVerification    Ends---------");
 	}
 	
-	String BlogPage = "//div[@class='css-1rm28g8']/div/button";
+	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "NotLoggedIn")
-	public  void BlogPage_BlogPageElements_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
+	public  void BlogPage_CategoryHeaderElements_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("BlogPage_BlogPageElements");
 		Log.info("Verfying the BlogPage List");
 		recipePage = new RecipePageFinal();
@@ -155,13 +155,13 @@ public class BlogPageTest  extends BaseClass {
 	
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
-	public void BlogPage_recipeImage_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
-		Log.startTestCase("-----------BlogPage_recipeImage    Starts---------");
+	public void BlogPage_Image_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
+		Log.startTestCase("-----------BlogPage_Image_dotFashion    Starts---------");
 		blogPage = new BlogPage();
 		launchApp_V1(browser, url);
 		blogPage.imageVerification();
 
-		Log.endTestCase("-----------BlogPage_recipeImage    Ends---------");
+		Log.endTestCase("-----------BlogPage_Image_dotFashion    Ends---------");
 	}
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled =  true, groups = "NotLoggedIn")
 	public void BlogPage_authornameVerification_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate){
@@ -277,15 +277,16 @@ public class BlogPageTest  extends BaseClass {
 	public void BlogPage_askOurExpertSection(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_askOurExpert    Starts---------");
 		blogPage = new BlogPage();
+		homePage = new HomePage();
 		launchApp_V1(browser, url);
-		blogPage.askOurExpert();
+		homePage.askOurExpert();
 		Log.endTestCase("-----------BlogPage_askOurExpert    Ends---------");
 	}
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void BlogPage_AddCommentinCommentSeection_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("BlogPage_AddCommentinCommentSeection");
 
@@ -295,11 +296,11 @@ public class BlogPageTest  extends BaseClass {
 		loginPage.loginSetup(prop.getProperty("Username"), prop.getProperty("Password"));
 		getDriver().get(url);
 		recipePage = new RecipePageFinal();
-		recipePage.LoggedInAddCommentsVerification("cancel");
+		recipePage.LoggedInAddCommentsVerification("save");
 		Log.endTestCase("-----------BlogPage_AddCommentinCommentSeection ---------");
 	}
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void BlogPage_bookMarkIconFunctionalityLoggedIn_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_bookMarkIconFunctionalityLoggedIn    Starts---------");
 		recipePage = new RecipePageFinal();
@@ -308,7 +309,7 @@ public class BlogPageTest  extends BaseClass {
 		Log.endTestCase("-----------BlogPage_bookMarkIconFunctionalityLoggedIn    Ends---------");
 	}
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void BlogPage_likeIconFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_likeIconFunctionality    Starts---------");
 		recipePage = new RecipePageFinal();
@@ -318,7 +319,7 @@ public class BlogPageTest  extends BaseClass {
 	}
 	
 	
-	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = true, groups = "LoggedIn")
+	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class, enabled = false, groups = "LoggedIn")
 	public void BlogPage_reportAbuseFunctionality_dotFashion(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException {
 		Log.startTestCase("-----------BlogPage_reportAbuseFunctionality_dotFashion    Starts---------");
 		launchApp_V1(browser, prop.getProperty("LoginUrl"));

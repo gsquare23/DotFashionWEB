@@ -37,7 +37,7 @@ public class CategoryPage extends BaseClass{
 	}
 	
 	
-	//String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a[1]";
+	
 	String bd_Category = "//a[@class='MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-18zeukv']";
 	public String breadCrumbFunctionality() {
 		String bd1text = getDriver().findElement(By.xpath(bd_Home)).getText();

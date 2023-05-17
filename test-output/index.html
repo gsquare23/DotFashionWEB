@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\garvi\AppData\Local\Temp\testng-eclipse--342524455\testng-customsuite.xml</span>
+                    <span>C:\Users\garvi\AppData\Local\Temp\testng-eclipse-9666364\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.dotKonnekt.tests.RecipePageTest" class="method navigator-link" hash-for-method="verifyTitle">verifyTitle</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.dotKonnekt.tests.HomePageTest" class="method navigator-link" hash-for-method="TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)">TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,32 +121,40 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.dotKonnekt.tests.RecipePageTest</span>
+              <span class="class-name">com.dotKonnekt.tests.HomePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyTitle">
-                  </a> <!-- verifyTitle -->
-                  <span class="method-name">verifyTitle</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;com.dotKonnekt.pages.RecipePage.getTitle()&quot; because &quot;this.recipePage&quot; is null
-	at com.dotKonnekt.tests.RecipePageTest.verifyTitle(RecipePageTest.java:31)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+                  <a name="TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)">
+                  </a> <!-- TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/) -->
+                  <span class="method-name">TitleVerification</span>
+                  <span class="parameters">(Home Page,dot beauty,ChromeMobile,https://uidotfashion.sangria.tech/)</span>
+                  <div class="stack-trace">java.lang.AssertionError: Title Not Verified expected [dot beauty] but found [dotfashion]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at com.dotKonnekt.tests.HomePageTest.TitleVerification(HomePageTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -166,7 +174,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\garvi\AppData\Local\Temp\testng-eclipse--342524455\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\garvi\AppData\Local\Temp\testng-eclipse-9666364\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -175,7 +183,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.dotKonnekt.tests.RecipePageTest&quot;/&gt;
+      &lt;class name=&quot;com.dotKonnekt.tests.HomePageTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;TitleVerification&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.dotKonnekt.tests.HomePageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -199,6 +211,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">NotLoggedIn</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">TitleVerification</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -217,14 +237,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyTitle')
-data.setCell(0, 2, 'com.dotKonnekt.tests.RecipePageTest')
-data.setCell(0, 3, 26);
+data.setCell(0, 1, 'TitleVerification')
+data.setCell(0, 2, 'com.dotKonnekt.tests.HomePageTest')
+data.setCell(0, 3, 10464);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 ms</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -239,9 +259,52 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">19 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.dotKonnekt.tests.HomePageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">HomePage_CartFucntionalityVerification</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_OurStorySection</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_SendAMessageFunctionalityGuestUser</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_SearchFucntionalityVerification</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_SendAMessageFunctionalityLoggedInUser</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductCartIconLoggedUSer</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_discountVoucherSection</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_aboveAboutUsSection</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_UserFunctionalityVerification</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_shoutOutFromCustomers</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_PageHeaderVerification</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_NewArrival</span>
+                <br/>
+                <span class="ignored-method-name">BrowserStack</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_askOurExpertSection</span>
+                <br/>
+                <span class="ignored-method-name">HomePage_ProductQuickviewVerification</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -250,30 +313,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.dotKonnekt.tests.RecipePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.dotKonnekt.tests.HomePageTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">loadConfig</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">377 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyTitle</span>
-                <span class="method-start">6214 ms</span>
+                <span class="method-name">TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)</span>
+                <span class="method-start">1511 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6245 ms</span>
+                <span class="method-start">11979 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">flush</span>
-                <span class="method-start">6311 ms</span>
+                <span class="method-start">12183 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

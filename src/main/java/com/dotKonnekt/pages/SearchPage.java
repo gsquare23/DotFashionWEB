@@ -27,16 +27,16 @@ public class SearchPage extends BaseClass{
 	}
 	
 	SoftAssert softAssert = new SoftAssert();
-	String pagination = "(//div[@class='MuiBox-root css-1sfz9yc']/nav/ul/li/button)";
-	String shopProducts = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-4 MuiGrid-grid-lg-4 MuiGrid-grid-xl-3 css-i25sow']/div";
-	String showingresult = "(//div[@class='MuiBox-root css-0'])[2]/p";
+	String pagination = "(//div[@id='sg-paginationBox']/nav/ul/li/button)";
+	String shopProducts = "//div[@id='sg-productCardWrapper']";
+	String showingresult = "(//div[@id='sg-tabsComponentBox2'])/p";
 	String noresult = "//p[@class='MuiTypography-root MuiTypography-body1 css-3iqdok']";
-	String shoptab = "//div[@aria-label='basic tabs example']/button[1]";
-	String articletab = "//div[@aria-label='basic tabs example']/button[2]";
+	String shoptab = "(//button[@id='sg-tabsComponentTab'])[1]";
+	String articletab = "(//button[@id='sg-tabsComponentTab'])[2]";
 	String clickButton=  "//*[name()='svg' and @data-testid='SearchOutlinedIcon']";
 	String searchBox = "//input[@placeholder='Search']";
-	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-64acg5']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-8s8b0g']";
+	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-2nr3zx']";
+	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-1awxnbv']";
 	public void validateSeachFunctionalityForShopTab(String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
 
@@ -246,10 +246,10 @@ public class SearchPage extends BaseClass{
 		}
 	
 	
-	String lowToHigh = "(//div[contains(@class,'css-177ic5c')])/ul/li[2]";
-	String actualPrice = "(//div[@class='MuiTypography-root MuiTypography-body1 css-1jw05cp'])";
-	String highToLow = "(//div[contains(@class,'css-177ic5c')])/ul/li[3]";
-	String recentlyAdded ="(//p[@class='MuiTypography-root MuiTypography-body1 css-c43tyy'])[5]";
+	String lowToHigh = "(//li[@id='sg-filter2MenuItem'])[2]";
+	String actualPrice = "(//div[@id='productCardContentPriceTile'])";
+	String highToLow = "(//li[@id='sg-filter2MenuItem'])[3]";
+	String recentlyAdded ="(//p[@id='sg-filter2Typography'])";
 	public void FilterByRecentlyAdded(String FilterOptions) throws InterruptedException {
 		WebElement RecentlyAdded = getDriver().findElement(By.xpath(recentlyAdded));
 		Action.scrollByVisibilityOfElement(getDriver(), RecentlyAdded);
