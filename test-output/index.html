@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\garvi\AppData\Local\Temp\testng-eclipse-9666364\testng-customsuite.xml</span>
+                    <span>C:\Users\garvi\AppData\Local\Temp\testng-eclipse--1300219166\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.dotKonnekt.tests.HomePageTest" class="method navigator-link" hash-for-method="TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)">TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.dotKonnekt.tests.ExperienceBuilder_selectContentTest" class="method navigator-link" hash-for-method="LeftMenusIcon(ExperienceBuilder, Sangria Command Center, Edge, https://csdotbeauty.sangria.tech/login)">LeftMenusIcon(ExperienceBuilder, Sangria Command Center, Edge, https://csdotbeauty.sangria.tech/login)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,22 +121,42 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.dotKonnekt.tests.HomePageTest</span>
+              <span class="class-name">com.dotKonnekt.tests.ExperienceBuilder_selectContentTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)">
-                  </a> <!-- TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/) -->
-                  <span class="method-name">TitleVerification</span>
-                  <span class="parameters">(Home Page,dot beauty,ChromeMobile,https://uidotfashion.sangria.tech/)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Title Not Verified expected [dot beauty] but found [dotfashion]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1577)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at com.dotKonnekt.tests.HomePageTest.TitleVerification(HomePageTest.java:41)
+                  <a name="LeftMenusIcon(ExperienceBuilder, Sangria Command Center, Edge, https://csdotbeauty.sangria.tech/login)">
+                  </a> <!-- LeftMenusIcon(ExperienceBuilder, Sangria Command Center, Edge, https://csdotbeauty.sangria.tech/login) -->
+                  <span class="method-name">LeftMenusIcon</span>
+                  <span class="parameters">(ExperienceBuilder,Sangria Command Center,Edge,https://csdotbeauty.sangria.tech/login)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[normalize-space()=&apos;Experience Builder&apos;]&quot;}
+  (Session info: MicrosoftEdge=113.0.1774.42)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [4285a11954ff165d89445e5a35fb2424, findElement {using=xpath, value=//span[normalize-space()=&apos;Experience Builder&apos;]}]
+Capabilities {acceptInsecureCerts: true, browserName: msedge, browserVersion: 113.0.1774.42, ms:edgeOptions: {debuggerAddress: localhost:65129}, msedge: {msedgedriverVersion: 113.0.1774.50 (8c198093ceda..., userDataDir: C:\Users\garvi\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65129/devtoo..., se:cdpVersion: 113.0.1774.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4285a11954ff165d89445e5a35fb2424
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dotKonnekt.pages.EB_selectContentPage.EB_login(EB_selectContentPage.java:85)
+	at com.dotKonnekt.tests.ExperienceBuilder_selectContentTest.LeftMenusIcon(ExperienceBuilder_selectContentTest.java:93)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,7 +194,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\garvi\AppData\Local\Temp\testng-eclipse-9666364\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\garvi\AppData\Local\Temp\testng-eclipse--1300219166\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -183,11 +203,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.dotKonnekt.tests.HomePageTest&quot;&gt;
+      &lt;class name=&quot;com.dotKonnekt.tests.ExperienceBuilder_selectContentTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;TitleVerification&quot;/&gt;
+          &lt;include name=&quot;LeftMenusIcon&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.dotKonnekt.tests.HomePageTest --&gt;
+      &lt;/class&gt; &lt;!-- com.dotKonnekt.tests.ExperienceBuilder_selectContentTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -215,7 +235,7 @@
               <span class="test-group-name">NotLoggedIn</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">TitleVerification</span>
+                <span class="method-in-group-name">LeftMenusIcon</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -237,14 +257,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TitleVerification')
-data.setCell(0, 2, 'com.dotKonnekt.tests.HomePageTest')
-data.setCell(0, 3, 10464);
+data.setCell(0, 1, 'LeftMenusIcon')
+data.setCell(0, 2, 'com.dotKonnekt.tests.ExperienceBuilder_selectContentTest')
+data.setCell(0, 3, 101999);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -259,49 +279,27 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.dotKonnekt.tests.HomePageTest</span>
+              <span class="ignored-class-name">com.dotKonnekt.tests.ExperienceBuilder_selectContentTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">HomePage_CartFucntionalityVerification</span>
+                <span class="ignored-method-name">ContentTileVerificationPresence</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_OurStorySection</span>
+                <span class="ignored-method-name">PreviewtheMagic</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_SendAMessageFunctionalityGuestUser</span>
+                <span class="ignored-method-name">Searchfunctionality</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn</span>
+                <span class="ignored-method-name">universalSearchBarFunctionality</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_SearchFucntionalityVerification</span>
+                <span class="ignored-method-name">LoginPage</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductCartIconGuestUSer</span>
+                <span class="ignored-method-name">addProductSectionverification</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_SendAMessageFunctionalityLoggedInUser</span>
+                <span class="ignored-method-name">noResultFoundTest</span>
                 <br/>
-                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductCartIconLoggedUSer</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingProductTileGuestUSer</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_discountVoucherSection</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_aboveAboutUsSection</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_UserFunctionalityVerification</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_endToEndGuestScenarioByClickingQuickViewGuestUSer</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_shoutOutFromCustomers</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_PageHeaderVerification</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_NewArrival</span>
-                <br/>
-                <span class="ignored-method-name">BrowserStack</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_askOurExpertSection</span>
-                <br/>
-                <span class="ignored-method-name">HomePage_ProductQuickviewVerification</span>
+                <span class="ignored-method-name">buildAnExperienceBoXElements</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -313,7 +311,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.dotKonnekt.tests.HomePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.dotKonnekt.tests.ExperienceBuilder_selectContentTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">loadConfig</span>
                 <span class="method-start">0 ms</span>
@@ -321,16 +319,16 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">TitleVerification(Home Page, dot beauty, ChromeMobile, https://uidotfashion.sangria.tech/)</span>
-                <span class="method-start">1511 ms</span>
+                <span class="method-name">LeftMenusIcon(ExperienceBuilder, Sangria Command Center, Edge, https://csdotbeauty.sangria.tech/login)</span>
+                <span class="method-start">1760 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">11979 ms</span>
+                <span class="method-name">teardown</span>
+                <span class="method-start">103771 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">flush</span>
-                <span class="method-start">12183 ms</span>
+                <span class="method-start">104029 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

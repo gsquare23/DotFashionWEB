@@ -40,16 +40,18 @@ public class HomePage extends BaseClass{
 	public void clickOnCategory() {
 		getDriver().findElement(By.xpath(skin)).click();
 	}
-	String allProduct = "((//div[@class='swiper-wrapper'])[2]/div/div)";
+	
+	String quickview = "(//div[@id='sg-quickViewButton'])";
+	String allProduct = "((//div[@id='sg-productCardWrapper']))";
 	String carticon = "(//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon'])";
 	String wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	String quickview = "(//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k'])";
-	String discountedPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
-	String actualPrice = "//div[@class='MuiTypography-root MuiTypography-body1 css-w6n1tq']";
-	String productsName = "(//div[@class='swiper-wrapper'])[2]/div/div/div/div[1]";
-	String images = "(//div[@class='swiper-wrapper'])[2]/div/div/span/img";
+	String addToCartButton = "(//button[@id='sg-productCardQuickViewText'])";
+	//String discountedPrice = "//div[@id='productCardContentPriceTile']";
+	String actualPrice = "//div[@id='productCardContentPriceTile']";
+	String productsName = "(//div[@id='sg-productCardContentTitle'])";
+	String images = "(//img[@id='sg-productCardImage2'])";
 	SoftAssert softAssert = new SoftAssert();
-	String newArrivalSection = "(//div[@class='MuiTypography-root MuiTypography-body1 css-m4divx'])[1]";
+	String newArrivalSection = "(//div[@id='sg-recomendationProductTitle'])[1]";
 	public void newArrival() throws InterruptedException {
 		WebElement NewArrivalSection  = getDriver().findElement(By.xpath(newArrivalSection));
 		Action.scrollByVisibilityOfElement(getDriver(), NewArrivalSection);
@@ -158,14 +160,14 @@ public class HomePage extends BaseClass{
 	
 	
 	
-	String thumbnailImage = "//div[@class='MuiAvatar-root MuiAvatar-circular css-1o7ikla']";
+	String thumbnailImage = "//div[@id='sg-testimonialCardAvatar']";
 	String thumbnail = "//*[name()='svg' and @data-testid='PersonIcon']";
-	String username = "//p[@class='MuiTypography-root MuiTypography-body1 css-1yy2u8t']";
+	String username = "//p[@id='sg-testimonialCardTitle']";
 	String quoted = "//*[name()='svg' and @data-testid='FormatQuoteIcon']";
-	String testmonialsText ="//p[@class='MuiTypography-root MuiTypography-body1 css-t2fddp']";
-	String testimonials= "//div[contains(@class,'css-1lo2wsk')]/div/div";
-	String shoutOutSection= "//div[contains(@class,'css-1lmxfwf')]";
-	String socialMediaIcon = "//div[@class='MuiBox-root css-1p3qk0r']/span/img";
+	String testmonialsText ="//p[@id='sg-testimonialCardContent']";
+	String testimonials= "//div[contains(@id,'sg-testimonialCardMainWrapper')]";
+	String shoutOutSection= "//div[contains(@id,'sg-homeTestimonialShoutOut')]";
+	String socialMediaIcon = "//img[@id='sg-testimonialCardSocialImg']";
 	public void shoutOut() {
 		WebElement ShoutOutSection  = getDriver().findElement(By.xpath(shoutOutSection));
 		Action.scrollByVisibilityOfElement(getDriver(), ShoutOutSection);
@@ -461,9 +463,10 @@ public class HomePage extends BaseClass{
 	
 	}
 	
-	String img = "//div[@class='MuiBox-root css-1002pp8']/span/img";
-	String aboutUsDesc  = "//p[@class='MuiTypography-root MuiTypography-body1 css-e5ptnh']";
-	String aboutUS = "//div[@class='MuiTypography-root MuiTypography-body1 css-7svzti']";
+	
+	String img = "//img[@id='sg-ourStoryImagePaths']";
+	String aboutUsDesc  = "//p[@id='sg-ourStoryDesc']";
+	String aboutUS = "//div[@id='sg-ourStoryLinkText']";
 	public void ourStory_AboutUs() throws InterruptedException {
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -483,13 +486,15 @@ public class HomePage extends BaseClass{
         }
         
 	}
-	String learnMoreBtn = "//div[@class='MuiBox-root css-1hvnrsa']/button";
-	String price ="//div[@class='MuiBox-root css-1hvnrsa']/p";
-	String date ="//div[@class='MuiBox-root css-12cavdm']/p[2]";
-	String courseInstructor = "//div[@class='MuiBox-root css-12cavdm']/p[1]";
-	String productname = "//div[@class='MuiBox-root css-1akadze']/div[2]";
-	String faceOils = "//div[@class='MuiBox-root css-1akadze']/div[1]";
-	String img1 = "//div[@class='MuiBox-root css-ibpw6x']/span/img";
+	
+	String category1 = "//div[@id='sg-courseStoryPreTitle']";
+	String learnMoreBtn = "//button[@id='btnAddToCart']";
+	String price ="//p[@id='sg-courseStoryFinalPrice']";
+	String date ="//p[@id='sg-courseStoryCreatedOn']";
+	String courseInstructor = "//p[@id='sg-courseStoryInstructorName']";
+	String productname = "//div[@id='sg-courseStoryTitle']";
+	String categoryN = "//div[@id='sg-courseStoryPreTitle']";
+	String img1 = "//img[@id='sg-courseStoryImage']";
 	public void aboveAboutSection() throws InterruptedException {
 
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -504,8 +509,8 @@ public class HomePage extends BaseClass{
 	        else {
 	        	Assert.assertTrue(false, "Image is not present in aboveAboutUsSection");
 	        }
-	        WebElement FaceOils = getDriver().findElement(By.xpath(faceOils));
-	        Assert.assertTrue(FaceOils.isDisplayed());
+	        WebElement Category1 = getDriver().findElement(By.xpath(category1));
+	        Assert.assertTrue(Category1.isDisplayed());
 	        Log.info("Successfully verified the BottomWear Description Presence");
 	        WebElement ProductName = getDriver().findElement(By.xpath(productname));
 	        Assert.assertTrue(ProductName.isDisplayed(), "Product Name is not present");
@@ -530,12 +535,12 @@ public class HomePage extends BaseClass{
 	      
 	        
 	}
-	String copyLogo  = "//div[@class='MuiBox-root css-263a40']//img[@alt='copylogo']";
-	String couponCode ="//p[contains(@class,'css-yrfjuq')]";
-	String copyHoliday ="//p[contains(@class,'css-51tpa0')]"; 
-	String giftTextDesc = "//p[contains(@class,'css-k0b2sd')]";
-	String giftText = "//p[contains(@class,'css-4mnsdu')]";
-	String voucherImage = "//div[@class='MuiBox-root css-8usfwt']/span/img";
+	String copyLogo  = "//img[@id='sg-adBannerCopyImg']";
+	String couponCode ="//p[contains(@id,'sg-adBannerCouponCode')][1]";
+	String copyHoliday ="//p[contains(@id,'sg-adBannerCouponTitle')][1]"; 
+	String giftTextDesc = "//p[contains(@id,'sg-adBannerSectionDesc1')]";
+	String giftText = "//p[contains(@id,'sg-adBannerSectionTitle1')]";
+	String voucherImage = "//img[@id='sg-adBannerImgPath']";
 	public void discountVoucher() {
 		WebElement VoucherImage = getDriver().findElement(By.xpath(voucherImage));
 		Action.scrollByVisibilityOfElement(getDriver(), VoucherImage);

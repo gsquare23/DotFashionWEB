@@ -42,6 +42,7 @@ public class Action extends BaseClass  {
 
 		Actions act = new Actions((WebDriver) webDriver);
 		act.moveToElement(ele).click().build().perform();
+		System.out.println("Successfully clicked on the element");
 
 	}
 

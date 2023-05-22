@@ -14,10 +14,10 @@
       <class name="com.dotKonnekt.tests.BlogPageTest">
         <methods>
           <include name="teardown"/>
-          <include name="BlogPage_ProductQuickviewVerification_dotFashion" invocation-numbers="0"/>
-          <include name="BlogPage_blogTitleVerification_dotFashion" invocation-numbers="0"/>
+          <include name="BlogPage_ProductTilesVerification_dotFashion" invocation-numbers="0"/>
           <include name="flush"/>
           <include name="loadConfig"/>
+          <include name="BlogPage_askOurExpertSection" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.dotKonnekt.tests.BlogPageTest -->
     </classes>

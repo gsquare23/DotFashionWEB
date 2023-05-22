@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>NotLoggedIn</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>24/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>26/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 19 10:01:43 IST 2023</td>
+<td>Started on:</td><td>Fri May 19 14:04:32 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>164 seconds (164829 ms)</td>
+<tr><td>Total time:</td><td>249 seconds (249660 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>NotLoggedIn </td>
 </tr><tr>
@@ -76,40 +76,87 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion()'><b>BlogPage_blogTitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]&quot;}
-  (Session info: chrome=111.0.5563.147)
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductTilesVerification_dotFashion()'><b>BlogPage_ProductTilesVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	-4 Actual Prices are not present  expected [true] but found [false],
+	-4 Wishlist icon are not present  expected [true] but found [false]
+	at com.dotKonnekt.pages.BlogPage.productImageVerification(BlogPage.java:247)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductTilesVerification_dotFashion(BlogPageTest.java:231)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace899589525", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace899589525'><pre>java.lang.AssertionError: The following asserts failed:
+	-4 Actual Prices are not present  expected [true] but found [false],
+	-4 Wishlist icon are not present  expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.dotKonnekt.pages.BlogPage.productImageVerification(BlogPage.java:247)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductTilesVerification_dotFashion(BlogPageTest.java:231)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>65</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_askOurExpertSection()'><b>BlogPage_askOurExpertSection</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#sg\-askExpertH2Bold&quot;}
+  (Session info: chrome=113.0.5672.93)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d846d5069fcee6b6541275e82a36897c, findElement {using=xpath, value=//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58892/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d846d5069fcee6b6541275e82a36897c
+Command: [5779d291d3ea114ca6b72b60f073d16c, findElement {using=id, value=sg-askExpertH2Bold}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53888}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53888/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5779d291d3ea114ca6b72b60f073d16c
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.BlogPage.blogTitleVerification(BlogPage.java:49)
-	at com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion(BlogPageTest.java:225)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dotKonnekt.pages.HomePage.askOurExpert(HomePage.java:249)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_askOurExpertSection(BlogPageTest.java:282)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1228179933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1228179933'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]&quot;}
-  (Session info: chrome=111.0.5563.147)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace312068212", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace312068212'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#sg\-askExpertH2Bold&quot;}
+  (Session info: chrome=113.0.5672.93)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d846d5069fcee6b6541275e82a36897c, findElement {using=xpath, value=//div[@class=&apos;MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-rhwwre&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58892/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d846d5069fcee6b6541275e82a36897c
+Command: [5779d291d3ea114ca6b72b60f073d16c, findElement {using=id, value=sg-askExpertH2Bold}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\garvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53888}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53888/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5779d291d3ea114ca6b72b60f073d16c
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -118,16 +165,16 @@ Session ID: d846d5069fcee6b6541275e82a36897c
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at com.dotKonnekt.pages.BlogPage.blogTitleVerification(BlogPage.java:49)
-	at com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion(BlogPageTest.java:225)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dotKonnekt.pages.HomePage.askOurExpert(HomePage.java:249)
+	at com.dotKonnekt.tests.BlogPageTest.BlogPage_askOurExpertSection(BlogPageTest.java:282)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -136,16 +183,16 @@ Session ID: d846d5069fcee6b6541275e82a36897c
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -157,52 +204,8 @@ Session ID: d846d5069fcee6b6541275e82a36897c
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>12</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion()'><b>BlogPage_ProductQuickviewVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td><div><pre>java.lang.AssertionError: Quick view is not working properly expected [true] but found [false]
-	at com.dotKonnekt.pages.BlogPage.productQuickView(BlogPage.java:538)
-	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion(BlogPageTest.java:252)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1693900057", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1693900057'><pre>java.lang.AssertionError: Quick view is not working properly expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at com.dotKonnekt.pages.BlogPage.productQuickView(BlogPage.java:538)
-	at com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion(BlogPageTest.java:252)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>5</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>13</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -213,125 +216,135 @@ Session ID: d846d5069fcee6b6541275e82a36897c
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_askOurExpertSection()'><b>BlogPage_askOurExpertSection</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>7</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
-<td></td>
-<td>12</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_authornameVerification_dotFashion()'><b>BlogPage_authornameVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>2</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_SearchFucntionalityVerification_dotFashion()'><b>BlogPage_SearchFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>5</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_UserFunctionalityVerification_dotFashion()'><b>BlogPage_UserFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogPageElements_dotFashion()'><b>BlogPage_BlogPageElements_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>7</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageLoadtime()'><b>BlogPage_PageLoadtime</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_blogTitleVerification_dotFashion()'><b>BlogPage_blogTitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
 <td>3</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
-<td></td>
-<td>8</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_LogoFunctionalityVerification_dotFashion()'><b>BlogPage_LogoFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_addCommentVerification_dotFashion()'><b>BlogPage_addCommentVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>3</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_tagsVerification_dotFashion()'><b>BlogPage_tagsVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>2</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_recipeImage_dotFashion()'><b>BlogPage_recipeImage_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
-<td></td>
-<td>8</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductTilesVerification_dotFashion()'><b>BlogPage_ProductTilesVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>3</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
-<td></td>
-<td>8</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
 <td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BreadCrumbVerification_dotFashion()'><b>BlogPage_BreadCrumbVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
 <td>7</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_likeIconFunctionality1_dotFashion()'><b>BlogPage_likeIconFunctionality1_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_LogoFunctionalityVerification_dotFashion()'><b>BlogPage_LogoFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_addCommentVerification_dotFashion()'><b>BlogPage_addCommentVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>6</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_Image_dotFashion()'><b>BlogPage_Image_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
+<td></td>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
+<td></td>
+<td>8</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageHeaderVerification_dotFashion()'><b>BlogPage_PageHeaderVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
+<td></td>
+<td>6</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageHeaderVerification_dotFashion()'><b>BlogPage_PageHeaderVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
+<td></td>
+<td>6</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
 <td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
 <td></td>
 <td>8</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageHeaderVerification_dotFashion()'><b>BlogPage_PageHeaderVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
+<td></td>
+<td>6</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_TitleVerification_dotFashion()'><b>BlogPage_TitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>2</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
+<td></td>
+<td>12</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_SearchFucntionalityVerification_dotFashion()'><b>BlogPage_SearchFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>4</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_tagsVerification_dotFashion()'><b>BlogPage_tagsVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>2</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/best-bottom-wear-options-for-heavy-lower-body, Best Bottom Wear Options For Heavy Lower Body, Ankita Biswas, /24 Mar 2023/</td>
+<td></td>
+<td>14</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductQuickviewVerification_dotFashion()'><b>BlogPage_ProductQuickviewVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>13</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
 <td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ProductWishlistVerification_dotFashion()'><b>BlogPage_ProductWishlistVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
 <td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_authornameVerification_dotFashion()'><b>BlogPage_authornameVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_CategoryHeaderElements_dotFashion()'><b>BlogPage_CategoryHeaderElements_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>3</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_UserFunctionalityVerification_dotFashion()'><b>BlogPage_UserFunctionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
+<tr>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_CartFucntionalityVerification_dotFashion()'><b>BlogPage_CartFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td></td>
+<td>5</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
 <td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_ShareIconFunctionality_dotFashion()'><b>BlogPage_ShareIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
 <td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_TitleVerification_dotFashion()'><b>BlogPage_TitleVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_bookMarkIconFunctionality_dotFashion()'><b>BlogPage_bookMarkIconFunctionality_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/the-very-best-sports-bras-options-for-yogis-and-zumba-instructors-, The Very Best Sports Bras Options for yogis and Zumba instructors., Ankita Biswas, //</td>
 <td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>8</td>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 <tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_CartFucntionalityVerification_dotFashion()'><b>BlogPage_CartFucntionalityVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
+<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageLoadtime()'><b>BlogPage_PageLoadtime</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
 <td></td>
 <td>3</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_likeIconFunctionality1_dotFashion()'><b>BlogPage_likeIconFunctionality1_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_BlogVideoVerification_dotFashion()'><b>BlogPage_BlogVideoVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/reasons-why-you-should-get-yourself-a-leather-jacket, Reasons why you should get yourself a leather jacket, Ankita Biswas, /03 Apr 2023/</td>
-<td></td>
-<td>10</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
-<tr>
-<td title='com.dotKonnekt.tests.BlogPageTest.BlogPage_PageHeaderVerification_dotFashion()'><b>BlogPage_PageHeaderVerification_dotFashion</b><br>Test class: com.dotKonnekt.tests.BlogPageTest<br>Parameters: BlogPage, BlogPage, Chrome, https://uidotfashion.sangria.tech/blog/tips-to-dress-comfortably-while-practicing-yoga, Tips To Dress Comfortably While Practicing Yoga, Ankita Biswas, /12 Apr 2023/</td>
-<td></td>
-<td>4</td>
-<td>com.dotKonnekt.tests.BlogPageTest@6631f5ca</td></tr>
+<td>com.dotKonnekt.tests.BlogPageTest@65e98b1c</td></tr>
 </table><p>
 </body>
 </html>

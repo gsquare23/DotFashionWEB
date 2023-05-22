@@ -18,8 +18,8 @@ import com.dotKonnekt.utility.Log;
 public class LoginPage extends BaseClass {
 
 	LoginPage loginPage;
+	String clickButton=  "//*[name()='svg' and @data-testid='SearchOutlinedIcon']";
 	String searchBox = "//input[@placeholder='Search']";
-	String clickButton=  "//div[@class='MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1a6giau']//*[name()='svg']";
 	String welcomeTxt1 = "(//p[@class='MuiTypography-root MuiTypography-body1 css-sgxgum'])[1]";
 	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1yt7wtf'])[1]";
 	String loginTxt = "(//button[normalize-space()='LOGIN/SIGNUP'])[1]";

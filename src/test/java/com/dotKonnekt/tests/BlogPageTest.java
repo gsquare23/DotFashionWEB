@@ -26,16 +26,7 @@ public class BlogPageTest  extends BaseClass {
 	LoginPage loginPage;
 	HomePage homePage;
 	
-	String welcomeTxt = "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'])[1]";
-	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1yt7wtf'])[1]";
-	String loginTxt = "(//button[normalize-space()='LOGIN/SIGNUP'])[1]";
-	String BlogPageElements = "//div[@class='MuiBox-root css-1y4n82h']/button";
-	String Author = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-1r6qczh']";
-	String P_Date = "//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 css-3odfiv']";
-	String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
-	String loginPageTxt = "//input[@placeholder='Email']";
-	String likeIcon = "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-fwkm60'])[1]";
-	
+
 	
 	@Test(dataProvider = "BlogPage1", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
 	public void BlogPage_PageLoadtime(String page, String title, String browser, String url, String blogTitle, String AuthorName, String PublishDate) throws InterruptedException, IOException {

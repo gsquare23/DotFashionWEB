@@ -1,3 +1,3 @@
-2023-05-17 14:19:28 INFO  Log:10 - =====================================TitleVerification TEST START=========================================
-2023-05-17 14:19:32 INFO  Log:22 - ChromeMobileBrowser Launch is successfully Completed
-2023-05-17 14:19:38 INFO  Log:22 - Successfully clicked on the newsLetter
+2023-05-22 09:59:35 INFO  Log:10 - =====================================-----------ContentTileVerificationPresence    Starts--------- TEST START=========================================
+2023-05-22 10:00:40 INFO  Log:22 - EdgeBrowser Launch is successfully Completed
+2023-05-22 10:00:40 INFO  Log:22 - Login of Expeience Builder Started Successfully

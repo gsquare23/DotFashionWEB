@@ -121,7 +121,7 @@ String bd_Home = "(//li[@class='MuiBreadcrumbs-li'])/a";
 	
 	// Image verification and product name verification are happening in this function.
 	
-	  @Test(dataProvider = "ProductPage", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn") 
+	  @Test(dataProvider = "ProductPage1", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn") 
 	  public void ProductPage_ProductDetailVerification(String page, String title, String browser, String url) throws InterruptedException {
 		  Log.startTestCase("ProductPage_ProductDetailVerification");
 		  productPage = new ProductPage(); launchApp_V1(browser, url);

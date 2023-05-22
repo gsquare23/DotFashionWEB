@@ -262,18 +262,32 @@ public class RecipePageFinal extends BaseClass {
 			count++;
 		}
 		System.out.println(listElements);
-		//String delim = ",";
-		//String category = String.join(delim, listElements);
-		 //System.out.println(category);
-		String category = "WOMEN,MEN";
-		 List<String> myList = new ArrayList<String>(Arrays.asList(category.split(",")));
-		 System.out.println(myList);
-		 if(listElements.containsAll(myList) && myList.containsAll(listElements)) {
-				Log.info("Successfully verified that all the category elements are in correct form");
-			}
-			else {
-				Assert.assertTrue(false, "Category elements are not in correct form");
-			}
+		if(getDriver().getCurrentUrl().contains("dotfashion")) {
+			String category = "WOMEN,MEN";	
+			List<String> myList = new ArrayList<String>(Arrays.asList(category.split(",")));
+			System.out.println(myList);
+			 if(listElements.containsAll(myList) && myList.containsAll(listElements)) {
+					Log.info("Successfully verified that all the category elements are in correct form");
+				}
+				else {
+					Assert.assertTrue(false, "Category elements are not in correct form");
+				}
+			
+		}
+		else {
+			String category = "SKiN,DIY RECIPES,DOLL UP";
+			List<String> myList = new ArrayList<String>(Arrays.asList(category.split(",")));
+			System.out.println(myList);
+			 if(listElements.containsAll(myList) && myList.containsAll(listElements)) {
+					Log.info("Successfully verified that all the category elements are in correct form");
+				}
+				else {
+					Assert.assertTrue(false, "Category elements are not in correct form");
+				}
+		}
+		
+		 
+		 
 		  if (count != 0) { if (count == menuList.size())
 		  { System.out.println("Category elements are equal"); } else {
 		  System.out.println("Category elements are not equal");
@@ -920,4 +934,8 @@ public class RecipePageFinal extends BaseClass {
 				}
 				
 	}
+	
+	
+	
+	
 }
