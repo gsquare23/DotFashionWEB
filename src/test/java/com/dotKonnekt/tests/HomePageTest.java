@@ -1,5 +1,7 @@
 package com.dotKonnekt.tests;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -30,7 +32,7 @@ public class HomePageTest extends BaseClass{
 	
 	
 	@Test(dataProvider = "HomePage", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn") 
-	public void TitleVerification(String page, String title, String browser, String url) throws InterruptedException {
+	public void TitleVerification(String page, String title, String browser, String url) throws InterruptedException, MalformedURLException {
 		Log.startTestCase("TitleVerification");
 		commonPagedetails = new CommonPagedetails();
 		homePage = new HomePage();
@@ -118,7 +120,7 @@ public class HomePageTest extends BaseClass{
 		Log.startTestCase("-----------HomePage_NewArrival    Starts---------");
 		homePage = new HomePage();
 		launchApp_EB(browser, url);
-		homePage.NewsletterPopup__Alert();
+		//homePage.NewsletterPopup__Alert();
 		homePage.newArrival();
 		Log.endTestCase("-----------HomePage_NewArrival    Ends---------");
 	}
@@ -325,6 +327,7 @@ public class HomePageTest extends BaseClass{
 		Log.endTestCase("-----------HomePage_endToEndGuestScenarioByClickingProductTileLoggedIn    Ends---------");
 	}
 	
+
 	
 	
 	@Test

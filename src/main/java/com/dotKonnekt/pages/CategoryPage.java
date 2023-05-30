@@ -200,7 +200,7 @@ public class CategoryPage extends BaseClass{
 	
 	
 	String allproduct ="//div[contains(@id,'sg-productCardWrapper')]";
-	String quickview = "//p[@id='sg-quickViewButton']";
+	String quickview = "(//div[@id='sg-quickViewButton'])";
 	String discountedPrice = "//p[@id='sg-productCardDisablePriceText']";
 	String actualPrice = "//div[@id='productCardContentPriceTile']";
 	String productsName = "//div[@id='sg-productCardContentTitle']";
@@ -217,7 +217,7 @@ public class CategoryPage extends BaseClass{
 			WebElement filterBy = getDriver().findElement(By.xpath(filter));
 			Action.scrollByVisibilityOfElement(getDriver(), filterBy);
 			Log.info("Filter By is present");
-			String pagination = "(//nav[@id='sg-pagination'])[2]/ul/li/button";
+			String pagination = "((//nav[@id='sg-pagination'])[2]/ul/li/button)";
 			List<WebElement> Pagination = getDriver().findElements(By.xpath(pagination));
 			
 			if(Pagination.size()>=3 ) {
@@ -274,8 +274,8 @@ public class CategoryPage extends BaseClass{
 		if (x == n) {
 			for(WebElement j1 : image) {
 				Action.mouseOverElement(getDriver(), j1);
-				//j1.getAttribute("srcset").contains("shopify.com")
-				if((Boolean) ((JavascriptExecutor)getDriver()) .executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", j1)) {
+				
+				if(j1.getAttribute("srcset").contains("shopify.com")) {
 					count4++;
 				}
 			}
@@ -314,7 +314,7 @@ public class CategoryPage extends BaseClass{
 		}
 			
 				
-				if(Pagination.size()==0) {
+			else if(Pagination.size()==0) {
 					Log.info("Pagination is not present");
 					Thread.sleep(2000);
 					List<WebElement> products1 = getDriver().findElements(By.xpath(allproduct));
@@ -355,8 +355,7 @@ public class CategoryPage extends BaseClass{
 						for(WebElement j1 : image) {
 							Action.mouseOverElement(getDriver(), j1);
 							Thread.sleep(500);
-							//j1.getAttribute("srcset").contains("shopify.com")
-							if((Boolean) ((JavascriptExecutor)getDriver()) .executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", j1)) {
+							if(j1.getAttribute("srcset").contains("shopify.com")) {
 								count4++;
 							}
 						}
@@ -390,6 +389,8 @@ public class CategoryPage extends BaseClass{
 			}
 		else {Assert.assertTrue(false, "Products are not present in the New Arrival Sections");}
 		}
+		
+		else {System.out.println("No Products are available");}
 		softAssert.assertAll();
 	}
 		

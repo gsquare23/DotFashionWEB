@@ -24,29 +24,29 @@ public class MyAccountPage extends BaseClass{
 	
 	SoftAssert softAssert = new SoftAssert();
 	
-	String welcomeTxt1 = "(//p[@class='MuiTypography-root MuiTypography-body1 css-k1juyd'])[1]";
-	String accessTxt ="(//p[@class='MuiTypography-root MuiTypography-body1 css-1yt7wtf'])[1]";
+	String welcomeTxt1 = "//p[@id='sg-iconsHeaderWelcomeTitle']";
+	String accessTxt ="//p[@id='sg-iconsHeaderWelcomeDesc']";
 	String loginTxt = "(//button[normalize-space()='LOGIN/SIGNUP'])[1]";
 	String loginPageTxt = "//input[@placeholder='Email']";
 	String profileImage = "//img[@alt='Profile Image']";
 	String helloText = "//div[@class='MuiBox-root css-13wixn3']";
 	String user = "//p[@class='MuiTypography-root MuiTypography-body1 css-nf0076']";
-	String editProfile = "//div[@class='MuiBox-root css-1uq2ht']/button[1]";
-	String Signout = "//div[@class='MuiBox-root css-1uq2ht']/button[2]";
-	String bookMark  = "//div[@class='MuiBox-root css-4qp2c5']/div/p[1]";
-	String haveAnythingMsg = "//div[@class='MuiBox-root css-1l3hrxc']";
-	String viewAll_bookmark = "//div[@class='MuiBox-root css-4qp2c5']/div/p[2]";
+	String editProfile = "//button[@id='sg-myAccountProfileEdit']";
+	String Signout = "//button[@id='sg-myAccountProfileSignOut']";
+	String bookMark  = "//p[@id='sg-myAcccountBookmarks']";
+	String haveAnythingMsg = "//div[@id='sg-myAcccountBookmarkItemWrapper']";
+	String viewAll_bookmark = "//p[@id='sg-myAcccountBookmarkViewAll']";
 	//String bookMark_haveanything = "(//div[@class='MuiBox-root css-1l3hrxc'])[1]";
-	String wishlist_viewAll = "//div[@class='MuiBox-root css-olbtjp']/div/p[2]";
-	String wishlist = "//div[@class='MuiBox-root css-olbtjp']/div/p[1]";
-	String wishlist_haveanything = "(//div[@class='MuiBox-root css-1l3hrxc'])[2]";
-	String address = "//div[@class='MuiBox-root css-1dj18ac']/div/p[1]";
-	String editButton = "//div[@class='MuiBox-root css-1dj18ac']/div/p[2]";
-	String orders = "//div[@class='MuiBox-root css-vyhwca']/div/p[1]";
+	String wishlist_viewAll = "//p[@id='sg-myAccountMyWishlistViewAll']";
+	String wishlist = "//p[@id='sg-myAccountMyWishlistHeader']";
+	String wishlist_haveanything = "//div[@id='sg-myAccountMyWishlistItemWrapper']";
+	String address = "//div[@id='sg-myAccountMyAddressHeaderWrapper']//p[@id='sg-myAccountMyAddressHeader']";
+	String editButton = "//button[@id='sg-myAccountProfileEdit']";
+	String orders = "//p[@id='sg-myAccountMyOrdersOrders']";
 	
 	
 	public void profileIcon_LoggedIcon(String Title) throws InterruptedException {
-		getDriver().findElement(By.xpath("//div[@class='MuiBox-root css-tap1yw']//img[@alt='logo']")).click();
+		getDriver().findElement(By.xpath("//img[@id='sg-iconsHeaderActiveUser']")).click();
 		Log.info("Profile Icon is present");
 		String welcomeText = getDriver().findElement(By.xpath(welcomeTxt1)).getText();
 		Log.info("Welcome Message is present");
@@ -159,7 +159,7 @@ public class MyAccountPage extends BaseClass{
 			}
 		}
 		else {
-			String BookMarkElements = "(//div[@class='MuiBox-root css-129qwum'])";
+			String BookMarkElements = "//div[@id='sg-myAcccountBookmarkItem']";
 			List<WebElement> Bookmark = getDriver().findElements(By.xpath(BookMarkElements));
 			System.out.println(Bookmark.size());
 			if(Bookmark.size()>0) {
@@ -168,10 +168,10 @@ public class MyAccountPage extends BaseClass{
 				Log.info("Successfully clicked on the Book Mark View All Button");
 				Assert.assertTrue(getDriver().findElement(By.xpath(chevronRight)).isDisplayed(), " Chevron right icon of BookMarks slide is not visible");
 				Log.info("Chevron right icon of BookMarks slide is present");
-				String bm_Text = "//p[@class='MuiTypography-root MuiTypography-body1 css-1dyjmp7']";
+				String bm_Text = "//p[@id='sg-myAcccountBookmarks']";
 				Assert.assertEquals(getDriver().findElement(By.xpath(bm_Text)).getText(), "Bookmarks", "Bookmarks heading is not present in the right side of pane");
 				Log.info("BookMark text is present in the view All functinlaity");
-				String viewAll_bookmarkElements = "//div[@class='MuiBox-root css-1f3x5w2']";
+				String viewAll_bookmarkElements = "//p[@id='sg-myAcccountBookmarkViewAll']";
 				List<WebElement> ViewAll_bookmarkElements = getDriver().findElements(By.xpath(viewAll_bookmarkElements));
 				if(ViewAll_bookmarkElements.size()==Bookmark.size()) {
 					Assert.assertTrue(true);
@@ -201,7 +201,7 @@ public class MyAccountPage extends BaseClass{
 		Thread.sleep(3000);
 		Log.info("Wishlist text is successfully Verified");
 		if(getDriver().findElement(By.xpath(wishlist_haveanything)).getText().equals("You don't have anything in your Wishlist yet...")) {
-			String wishlistElements = "(//div[@class='MuiBox-root css-d8xk2t'])";
+			String wishlistElements = "(//div[@id='sg-myAccountMyWishlistActions'])";
 			List<WebElement> WishlistElements = getDriver().findElements(By.xpath(wishlistElements));
 			System.out.println(WishlistElements.size());
 			Log.info("Wishlist Elements are present in Wishlist Sections");
@@ -214,7 +214,7 @@ public class MyAccountPage extends BaseClass{
 			}
 		}
 		else {
-			String wishlistElements = "(//div[@class='MuiBox-root css-d8xk2t'])";
+			String wishlistElements = "(//div[@id='sg-myAccountMyWishlistActions'])";
 			List<WebElement> WishlistElements = getDriver().findElements(By.xpath(wishlistElements));
 			System.out.println(WishlistElements.size());
 			if(WishlistElements.size()>0) {
@@ -223,10 +223,10 @@ public class MyAccountPage extends BaseClass{
 				Log.info("Successfully clicked on the WishList View All Button");
 				Assert.assertTrue(getDriver().findElement(By.xpath(chevronRight)).isDisplayed(), " Chevron right icon of Wishlist slide is not visible");
 				Log.info("Chevron right icon of Wishlist slide is present");
-				String wish_Text = "//p[@class='MuiTypography-root MuiTypography-body1 css-1dyjmp7']";
+				String wish_Text = "//p[@id='sg-myAccountMyWishlistHeader']";
 				Assert.assertEquals(getDriver().findElement(By.xpath(wish_Text)).getText(), "Wishlists", "Wishlists heading is not present in the right side of pane");
 				Log.info("Wishlists text is present in the view All functinlaity");
-				String viewAll_wishlistElements = "//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-z5uvai']";
+				String viewAll_wishlistElements = "//p[@id='sg-myAccountMyWishlistViewAll']";
 				List<WebElement> viewAll_wishlistElement = getDriver().findElements(By.xpath(viewAll_wishlistElements));
 				System.out.println(viewAll_wishlistElement.size());
 				if(viewAll_wishlistElement.size()==WishlistElements.size()) {

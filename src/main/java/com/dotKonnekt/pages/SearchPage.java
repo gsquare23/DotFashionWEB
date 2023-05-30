@@ -30,13 +30,13 @@ public class SearchPage extends BaseClass{
 	String pagination = "(//div[@id='sg-paginationBox']/nav/ul/li/button)";
 	String shopProducts = "//div[@id='sg-productCardWrapper']";
 	String showingresult = "(//div[@id='sg-tabsComponentBox2'])/p";
-	String noresult = "//p[@class='MuiTypography-root MuiTypography-body1 css-3iqdok']";
+	String noresult = "//p[@id='sg-no-results']";
 	String shoptab = "(//button[@id='sg-tabsComponentTab'])[1]";
 	String articletab = "(//button[@id='sg-tabsComponentTab'])[2]";
 	String clickButton=  "//*[name()='svg' and @data-testid='SearchOutlinedIcon']";
 	String searchBox = "//input[@placeholder='Search']";
-	String recentSearch = "//p[@class='MuiTypography-root MuiTypography-body1 css-2nr3zx']";
-	String trending = "//p[@class='MuiTypography-root MuiTypography-body1 css-1awxnbv']";
+	String recentSearch = "//p[@id='sg-autoCompleteSearchTypography']";
+	String trending = "//p[@id='sg-autoCompleteSearchTypography3']";
 	public void validateSeachFunctionalityForShopTab(String searchData, String ClickedBy,String Title) throws InterruptedException {
 		getDriver().findElement(By.xpath(searchBox)).click();
 
@@ -246,10 +246,10 @@ public class SearchPage extends BaseClass{
 		}
 	
 	
-	String lowToHigh = "(//li[@id='sg-filter2MenuItem'])[2]";
+	String lowToHigh = "(//li[@data-value='lowToHigh'])";
 	String actualPrice = "(//div[@id='productCardContentPriceTile'])";
-	String highToLow = "(//li[@id='sg-filter2MenuItem'])[3]";
-	String recentlyAdded ="(//p[@id='sg-filter2Typography'])";
+	String highToLow = "(//li[@data-value='highToLow'])";
+	String recentlyAdded ="(//div[@id='demo-simple-select-standard'])[4]";
 	public void FilterByRecentlyAdded(String FilterOptions) throws InterruptedException {
 		WebElement RecentlyAdded = getDriver().findElement(By.xpath(recentlyAdded));
 		Action.scrollByVisibilityOfElement(getDriver(), RecentlyAdded);
@@ -341,15 +341,15 @@ public class SearchPage extends BaseClass{
 			  Assert.assertTrue(false, n - z + " Actual Prices are not present "); }
 	}
 	//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-spacing-md-2 css-1tg6332']/div
-	String ratings = "//div[@class='MuiBox-root css-yeouz0']/span";
-	String allproduct = "(//div[contains(@class,'css-i25sow')])/div";
+	String ratings = "(//span[@id='sg-starRatingStyledRating'])";
+	String allproduct = "(//div[@id='sg-productCardWrapper'])";
 	String carticon = "//*[name()='svg' and @data-testid='ShoppingCartOutlinedIcon']";
 	String wishlist = "//*[name()='svg' and @data-testid='FavoriteBorderOutlinedIcon']";
-	String quickview = "//p[@class='MuiTypography-root MuiTypography-body1 css-14ohi1k']";
+	String quickview = "(//div[contains(text(),'Quick View')])";
 //	String actualPrice = "//div[@class='MuiBox-root css-70qvj9']/p";
-	String discountedPrice = "p[@class='MuiTypography-root MuiTypography-body1 css-1zopcr']";
-	String productsName = "(//div[contains(@class,'css-1v9zv32')])[1]/div/div/div/div[1]";
-	String images = "(//div[contains(@class,'css-1v9zv32')])[1]/div/div/span/img";
+	String discountedPrice = "//div[@id='productCardContentPriceTile']";
+	String productsName = "(//div[contains(@id,'sg-productCardContentTitle')])";
+	String images = "//img[@id='sg-productCardImage2']";
 
 	public void ShopProducts() throws InterruptedException {
 		Log.info("Shop functionality starts"); 
@@ -465,5 +465,19 @@ public class SearchPage extends BaseClass{
 		softAssert.assertAll();
 	}
 	
-	
+	String colorFilter = "//p[normalize-space()='Color']";
+	String sizeFilter= "//p[normalize-space()='Size']";
+	String priceFilter =  "//p[normalize-space()='Price']";
+	public void filterOptions() {
+		WebElement PriceFilter = getDriver().findElement(By.xpath(priceFilter));
+		System.out.println(PriceFilter.isEnabled());
+		
+		WebElement SizeFilter = getDriver().findElement(By.xpath(sizeFilter));
+		System.out.println(PriceFilter.isEnabled());
+		
+		WebElement ColorFilter = getDriver().findElement(By.xpath(colorFilter));
+		System.out.println(PriceFilter.isEnabled());
+		
+		
+	}
 }

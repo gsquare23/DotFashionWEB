@@ -459,6 +459,33 @@ public class EB_selectContentPage extends BaseClass {
 		Log.info("Successfully Verified the presence of the Add Product");
 
 	}
+	
+	
+	
+	String community = "//div[@class='MuiBox-root jss501 jss203']/div";
+	String engageCustomer = "//span[normalize-space()='Engage Customer']";
+	public void engageSection() {
+		
+		WebElement EngageCustomer = getDriver().findElement(By.xpath(engageCustomer));
+		Assert.assertEquals(EngageCustomer.getText(), "Engage Customer", "Add Product is not Equal");
+		Log.info("Successfully Verified the presence of the Engage Customer Section");
+		
+		Action.click(getDriver(), EngageCustomer);
+		
+		List<WebElement> Community = getDriver().findElements(By.xpath(community));
+		int n = Community.size();
+		System.out.println("Total Community are " + n);
+		Assert.assertEquals(n, 3, "All 3 Community are not present on the Page");
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
 
 }
 

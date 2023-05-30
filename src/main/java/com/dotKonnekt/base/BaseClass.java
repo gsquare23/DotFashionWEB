@@ -1,6 +1,8 @@
 package com.dotKonnekt.base;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -152,16 +154,42 @@ public class BaseClass {
 			driver.set(new ChromeDriver(chromeOptions));
 			getDriver().manage().window().maximize();
 		}
+		else if(browsername.equals("Safari")) {
+			
+			//WebDriverManager.chromedriver().setup();
+			ChromeOptions browserOptions = new ChromeOptions();
+	    	browserOptions.setPlatformName("macOS 10.15");
+	    	browserOptions.setBrowserVersion("latest");
+	    	Map<String, Object> sauceOptions = new HashMap<>();
+	    	sauceOptions.put("username", "Gsquare");
+	    	sauceOptions.put("accessKey", "cc037b2f-f1ad-4f29-ba97-8a12245e8fbd");
+	    	sauceOptions.put("build", "selenium-build-2J540");
+	    	sauceOptions.put("name", "<your test name>");
+	    	browserOptions.setCapability("sauce:options", sauceOptions);
+	    	
+	        // Create a RemoteWebDriver instance.
+	    	URL url;
+			try {
+				url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+				
+				WebDriver driver = new RemoteWebDriver(url, browserOptions);
+			} catch (MalformedURLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	    	
+		}
 		
 		else if (browsername.equals("ChromeMobile")) {
 
 			WebDriverManager.chromedriver().setup();
 			
 			  ChromeOptions chromeOptions = new ChromeOptions();
-			  chromeOptions.addArguments("--remote-allow-origins=*"); DesiredCapabilities
-			  cp = new DesiredCapabilities(); cp.setCapability(ChromeOptions.CAPABILITY,
-			  chromeOptions); chromeOptions.merge(cp); driver.set(new
-			  ChromeDriver(chromeOptions));
+			  chromeOptions.addArguments("--remote-allow-origins=*"); 
+			  DesiredCapabilities cp = new DesiredCapabilities(); 
+			  cp.setCapability(ChromeOptions.CAPABILITY,chromeOptions); 
+			  chromeOptions.merge(cp); 
+			  driver.set(new ChromeDriver(chromeOptions));
 			 
 			//driver.set(new ChromeDriver());
 			

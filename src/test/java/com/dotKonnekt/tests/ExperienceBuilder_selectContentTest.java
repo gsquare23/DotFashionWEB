@@ -153,13 +153,30 @@ public class ExperienceBuilder_selectContentTest extends BaseClass {
 	
 	@Test(dataProvider = "ExperienceBuilder", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
 	public void addProductSectionverification(String page, String title, String browser, String url) throws InterruptedException {
-		Log.startTestCase("-----------ContentTileVerificationPresence    Starts---------");
+		Log.startTestCase("-----------addProductSectionverification    Starts---------");
 		ebPage = new EB_selectContentPage();
 		launchApp_EB(browser, url);
 		ebPage.EB_login();
 		ebPage.addProductsSection();
-		Log.endTestCase("-----------ContentTileVerificationPresence    Ends---------");
+		Log.endTestCase("-----------addProductSectionverification    Ends---------");
 	}
+	
+	
+	
+
+	@Test(dataProvider = "ExperienceBuilder", dataProviderClass = DataProviders.class,enabled = true, groups = "NotLoggedIn")
+	public void engageCustomerSection(String page, String title, String browser, String url) throws InterruptedException {
+		Log.startTestCase("-----------engageCustomerSection    Starts---------");
+		ebPage = new EB_selectContentPage();
+		launchApp_EB(browser, url);
+		ebPage.EB_login();
+		ebPage.engageSection();
+		Log.endTestCase("-----------engageCustomerSection    Ends---------");
+	}
+	
+	
+	
+	
 	
 	
 	@AfterMethod(groups = {"LoggedIn","NotLoggedIn"})
